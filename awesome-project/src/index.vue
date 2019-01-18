@@ -32,6 +32,8 @@ export default {
     background-color: #222222;
     justify-content: left;
     align-items: left;
+    width: 100%;
+    height: 100%;
   }
   .app-header {
     background-color: #41B883;

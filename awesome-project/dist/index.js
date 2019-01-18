@@ -89,7 +89,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/testweex/awesome-project/src/components/First.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/First.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-129832a0"
@@ -119,7 +119,7 @@ module.exports = __vue_exports__
 var _require = __webpack_require__(2),
     router = _require.router;
 
-var App = __webpack_require__(9);
+var App = __webpack_require__(10);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/helloworld');
@@ -2832,10 +2832,10 @@ __vue_styles__.push(__webpack_require__(7)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(13)
+__vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(8)
+var __vue_template__ = __webpack_require__(9)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2847,7 +2847,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/testweex/awesome-project/src/components/HelloWorld.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/HelloWorld.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-469af010"
@@ -2871,9 +2871,7 @@ module.exports = __vue_exports__
 module.exports = {
   "rootDiv": {
     "top": "0",
-    "backgroundColor": "#ff2222",
-    "width": 100,
-    "height": 100
+    "backgroundColor": "#ff2222"
   },
   "buttocls": {
     "width": "200",
@@ -2884,6 +2882,45 @@ module.exports = {
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+exports.default = {
+  name: 'HelloWorld',
+  data: function data() {
+    return {
+      name: 'this is my name!!!'
+    };
+  },
+
+  methods: {
+    push: function push() {
+      console.log('push action');
+      this.$router.push('./');
+      console.log(this);
+    }
+  },
+  components: {}
+};
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2903,21 +2940,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(10)
+__vue_styles__.push(__webpack_require__(11)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(11)
+__vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(12)
+var __vue_template__ = __webpack_require__(13)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2929,7 +2966,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/testweex/awesome-project/src/index.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-2964abc9"
@@ -2947,12 +2984,14 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = {
   "wrapper": {
-    "backgroundColor": "#222222"
+    "backgroundColor": "#222222",
+    "width": 100,
+    "height": 100
   },
   "app-header": {
     "backgroundColor": "#41B883"
@@ -2983,7 +3022,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3025,49 +3064,10 @@ exports.default = {
 //
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (17:10)\n    at Parser.pp$4.raise (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2610:13)\n    at Parser.pp.unexpected (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:637:8)\n    at Parser.pp$3.parseIdent (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2565:10)\n    at Parser.pp$3.parsePropertyName (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2362:105)\n    at Parser.parseObj (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4463:14)\n    at Parser.pp$3.parseExprAtom (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4372:24)\n    at Parser.pp$3.parseExprSubscripts (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1955:19)\n    at Parser.pp$3.parseMaybeUnary (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parsePropertyValue (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2310:87)\n    at Parser.parseObj (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4472:14)\n    at Parser.pp$3.parseExprAtom (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/apple/testweex/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4372:24)");
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-exports.default = {
-  name: 'HelloWorld',
-  data: function data() {
-    return {
-      name: 'this is my name!!!'
-    };
-  },
-
-  methods: {
-    push: function push() {
-      console.log('push action');
-      this.$router.push('./');
-      console.log(this);
-    }
-  },
-  components: {}
-};
+throw new Error("Module build failed: SyntaxError: Unexpected token (17:10)\n    at Parser.pp$4.raise (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2610:13)\n    at Parser.pp.unexpected (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:637:8)\n    at Parser.pp$3.parseIdent (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2565:10)\n    at Parser.pp$3.parsePropertyName (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2362:105)\n    at Parser.parseObj (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4463:14)\n    at Parser.pp$3.parseExprAtom (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4372:24)\n    at Parser.pp$3.parseExprSubscripts (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1955:19)\n    at Parser.pp$3.parseMaybeUnary (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1932:17)\n    at Parser.pp$3.parseExprOps (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1874:19)\n    at Parser.pp$3.parseMaybeConditional (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1857:19)\n    at Parser.pp$3.parseMaybeAssign (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:1832:19)\n    at Parser.pp$3.parsePropertyValue (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2310:87)\n    at Parser.parseObj (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4472:14)\n    at Parser.pp$3.parseExprAtom (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:2077:17)\n    at Parser.parseExprAtom (/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/node_modules/vue-template-es2015-compiler/buble.js:4372:24)");
 
 /***/ })
 /******/ ]);

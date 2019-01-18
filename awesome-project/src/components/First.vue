@@ -7,6 +7,8 @@
 <style scoped>
   .rootDiv{
     background-color: #ff0000;
+    /* width: 100%;
+    height: 100%; */
   }
   .contentcls{
       width: 200px;
