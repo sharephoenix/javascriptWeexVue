@@ -1,6 +1,6 @@
 <template>
   <div class="rootDiv">
-    <!-- <text class="contentcls"> this is first view</text> -->
+    <text class="contentcls"> this is first view</text>
     <tabbrar-controlle></tabbrar-controlle>
   </div>
 </template>

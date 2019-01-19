@@ -23,17 +23,17 @@ export const router = new Router({
     },
     {
       path: '/fragment1',
-      name: 'fragment1',
+      name: 'Fragment1',
       component: Fragment1
     },
     {
       path: '/fragment2',
-      name: 'fragment2',
+      name: 'Fragment2',
       component: Fragment2
     },
     {
       path: '/fragment3',
-      name: 'fragment3',
+      name: 'Fragment3',
       component: Fragment3
     }
   ]

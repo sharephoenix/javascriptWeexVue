@@ -5,6 +5,7 @@
       <text class="greeting">The environment is ready!</text>
     </div> -->
     <div class="app-content">
+      <div>asdfasdf</div>
       <tabbrar-controlle/>
     </div>
     <!-- <custom-first></custom-first> -->

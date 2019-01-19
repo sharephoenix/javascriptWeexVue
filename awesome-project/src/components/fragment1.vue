@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
       <image src="https://alibaba.github.io/weex/img/weex_logo_blue@3x.png" class="logo"></image>
-      <text class="button" @click="jump">1111 Hello {{target}}</text>
+      <text class="button" @click="jump"> jump  {{counts}} {{target}}</text>
+      <button v-on:click="update"> click update </button>
   </div>
 </template>
 
@@ -12,18 +13,22 @@ var modal = weex.requireModule('modal')
 export default {
   name: 'fragment1',
   data () {
-    return { target: 'World' }
+    return {
+      target: 'World',
+      counts: 100000
+    }
   },
   methods: {
     update: function () {
       this.target = 'Lychee'
-      // test.showToast();
+      this.counts = navigator.counts
+      modal.toast({'message': 'this is my message!!!'})
     },
     jump (event) {
       console.log('will jump')
       navigator.push({
-        url: 'http://192.168.1.105:8105/fragment3',
-        animated: true
+        url: 'http://192.168.1.105:8081/fragment3',
+        animated: 'true'
       }, event => {
         modal.toast({ message: 'callback: ' + event })
       })

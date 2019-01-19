@@ -169,7 +169,7 @@ var _require = __webpack_require__(3),
 var App = __webpack_require__(27);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
-router.push('/fragment1');
+// router.push('/fragment1')
 
 /***/ }),
 /* 3 */
@@ -224,15 +224,15 @@ var router = exports.router = new _vueRouter2.default({
     component: _First2.default
   }, {
     path: '/fragment1',
-    name: 'fragment1',
+    name: 'Fragment1',
     component: _fragment2.default
   }, {
     path: '/fragment2',
-    name: 'fragment2',
+    name: 'Fragment2',
     component: _fragment4.default
   }, {
     path: '/fragment3',
-    name: 'fragment3',
+    name: 'Fragment3',
     component: _fragment6.default
   }]
 });
@@ -3040,7 +3040,9 @@ module.exports.render._withStripped = true
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["rootDiv"]
-  }, [_c('tabbrar-controlle')], 1)
+  }, [_c('text', {
+    staticClass: ["contentcls"]
+  }, [_vm._v(" this is first view")]), _c('tabbrar-controlle')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3252,6 +3254,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var navigator = weex.requireModule('navigator');
 var modal = weex.requireModule('modal');
@@ -3259,19 +3262,23 @@ var modal = weex.requireModule('modal');
 exports.default = {
   name: 'fragment1',
   data: function data() {
-    return { target: 'World' };
+    return {
+      target: 'World',
+      counts: 100000
+    };
   },
 
   methods: {
     update: function update() {
       this.target = 'Lychee';
-      // test.showToast();
+      this.counts = navigator.counts;
+      modal.toast({ 'message': 'this is my message!!!' });
     },
     jump: function jump(event) {
       console.log('will jump');
       navigator.push({
-        url: 'http://192.168.1.105:8105/fragment3',
-        animated: true
+        url: 'http://192.168.1.105:8081/fragment3',
+        animated: 'true'
       }, function (event) {
         modal.toast({ message: 'callback: ' + event });
       });
@@ -3296,7 +3303,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.jump
     }
-  }, [_vm._v("1111 Hello " + _vm._s(_vm.target))])])
+  }, [_vm._v(" jump  " + _vm._s(_vm.counts) + " " + _vm._s(_vm.target))]), _c('button', {
+    on: {
+      "click": _vm.update
+    }
+  }, [_vm._v(" click update ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3519,22 +3530,32 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 // var globalEvent=weex.requireModule('globalEvent');
 // globalEvent.addEventListener("fragment", function (result) {
 //         console.log("get fragment");
 //   });
-
+var navigator = weex.requireModule('navigator');
+var modal = weex.requireModule('modal');
 exports.default = {
   name: 'fragment3',
   data: function data() {
-    return { target: 'World' };
+    return {
+      target: 'World',
+      counts: 0
+    };
   },
 
   methods: {
     update: function update() {
       this.target = 'Lychee';
-      // test.showToast();
+      this.counts = navigator.counts;
+    },
+    popnavator: function popnavator() {
+      modal.toast({ 'message': 'pop controller!!!' });
+      navigator.pop();
     }
   }
 };
@@ -3556,7 +3577,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.update
     }
-  }, [_vm._v("3333 Hello " + _vm._s(_vm.target))])])
+  }, [_vm._v("navigator: " + _vm._s(_vm.counts) + " Hello " + _vm._s(_vm.target))]), _c('button', {
+    on: {
+      "click": _vm.popnavator
+    }
+  }, [_vm._v(" pop controller")]), _c('button', {
+    on: {
+      "click": _vm.update
+    }
+  }, [_vm._v("click me update navigator count")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3676,6 +3705,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 exports.default = {
   name: 'App',
@@ -3700,7 +3730,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["wrapper"]
   }, [_c('div', {
     staticClass: ["app-content"]
-  }, [_c('tabbrar-controlle')], 1)])
+  }, [_c('div', [_vm._v("asdfasdf")]), _c('tabbrar-controlle')], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
