@@ -14,7 +14,6 @@
     "clean:ios": "rimraf ./release/ios",
     "clean:android": "rimraf ./release/android",
     "dev": "webpack --env.NODE_ENV=common --progress --watch",
-    "lint": "eslint --ext .js,.vue src  --fix",
     "serve": "webpack-dev-server --env.NODE_ENV=development --progress",
     "ios": "weex run ios",
     "web": "npm run serve",
