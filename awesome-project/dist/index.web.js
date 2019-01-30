@@ -8729,7 +8729,7 @@ var _require = __webpack_require__(12),
 var App = __webpack_require__(43);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
-// router.push('/dist/fragment1')
+// router.push('/fragment1')
 
 /***/ }),
 /* 8 */
@@ -19983,15 +19983,15 @@ var router = exports.router = new _vueRouter2.default({
     component: _First2.default
   }, {
     path: '/fragment1',
-    name: 'fragment1',
+    name: 'Fragment1',
     component: _fragment2.default
   }, {
     path: '/fragment2',
-    name: 'fragment2',
+    name: 'Fragment2',
     component: _fragment4.default
   }, {
     path: '/fragment3',
-    name: 'fragment3',
+    name: 'Fragment3',
     component: _fragment6.default
   }]
 });
@@ -22657,7 +22657,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.rootDiv[data-v-708d1510] {\n  background-color: blue;\n  /* width: 100%;\n    height: 100%; */\n}\n.contentcls[data-v-708d1510] {\n  width: 100%;\n  height: 2.66667rem;\n  color: #ff0000;\n  background-color: aqua;\n}\n", ""]);
+exports.push([module.i, "\n.rootDiv[data-v-708d1510] {\n  background-color: blue;\n  width: 100%;\n  height: 100%;\n}\n.contentcls[data-v-708d1510] {\n  width: 100%;\n  height: 2.66667rem;\n  color: #ff0000;\n  background-color: aqua;\n}\n", ""]);
 
 // exports
 
@@ -22902,7 +22902,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('tabbrar-controlle')], 1)
+  }, [_c('p', {
+    staticClass: "contentcls weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" this is first view")]), _vm._v(" "), _c('tabbrar-controlle')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23181,21 +23186,34 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
-// var globalEvent=weex.requireModule('globalEvent');
-// globalEvent.addEventListener("fragment", function (result) {
-//         console.log("get fragment");
-//   });
+var navigator = weex.requireModule('navigator');
+var modal = weex.requireModule('modal');
 
 exports.default = {
+  name: 'fragment1',
   data: function data() {
-    return { target: 'World' };
+    return {
+      target: 'World',
+      counts: 100000
+    };
   },
 
   methods: {
     update: function update() {
       this.target = 'Lychee';
-      // test.showToast();
+      this.counts = navigator.counts;
+      modal.toast({ 'message': 'this is my message!!!' });
+    },
+    jump: function jump(event) {
+      console.log('will jump');
+      navigator.push({
+        url: 'http://192.168.1.105:8081/fragment3',
+        animated: 'true'
+      }, function (event) {
+        modal.toast({ message: 'callback: ' + event });
+      });
     }
   }
 };
@@ -23227,10 +23245,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
+        return _vm.jump($event)
+      }
+    }
+  }, [_vm._v(" jump  " + _vm._s(_vm.counts) + " " + _vm._s(_vm.target))]), _vm._v(" "), _c('button', {
+    attrs: {
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
         return _vm.update($event)
       }
     }
-  }, [_vm._v("1111 Hello " + _vm._s(_vm.target))])])
+  }, [_vm._v(" click update ")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23341,8 +23370,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
 
 // var globalEvent=weex.requireModule('globalEvent');
 // globalEvent.addEventListener("fragment", function (result) {
@@ -23350,6 +23377,7 @@ Object.defineProperty(exports, "__esModule", {
 //   });
 
 exports.default = {
+  name: 'fragment2',
   data: function data() {
     return { target: 'World' };
   },
@@ -23503,21 +23531,32 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 // var globalEvent=weex.requireModule('globalEvent');
 // globalEvent.addEventListener("fragment", function (result) {
 //         console.log("get fragment");
 //   });
-
+var navigator = weex.requireModule('navigator');
+var modal = weex.requireModule('modal');
 exports.default = {
+  name: 'fragment3',
   data: function data() {
-    return { target: 'World' };
+    return {
+      target: 'World',
+      counts: 0
+    };
   },
 
   methods: {
     update: function update() {
       this.target = 'Lychee';
-      // test.showToast();
+      this.counts = navigator.counts;
+    },
+    popnavator: function popnavator() {
+      modal.toast({ 'message': 'pop controller!!!' });
+      navigator.pop();
     }
   }
 };
@@ -23552,7 +23591,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         return _vm.update($event)
       }
     }
-  }, [_vm._v("3333 Hello " + _vm._s(_vm.target))])])
+  }, [_vm._v("navigator: " + _vm._s(_vm.counts) + " Hello " + _vm._s(_vm.target))]), _vm._v(" "), _c('button', {
+    attrs: {
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.popnavator($event)
+      }
+    }
+  }, [_vm._v(" pop controller")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.update($event)
+      }
+    }
+  }, [_vm._v("click me update navigator count")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23680,6 +23741,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 exports.default = {
   name: 'App',
@@ -23710,7 +23772,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('tabbrar-controlle')], 1)])
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_vm._v("asdfasdf")]), _vm._v(" "), _c('tabbrar-controlle')], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

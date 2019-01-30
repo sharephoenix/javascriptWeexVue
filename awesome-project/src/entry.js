@@ -5,4 +5,4 @@ const { router } = require('./router')
 const App = require('@/index.vue')
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({el: '#root', router}, App))
-// router.push('/fragment1')
+router.push('/fragment1')

@@ -5,13 +5,13 @@
       <controller style="width:500px;flex: 1;margin-top: 20px;"
                   src="http://192.168.1.105:8087/dist/fragment4.js"
                   tag="lychee1"></controller> -->
-      <div>test header</div>
+      <!-- <div>test header</div> -->
       <router-view></router-view>
-      <div class="toolbar">
+      <!-- <div class="toolbar">
         <div class="toolbar_btn" @click="function_src(1)">1</div>
         <div class="toolbar_btn" @click="function_src(2)">2</div>
         <div class="toolbar_btn" @click="function_src(3)">3</div>
-      </div>
+      </div> -->
   </div>
 </template>
 <script>
