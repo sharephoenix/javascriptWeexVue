@@ -1,6 +1,6 @@
 <template>
   <slider class="slider" auto-play="true" interval="5000" @change="onchange">
-    <div class="frame" v-for="img in imageList" :key="img.title">
+    <div class="frame" v-for="(img) in imageList" :key="img.title">
       <image class="image" resize="cover" :src="img.src"></image>
     <div><textarea placeholder="aaaaaaaa"/></div>
     </div>
@@ -13,6 +13,7 @@ export default {
   props: ['imageList'],
   data () {
     return {
+      testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
     }
   },
   methods: {

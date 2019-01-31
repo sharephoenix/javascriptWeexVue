@@ -11,3 +11,9 @@
     npm install
 ## 运行项目
     npm run start // 启动项目
+## 添加工程模板
+    weexpack platform add ios
+    weexpack platform add android
+## 运行模板
+    weexpack run ios
+    weexpack run android

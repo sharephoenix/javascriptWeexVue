@@ -4424,8 +4424,14 @@ exports.default = {
     return {
       tabTitles: _config2.default.tabTitles,
       tabStyles: _config2.default.tabStyles,
-      Banners: [{ title: '111', src: 'http://app.kuitao8.com/images/banner/1.jpg' }, { title: '222', src: 'http://app.kuitao8.com/images/banner/2.jpg' }, { title: '333', src: 'http://app.kuitao8.com/images/banner/3.jpg' }]
+      Banners: [{ title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg' }, { title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg' }, { title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg' }],
+      testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
     };
+  },
+  computed: {
+    list: function list() {
+      return this.Banners;
+    }
   },
   created: function created() {
     var tabPageHeight = _weexUi.Utils.env.getPageHeight();
@@ -21396,7 +21402,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   props: ['imageList'],
   data: function data() {
-    return {};
+    return {
+      testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
+    };
   },
 
   methods: {
@@ -21558,11 +21566,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick,
       "wxcMinibarRightButtonClicked": _vm.minibarRightButtonClick
     }
-  }), _c('text', [_vm._v("asdfasdfasd")]), _c('scroller', {
+  }), _c('scroller', {
     staticClass: ["main-list"]
   }, [_c('kx-slider', {
     attrs: {
-      "imageList": "Banners"
+      "imageList": _vm.Banners
     }
   })], 1)], 1), _c('div', {
     staticClass: ["item-container"],

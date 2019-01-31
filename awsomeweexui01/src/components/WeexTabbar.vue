@@ -15,10 +15,10 @@
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
         ></wxc-minibar>
-        <text>asdfasdfasd</text>
+
         <scroller class="main-list">
       <!-- 轮播图 -->
-          <kx-slider imageList="Banners"></kx-slider>
+          <kx-slider :imageList="Banners"></kx-slider>
         </scroller>
     </div>
 
@@ -78,14 +78,18 @@ export default {
     WxcMinibar,
     'kx-slider': Slider
   },
-  data () {
-    return {
-      tabTitles: Config.tabTitles,
-      tabStyles: Config.tabStyles,
-      Banners: [
-        {title: '111', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
-        {title: '222', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
-        {title: '333', src: 'http://app.kuitao8.com/images/banner/3.jpg'}]
+  data: () => ({
+    tabTitles: Config.tabTitles,
+    tabStyles: Config.tabStyles,
+    Banners: [
+      {title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
+      {title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
+      {title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg'}],
+    testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
+  }),
+  computed: {
+    list: function () {
+      return this.Banners
     }
   },
   created () {
