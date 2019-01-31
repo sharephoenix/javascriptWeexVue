@@ -6,10 +6,10 @@
 </template>
 
 <script>
-// var globalEvent=weex.requireModule('globalEvent');
-// globalEvent.addEventListener("fragment", function (result) {
-//         console.log("get fragment");
-//   });
+var globalEvent=weex.requireModule('globalEvent');
+globalEvent.addEventListener("fragment", function (result) {
+        console.log("get fragment");
+  });
 
 export default {
   name: 'fragment2',

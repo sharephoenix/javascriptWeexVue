@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <!-- <div class="app-header">
+    <div class="app-header">
       <image :src="logo" class="logo" />
       <text class="greeting">The environment is ready!</text>
-    </div> -->
+    </div>
     <div class="app-content">
       <div>asdfasdf</div>
       <tabbrar-controlle/>

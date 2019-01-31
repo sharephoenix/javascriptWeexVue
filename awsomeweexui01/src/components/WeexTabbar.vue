@@ -6,21 +6,20 @@
     @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected"
   >
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="{ height: height }">
+    <div class="item-container" :style="contentStyle">
         <wxc-minibar
           title="首页"
           background-color="#009ff0"
           text-color="#FFFFFF"
-          left-button="N"
-          right-button="N"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
         ></wxc-minibar>
+        <text>asdfasdfasd</text>
         <scroller class="main-list">
       <!-- 轮播图 -->
-      <kx-slider :imageList="Banners"></kx-slider>
-    </scroller>  
+          <kx-slider imageList="Banners"></kx-slider>
+        </scroller>
     </div>
 
     <!-- 第二个页面内容-->
@@ -67,27 +66,28 @@
 
 <script>
 import { WxcTabBar, WxcMinibar, Utils } from 'weex-ui'
- import Slider from './Slider.vue'
+import Slider from './Slider.vue'
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 import Config from './config'
 const modal = weex.requireModule('modal')
 
 export default {
   name: 'WeexTabbar',
-  components: { 
-    WxcTabBar, 
-     WxcMinibar, 
-  'kx-slider': Slider 
+  components: {
+    WxcTabBar,
+    WxcMinibar,
+    'kx-slider': Slider
   },
-  data: () => ({
-    tabTitles: Config.tabTitles,
-    tabStyles: Config.tabStyles,
-    Banners: [
-          { title: '', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
-          { title: '', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
-          { title: '', src: 'http://app.kuitao8.com/images/banner/3.jpg'}
-        ]
-  }),
+  data () {
+    return {
+      tabTitles: Config.tabTitles,
+      tabStyles: Config.tabStyles,
+      Banners: [
+        {title: '111', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
+        {title: '222', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
+        {title: '333', src: 'http://app.kuitao8.com/images/banner/3.jpg'}]
+    }
+  },
   created () {
     const tabPageHeight = Utils.env.getPageHeight()
     // 如果页面没有导航栏，可以用下面这个计算高度的方法
@@ -115,9 +115,9 @@ export default {
   width: 750px;
   background-color: #f2f2f2;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: flex-start;
 }
- .wrapper{
+.wrapper{
   }
   .iconfont {
     font-family:iconfont;

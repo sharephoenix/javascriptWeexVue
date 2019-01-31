@@ -5,7 +5,7 @@
       <controller style="width:500px;flex: 1;margin-top: 20px;"
                   src="http://192.168.1.105:8087/dist/fragment4.js"
                   tag="lychee1"></controller> -->
-      <div>test header</div>
+      <!-- <div>test header</div> -->
       <router-view></router-view>
       <div class="toolbar">
         <div class="toolbar_btn" @click="function_src(1)">1</div>

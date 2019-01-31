@@ -1,13 +1,14 @@
 <template>
   <div class="rootDiv">
     <text class="contentcls"> this is first view</text>
+    <fragment1 styles="{width:100%;height:33px;}"></fragment1>
     <tabbrar-controlle></tabbrar-controlle>
   </div>
 </template>
 
 <script>
 import controller from './controller'
-
+import fragment1 from './fragment1'
 export default {
   name: 'tabar',
   data () {
@@ -16,7 +17,8 @@ export default {
     }
   },
   components: {
-    'tabbrar-controlle': controller
+    'tabbrar-controlle': controller,
+    'fragment1': fragment1
   }
 }
 </script>
