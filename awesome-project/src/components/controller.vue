@@ -41,11 +41,14 @@ export default {
 </script>
 <style>
 .body {
-  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
   width: 100%;
-  height: 750px;
 }
 .toolbar {
+  position: absolute;
+  bottom: 0px;
   background-color: #eee;
   display: flex;
   justify-content: center;

@@ -92,7 +92,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/First.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/First.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-129832a0"
@@ -136,7 +136,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/controller.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/controller.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-63b783ac"
@@ -187,10 +187,6 @@ var _vueRouter = __webpack_require__(4);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _First = __webpack_require__(0);
-
-var _First2 = _interopRequireDefault(_First);
-
 var _HelloWorld = __webpack_require__(11);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
@@ -209,19 +205,21 @@ var _fragment6 = _interopRequireDefault(_fragment5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global Vue */
-Vue.use(_vueRouter2.default);
+Vue.use(_vueRouter2.default); /* global Vue */
+
+
+undefined.$router.push('../src/components/fragment1.vue');
 
 var router = exports.router = new _vueRouter2.default({
   mode: 'history',
   routes: [{
+    path: '/',
+    name: 'First',
+    component: _fragment2.default
+  }, {
     path: '/helloworld',
     name: 'HelloWorld',
     component: _HelloWorld2.default
-  }, {
-    path: '/',
-    name: 'First',
-    component: _First2.default
   }, {
     path: '/fragment1',
     name: 'Fragment1',
@@ -2923,11 +2921,14 @@ exports.default = {
 
 module.exports = {
   "body": {
-    "flexDirection": "column",
-    "width": 100,
-    "height": "750"
+    "position": "absolute",
+    "bottom": "0",
+    "top": "0",
+    "width": 100
   },
   "toolbar": {
+    "position": "absolute",
+    "bottom": "0",
     "backgroundColor": "#eeeeee",
     "display": "flex",
     "justifyContent": "center",
@@ -3073,7 +3074,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/HelloWorld.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/HelloWorld.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-469af010"
@@ -3191,7 +3192,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/fragment1.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/fragment1.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-6ed45781"
@@ -3338,7 +3339,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/fragment2.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/fragment2.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-6ee26f02"
@@ -3468,7 +3469,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/components/fragment3.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/fragment3.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-6ef08683"
@@ -3616,7 +3617,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/awesome-project/src/index.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-2964abc9"
