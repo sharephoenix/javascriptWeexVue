@@ -26,10 +26,10 @@ export default {
     }
   ],
   tabStyles: {
-    bgColor: '#FFFFFF',
+    bgColor: '#F2F2F2',
     titleColor: '#666666',
     activeTitleColor: '#3D3D3D',
-    activeBgColor: '#FFFFFF',
+    activeBgColor: '#F2F2F2',
     isActiveTitleBold: true,
     iconWidth: 70,
     iconHeight: 70,

@@ -39,7 +39,7 @@
     <div class="item-container" :style="contentStyle">
       <wxc-minibar
           title="消息"
-          background-color="#009ff0"
+          background-color="#F2F2F2"
           text-color="#FFFFFF"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
@@ -103,6 +103,7 @@ export default {
     wxcTabBarCurrentTabSelected (e) {
       const index = e.page
       console.log(index)
+      modal.toast({ 'message': index, 'duration': 1 })
     },
     minibarLeftButtonClick () {
       console.log('minibarLeftButtonClick')
@@ -117,7 +118,7 @@ export default {
 <style scoped>
 .item-container {
   width: 750px;
-  background-color: #f2f2f2;
+  background-color: #ff2222;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -127,9 +128,8 @@ export default {
     font-family:iconfont;
   }
   .main-list{
-    position: fixed;
+    position: static;
     top: 91px;
-    bottom: 90px;
     left: 0;
     right: 0;
   }
