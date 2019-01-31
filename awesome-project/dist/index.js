@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,14 +73,14 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(5)
+__vue_styles__.push(__webpack_require__(10)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(6)
+__vue_exports__ = __webpack_require__(11)
 
 /* template */
-var __vue_template__ = __webpack_require__(10)
+var __vue_template__ = __webpack_require__(18)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -117,14 +117,14 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(7)
+__vue_styles__.push(__webpack_require__(12)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(8)
+__vue_exports__ = __webpack_require__(13)
 
 /* template */
-var __vue_template__ = __webpack_require__(9)
+var __vue_template__ = __webpack_require__(14)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -157,22 +157,66 @@ module.exports = __vue_exports__
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(15)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(16)
+
+/* template */
+var __vue_template__ = __webpack_require__(17)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/fragment1.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-6ed45781"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
 /* global Vue */
 
 /* weex initialized here, please do not move this line */
-var _require = __webpack_require__(3),
+var _require = __webpack_require__(4),
     router = _require.router;
 
 var App = __webpack_require__(27);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
-// router.push('/fragment1')
+router.push('/fragment1');
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -183,15 +227,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.router = undefined;
 
-var _vueRouter = __webpack_require__(4);
+var _vueRouter = __webpack_require__(5);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _HelloWorld = __webpack_require__(11);
+var _HelloWorld = __webpack_require__(6);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
-var _fragment = __webpack_require__(15);
+var _First = __webpack_require__(0);
+
+var _First2 = _interopRequireDefault(_First);
+
+var _fragment = __webpack_require__(2);
 
 var _fragment2 = _interopRequireDefault(_fragment);
 
@@ -205,17 +253,15 @@ var _fragment6 = _interopRequireDefault(_fragment5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-Vue.use(_vueRouter2.default); /* global Vue */
-
-
-undefined.$router.push('../src/components/fragment1.vue');
+/* global Vue */
+Vue.use(_vueRouter2.default);
 
 var router = exports.router = new _vueRouter2.default({
   mode: 'history',
   routes: [{
     path: '/',
     name: 'First',
-    component: _fragment2.default
+    component: _First2.default
   }, {
     path: '/helloworld',
     name: 'HelloWorld',
@@ -236,7 +282,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2862,7 +2908,125 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(7)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(8)
+
+/* template */
+var __vue_template__ = __webpack_require__(9)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/HelloWorld.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-469af010"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "rootDiv": {
+    "top": "0",
+    "backgroundColor": "#ff2222"
+  },
+  "buttocls": {
+    "width": "200",
+    "height": "44",
+    "backgroundColor": "#00FFFF"
+  }
+}
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'HelloWorld',
+  data: function data() {
+    return {
+      name: 'this is my name!!!'
+    };
+  },
+
+  methods: {
+    push: function push() {
+      console.log('push action');
+      this.$router.push('./');
+      console.log(this);
+    }
+  },
+  components: {}
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["rootDiv"]
+  }, [_c('text', [_vm._v("Now, let's use Vue.js to build your Weex app.")]), _c('text', [_vm._v(" helloworld")]), _c('textarea', {
+    attrs: {
+      "placeholder": "thist textarrar"
+    }
+  }), _c('button', {
+    staticClass: ["buttocls"],
+    on: {
+      "click": _vm.push
+    }
+  }, [_vm._v("push new view")])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -2880,7 +3044,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 6 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2894,7 +3058,20 @@ var _controller = __webpack_require__(1);
 
 var _controller2 = _interopRequireDefault(_controller);
 
+var _fragment = __webpack_require__(2);
+
+var _fragment2 = _interopRequireDefault(_fragment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'tabar',
@@ -2905,18 +3082,13 @@ exports.default = {
   },
 
   components: {
-    'tabbrar-controlle': _controller2.default
+    'tabbrar-controlle': _controller2.default,
+    'fragment1': _fragment2.default
   }
-}; //
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 7 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -2949,7 +3121,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 8 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3001,13 +3173,13 @@ exports.default = {
 };
 
 /***/ }),
-/* 9 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["body"]
-  }, [_c('div', [_vm._v("test header")]), _c('router-view'), _c('div', {
+  }, [_c('router-view'), _c('div', {
     staticClass: ["toolbar"]
   }, [_c('div', {
     staticClass: ["toolbar_btn"],
@@ -3035,189 +3207,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["rootDiv"]
-  }, [_c('text', {
-    staticClass: ["contentcls"]
-  }, [_vm._v(" this is first view")]), _c('tabbrar-controlle')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(12)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(13)
-
-/* template */
-var __vue_template__ = __webpack_require__(14)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/HelloWorld.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-469af010"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "rootDiv": {
-    "top": "0",
-    "backgroundColor": "#ff2222"
-  },
-  "buttocls": {
-    "width": "200",
-    "height": "44",
-    "backgroundColor": "#00FFFF"
-  }
-}
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'HelloWorld',
-  data: function data() {
-    return {
-      name: 'this is my name!!!'
-    };
-  },
-
-  methods: {
-    push: function push() {
-      console.log('push action');
-      this.$router.push('./');
-      console.log(this);
-    }
-  },
-  components: {}
-};
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["rootDiv"]
-  }, [_c('text', [_vm._v("Now, let's use Vue.js to build your Weex app.")]), _c('text', [_vm._v(" helloworld")]), _c('textarea', {
-    attrs: {
-      "placeholder": "thist textarrar"
-    }
-  }), _c('button', {
-    staticClass: ["buttocls"],
-    on: {
-      "click": _vm.push
-    }
-  }, [_vm._v("push new view")])], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(16)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(17)
-
-/* template */
-var __vue_template__ = __webpack_require__(18)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/awesome-project/src/components/fragment1.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-6ed45781"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = {
   "wrapper": {
     "alignItems": "center",
-    "backgroundColor": "#66ccff",
-    "height": 100
+    "backgroundColor": "#66ccff"
   },
   "button": {
     "fontSize": "48",
@@ -3239,7 +3235,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3256,16 +3252,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
+// var globalEvent=weex.requireModule('globalEvent');
+// globalEvent.addEventListener("fragment", function (result) {
+//         console.log("get fragment");
+//   });
 var navigator = weex.requireModule('navigator');
 var modal = weex.requireModule('modal');
-
 exports.default = {
   name: 'fragment1',
   data: function data() {
     return {
       target: 'World',
-      counts: 100000
+      counts: 0
     };
   },
 
@@ -3273,22 +3273,16 @@ exports.default = {
     update: function update() {
       this.target = 'Lychee';
       this.counts = navigator.counts;
-      modal.toast({ 'message': 'this is my message!!!' });
     },
-    jump: function jump(event) {
-      console.log('will jump');
-      navigator.push({
-        url: 'http://192.168.1.105:8081/fragment3',
-        animated: 'true'
-      }, function (event) {
-        modal.toast({ message: 'callback: ' + event });
-      });
+    popnavator: function popnavator() {
+      modal.toast({ 'message': 'pop controller!!!' });
+      navigator.pop();
     }
   }
 };
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3302,13 +3296,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _c('text', {
     staticClass: ["button"],
     on: {
-      "click": _vm.jump
+      "click": _vm.update
     }
-  }, [_vm._v(" jump  " + _vm._s(_vm.counts) + " " + _vm._s(_vm.target))]), _c('button', {
+  }, [_vm._v("navigator: " + _vm._s(_vm.counts) + " Hello " + _vm._s(_vm.target))]), _c('button', {
+    on: {
+      "click": _vm.popnavator
+    }
+  }, [_vm._v(" pop controller")]), _c('button', {
     on: {
       "click": _vm.update
     }
-  }, [_vm._v(" click update ")])], 1)
+  }, [_vm._v("click me update navigator count")])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["rootDiv"]
+  }, [_c('text', {
+    staticClass: ["contentcls"]
+  }, [_vm._v(" this is first view")]), _c('fragment1', {
+    attrs: {
+      "styles": "{width:100%;height:33px;}"
+    }
+  }), _c('tabbrar-controlle')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3402,10 +3417,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-// var globalEvent=weex.requireModule('globalEvent');
-// globalEvent.addEventListener("fragment", function (result) {
-//         console.log("get fragment");
-//   });
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("fragment", function (result) {
+  console.log("get fragment");
+});
 
 exports.default = {
   name: 'fragment2',
@@ -3730,6 +3745,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: ["wrapper"]
   }, [_c('div', {
+    staticClass: ["app-header"]
+  }, [_c('image', {
+    staticClass: ["logo"],
+    attrs: {
+      "src": _vm.logo
+    }
+  }), _c('text', {
+    staticClass: ["greeting"]
+  }, [_vm._v("The environment is ready!")])]), _c('div', {
     staticClass: ["app-content"]
   }, [_c('div', [_vm._v("asdfasdf")]), _c('tabbrar-controlle')], 1)])
 },staticRenderFns: []}

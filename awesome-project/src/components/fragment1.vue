@@ -1,67 +1,43 @@
 <template>
   <div class="wrapper">
-      <!-- <image src="https://alibaba.github.io/weex/img/weex_logo_blue@3x.png" class="logo"></image>
-      <text class="button" @click="jump"> jump  {{counts}} {{target}}</text>
-      <button v-on:click="update"> click update </button> -->
-      <!-- <mycomponent ref='mycomponent' styles="{width:300px;height:300px;}"></mycomponent> -->
-      <!-- <button class="navivebutton" styles="{width:100%;height:33px;}" @click="jump"> excuate native action</button> -->
-      <wxc-button styles="{width:100%;height:33px;}" :text="buttonName" :wxcButtonClicked="toActiveNative">
-</wxc-button>
+      <image src="https://alibaba.github.io/weex/img/weex_logo_blue@3x.png" class="logo"></image>
+      <text class="button" @click="update">navigator: {{ counts }} Hello {{target}}</text>
+      <button v-on:click="popnavator"> pop controller</button>
+      <button v-on:click="update">click me update navigator count</button>
   </div>
 </template>
 
 <script>
+// var globalEvent=weex.requireModule('globalEvent');
+// globalEvent.addEventListener("fragment", function (result) {
+//         console.log("get fragment");
+//   });
 var navigator = weex.requireModule('navigator')
 var modal = weex.requireModule('modal')
-var Mycomponent = weex.requireModule('mycomponent')
-
 export default {
   name: 'fragment1',
   data () {
     return {
       target: 'World',
-      counts: 100000
+      counts: 0
     }
   },
   methods: {
-    update: function () {t
+    update: function () {
       this.target = 'Lychee'
-      // this.counts = navigator.counts
-      modal.toast({'message': 'this is my message!!!'})
+      this.counts = navigator.counts
     },
-    jump (event) {
-      console.log('will jump')
-      navigator.push({
-        url: 'http://192.168.1.105:8083/fragment3',
-        animated: 'true'
-      }, event => {
-        modal.toast({ message: 'callback: ' + event })
-      })
-    },
-    toActiveNative: function () {
-      modal.toast({ 'message': 'callback: ' + 'event' })
-      this.$refs.mycomponent.focus()
-      console.log('alexluan')
-    },
-    ready: function () {
-      var self = this;
-      var globalEvent = require('@weex-module/globalEvent');
-      globalEvent.addEventListener("geolocation",function(e){
-        modal.toast({'message': 'eventListener'})
-      });
+    popnavator: function () {
+      modal.toast({'message': 'pop controller!!!'})
+      navigator.pop()
     }
-  },
-  components: {
-    'mycomponent': Mycomponent
   }
 }
 </script>
-
 <style>
 .wrapper {
   align-items: center;
   background-color: #66ccff;
-  height: 100%;
 }
 .button {
   font-size: 48px;
@@ -77,8 +53,4 @@ export default {
   margin-bottom: 40px;
   background-color: #66cc00;
 }
-.navivebutton {
-  background-color: rgb(129, 127, 255);
-}
-
-</style> 
+</style>

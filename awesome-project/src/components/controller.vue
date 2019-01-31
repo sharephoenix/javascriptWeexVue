@@ -67,5 +67,5 @@ export default {
 .toolbar_btn:active {
   background-color: #999;
   height: 80px;
-}
+} 
 </style>
