@@ -1,6 +1,7 @@
 <template>
   <slider class="slider" auto-play="true" interval="5000" @change="onchange">
     <div class="frame" v-for="(img) in imageList" :key="img.title">
+
       <image class="image" resize="cover" :src="img.src"></image>
     <div><textarea placeholder="aaaaaaaa"/></div>
     </div>

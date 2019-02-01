@@ -4340,9 +4340,12 @@ var _config = __webpack_require__(252);
 
 var _config2 = _interopRequireDefault(_config);
 
+var _weexCache = __webpack_require__(258);
+
+var _weexCache2 = _interopRequireDefault(_weexCache);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var modal = weex.requireModule('modal');
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 //
 //
@@ -4411,6 +4414,8 @@ var modal = weex.requireModule('modal');
 //
 //
 
+var modal = weex.requireModule('modal');
+
 exports.default = {
   name: 'WeexTabbar',
   components: {
@@ -4418,12 +4423,27 @@ exports.default = {
     WxcMinibar: _weexUi.WxcMinibar,
     'kx-slider': _Slider2.default
   },
+  mounted: function mounted(el) {
+    var _this = this;
+
+    // AppCache.saveData('title', 'this is my cache title')
+    _weexCache2.default.getData('title', function (event) {
+      if (event.result) {
+        _this.$data.title = event.data;
+        console.log(event);
+        console.log('get success!!!!!!!!' + event.data);
+      } else {
+        console.log('get cache fail!!!s');
+      }
+    });
+  },
   data: function data() {
     return {
       tabTitles: _config2.default.tabTitles,
       tabStyles: _config2.default.tabStyles,
       Banners: [{ title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg' }, { title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg' }, { title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg' }],
-      testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
+      testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg',
+      title: 'title'
     };
   },
   computed: {
@@ -21397,6 +21417,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
   props: ['imageList'],
@@ -21613,7 +21634,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick,
       "wxcMinibarRightButtonClicked": _vm.minibarRightButtonClick
     }
-  }), _c('text', [_vm._v("首页")]), _c('text', [_vm._v("我的主页")])], 1)])
+  }), _c('text', [_vm._v(_vm._s(_vm.title))]), _c('text', [_vm._v(_vm._s(_vm.title) + " ==我的")])], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -21735,6 +21756,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("The environment is ready!")]), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var storage = weex.requireModule('storage');
+
+var WeexStore = storage;
+
+var saveData = function saveData(_ref) {
+  var key = _ref.key,
+      value = _ref.value;
+
+  WeexStore.setItem(key, value, function (event) {
+    console.log('cache success');
+  });
+};
+
+var getData = function getData(key, callback) {
+  WeexStore.getItem(key, function (event) {
+    if (event.result === 'success' && event.data) {
+      var result = { result: true, data: event.data };
+      callback(result);
+    } else {
+      var _result = { result: false, data: event.data };
+      callback(_result);
+    }
+  });
+};
+exports.default = { saveData: saveData, getData: getData };
 
 /***/ })
 /******/ ]);

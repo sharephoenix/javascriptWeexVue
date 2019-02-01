@@ -58,8 +58,8 @@
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
         ></wxc-minibar>
-        <text>首页</text>
-      <text>我的主页</text>
+        <text>{{title}}</text>
+      <text>{{title}} ==我的</text>
     </div>
   </wxc-tab-bar>
 </template>
@@ -69,6 +69,7 @@ import { WxcTabBar, WxcMinibar, Utils } from 'weex-ui'
 import Slider from './Slider.vue'
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 import Config from './config'
+import AppCache from '../cache/weexCache.js'
 const modal = weex.requireModule('modal')
 
 export default {
@@ -78,6 +79,18 @@ export default {
     WxcMinibar,
     'kx-slider': Slider
   },
+  mounted: function (el) {
+    // AppCache.saveData('title', 'this is my cache title')
+    AppCache.getData('title', (event) => {
+      if (event.result) {
+        this.$data.title = event.data
+        console.log(event)
+        console.log('get success!!!!!!!!' + event.data)
+      } else {
+        console.log('get cache fail!!!s')
+      }
+    })
+  },
   data: () => ({
     tabTitles: Config.tabTitles,
     tabStyles: Config.tabStyles,
@@ -85,7 +98,8 @@ export default {
       {title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
       {title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
       {title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg'}],
-    testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg'
+    testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg',
+    title: 'title'
   }),
   computed: {
     list: function () {
