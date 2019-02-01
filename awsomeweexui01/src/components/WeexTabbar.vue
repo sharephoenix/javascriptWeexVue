@@ -80,14 +80,14 @@ export default {
     'kx-slider': Slider
   },
   mounted: function (el) {
-    // AppCache.saveData('title', 'this is my cache title')
+    AppCache.saveData({key: 'title', value: 'this is my cache title bbbbb'})
     AppCache.getData('title', (event) => {
       if (event.result) {
         this.$data.title = event.data
         console.log(event)
         console.log('get success!!!!!!!!' + event.data)
       } else {
-        console.log('get cache fail!!!s')
+        console.log('get cache fail!!!')
       }
     })
   },

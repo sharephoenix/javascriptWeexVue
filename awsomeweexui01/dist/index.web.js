@@ -24237,14 +24237,14 @@ exports.default = {
   mounted: function mounted(el) {
     var _this = this;
 
-    // AppCache.saveData('title', 'this is my cache title')
+    _weexCache2.default.saveData({ key: 'title', value: 'this is my cache title bbbbb' });
     _weexCache2.default.getData('title', function (event) {
       if (event.result) {
         _this.$data.title = event.data;
         console.log(event);
         console.log('get success!!!!!!!!' + event.data);
       } else {
-        console.log('get cache fail!!!s');
+        console.log('get cache fail!!!');
       }
     });
   },
@@ -43050,13 +43050,15 @@ var saveData = function saveData(_ref) {
   var key = _ref.key,
       value = _ref.value;
 
+  console.log('--' + key + '--' + value);
   WeexStore.setItem(key, value, function (event) {
-    console.log('cache success');
+    console.log('cache success' + event);
   });
 };
 
 var getData = function getData(key, callback) {
   WeexStore.getItem(key, function (event) {
+    console.log('kkkkkey:' + key + event.result);
     if (event.result === 'success' && event.data) {
       var result = { result: true, data: event.data };
       callback(result);
