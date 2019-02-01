@@ -17,3 +17,5 @@
 ## 运行模板
     weex run ios
     weex run android
+## 数据缓存 注意：说是缓存的数据要在 5M 一下
+	const storage = weex.requireModule('storage')
