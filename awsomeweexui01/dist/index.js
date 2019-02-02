@@ -1590,7 +1590,7 @@ module.exports = __vue_exports__
 var _require = __webpack_require__(15),
     router = _require.router;
 
-var App = __webpack_require__(255);
+var App = __webpack_require__(254);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -4269,7 +4269,7 @@ __vue_styles__.push(__webpack_require__(18)
 __vue_exports__ = __webpack_require__(19)
 
 /* template */
-var __vue_template__ = __webpack_require__(254)
+var __vue_template__ = __webpack_require__(253)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -4340,7 +4340,7 @@ var _config = __webpack_require__(252);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _weexCache = __webpack_require__(253);
+var _weexCache = __webpack_require__(258);
 
 var _weexCache2 = _interopRequireDefault(_weexCache);
 
@@ -21560,44 +21560,6 @@ exports.default = {
 
 /***/ }),
 /* 253 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var storage = weex.requireModule('storage');
-
-var WeexStore = storage;
-
-var saveData = function saveData(_ref) {
-  var key = _ref.key,
-      value = _ref.value;
-
-  console.log('--' + key + '--' + value);
-  WeexStore.setItem(key, value, function (event) {
-    console.log('cache success' + event);
-  });
-};
-
-var getData = function getData(key, callback) {
-  WeexStore.getItem(key, function (event) {
-    console.log('kkkkkey:' + key + event.result);
-    if (event.result === 'success' && event.data) {
-      var result = { result: true, data: event.data };
-      callback(result);
-    } else {
-      var _result = { result: false, data: event.data };
-      callback(_result);
-    }
-  });
-};
-exports.default = { saveData: saveData, getData: getData };
-
-/***/ }),
-/* 254 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21677,21 +21639,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 255 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(256)
+__vue_styles__.push(__webpack_require__(255)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(257)
+__vue_exports__ = __webpack_require__(256)
 
 /* template */
-var __vue_template__ = __webpack_require__(258)
+var __vue_template__ = __webpack_require__(257)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -21721,7 +21683,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 256 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -21750,7 +21712,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 257 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21778,7 +21740,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 258 */
+/* 257 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21794,6 +21756,44 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("The environment is ready!")]), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var storage = weex.requireModule('storage');
+
+var WeexStore = storage;
+
+var saveData = function saveData(_ref) {
+  var key = _ref.key,
+      value = _ref.value;
+
+  console.log('--' + key + '--' + value);
+  WeexStore.setItem(key, value, function (event) {
+    console.log('cache success' + event);
+  });
+};
+
+var getData = function getData(key, callback) {
+  WeexStore.getItem(key, function (event) {
+    console.log('kkkkkey:' + key + event.result);
+    if (event.result === 'success' && event.data) {
+      var result = { result: true, data: event.data };
+      callback(result);
+    } else {
+      var _result = { result: false, data: event.data };
+      callback(_result);
+    }
+  });
+};
+exports.default = { saveData: saveData, getData: getData };
 
 /***/ })
 /******/ ]);

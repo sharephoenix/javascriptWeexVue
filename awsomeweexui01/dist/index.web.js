@@ -10150,7 +10150,7 @@ _weexVueRender2.default.init(_vue2.default);
 var _require = __webpack_require__(24),
     router = _require.router;
 
-var App = __webpack_require__(309);
+var App = __webpack_require__(308);
 /* eslint-disable no-new */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -24026,7 +24026,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(30),
   /* template */
-  __webpack_require__(308),
+  __webpack_require__(307),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -24151,7 +24151,7 @@ var _config = __webpack_require__(306);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _weexCache = __webpack_require__(307);
+var _weexCache = __webpack_require__(315);
 
 var _weexCache2 = _interopRequireDefault(_weexCache);
 
@@ -42762,44 +42762,6 @@ exports.default = {
 /* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var storage = weex.requireModule('storage');
-
-var WeexStore = storage;
-
-var saveData = function saveData(_ref) {
-  var key = _ref.key,
-      value = _ref.value;
-
-  console.log('--' + key + '--' + value);
-  WeexStore.setItem(key, value, function (event) {
-    console.log('cache success' + event);
-  });
-};
-
-var getData = function getData(key, callback) {
-  WeexStore.getItem(key, function (event) {
-    console.log('kkkkkey:' + key + event.result);
-    if (event.result === 'success' && event.data) {
-      var result = { result: true, data: event.data };
-      callback(result);
-    } else {
-      var _result = { result: false, data: event.data };
-      callback(_result);
-    }
-  });
-};
-exports.default = { saveData: saveData, getData: getData };
-
-/***/ }),
-/* 308 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('wxc-tab-bar', {
     attrs: {
@@ -42925,19 +42887,19 @@ if (false) {
 }
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(310)
+  __webpack_require__(309)
 }
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(312),
+  __webpack_require__(311),
   /* template */
-  __webpack_require__(313),
+  __webpack_require__(312),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -42969,13 +42931,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(311);
+var content = __webpack_require__(310);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -42995,7 +42957,7 @@ if(false) {
 }
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -43009,7 +42971,7 @@ exports.push([module.i, "\n.wrapper[data-v-13822e66] {\n  justify-content: cente
 
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43037,7 +42999,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -43067,6 +43029,46 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-13822e66", module.exports)
   }
 }
+
+/***/ }),
+/* 313 */,
+/* 314 */,
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var storage = weex.requireModule('storage');
+
+var WeexStore = storage;
+
+var saveData = function saveData(_ref) {
+  var key = _ref.key,
+      value = _ref.value;
+
+  console.log('--' + key + '--' + value);
+  WeexStore.setItem(key, value, function (event) {
+    console.log('cache success' + event);
+  });
+};
+
+var getData = function getData(key, callback) {
+  WeexStore.getItem(key, function (event) {
+    console.log('kkkkkey:' + key + event.result);
+    if (event.result === 'success' && event.data) {
+      var result = { result: true, data: event.data };
+      callback(result);
+    } else {
+      var _result = { result: false, data: event.data };
+      callback(_result);
+    }
+  });
+};
+exports.default = { saveData: saveData, getData: getData };
 
 /***/ })
 /******/ ]);
