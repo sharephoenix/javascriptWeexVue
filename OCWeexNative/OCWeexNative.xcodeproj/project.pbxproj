@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B194132211138400B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194122211138400B81322 /* AQXEventModule.m */; };
 		18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F26B8A220533AB00018BF3 /* AppDelegate.m */; };
 		18F26B91220533AB00018BF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F26B8F220533AB00018BF3 /* Main.storyboard */; };
 		18F26B93220533AD00018BF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F26B92220533AD00018BF3 /* Assets.xcassets */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18B194112211138400B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQXEventModule.h; sourceTree = "<group>"; };
+		18B194122211138400B81322 /* AQXEventModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQXEventModule.m; sourceTree = "<group>"; };
 		18F26B86220533AB00018BF3 /* OCWeexNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCWeexNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F26B89220533AB00018BF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18F26B8A220533AB00018BF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 				18F2AAC92205410F00018BF3 /* BaseViewController.m */,
 				18F2AACB2205413400018BF3 /* BaseNavigationController.h */,
 				18F2AACC2205413400018BF3 /* BaseNavigationController.m */,
+				18B194112211138400B81322 /* AQXEventModule.h */,
+				18B194122211138400B81322 /* AQXEventModule.m */,
 			);
 			path = BaseObjc;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F28B3C2205382400018BF3 /* ViewController.m in Sources */,
+				18B194132211138400B81322 /* AQXEventModule.m in Sources */,
 				18F2AACA2205410F00018BF3 /* BaseViewController.m in Sources */,
 				18F2AABC2205391D00018BF3 /* UIViewController+WXDemoNaviBar.m in Sources */,
 				18F29D1B2205391800018BF3 /* WeexSDKManager.m in Sources */,

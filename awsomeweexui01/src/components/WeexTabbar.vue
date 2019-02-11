@@ -119,11 +119,40 @@ export default {
       console.log(index)
       modal.toast({ 'message': index, 'duration': 1 })
     },
+    // updateHandler : function(e){
+    // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
+    // var self = this;
+    // var eventModule = require('@weex-module/event'); 
+
+    //   eventModule.openURL('test.js',function(ret) { 
+    //                     //回调执行
+    //     self.loadVersionData(ret.result);
+                      
+
+    //   });
+    // },
     minibarLeftButtonClick () {
       console.log('minibarLeftButtonClick')
     },
     minibarRightButtonClick () {
-      modal.toast({ 'message': 'click rightButton!', 'duration': 1 })
+      // weex.requireModule("event").weexSay("hello Weex")
+      // weex.requireModule("event").weexSay("hello Weex222")
+      const fff = weex.requireModule('event')
+      console.log(fff.params)
+      weex.requireModule('event').weexSay('message_callback', (params) => {
+        modal.toast({'message': params, 'duration': 1})
+      })
+      const b = weex.requireModule("event").callbacktest("hello Weex")
+      // this.$call("event", "weexSay", "Hello, Weex!");//event注册的关键字
+      // this.compnentname.weexSay('this is callback')
+      modal.toast({ 'message': 'click rightButton!lllxx' + b, 'duration': 1 })
+    },
+    updatedidload () {
+      modal.toast({ 'message': 'updatedidloadupdatedidload', 'duration': 1 })
+    },
+    fixtest (params) {
+      modal.toast({ 'message': params, 'duration': 1 })
+      weex.requireModule("event").weexSay("fixtestfixtestfixtest")
     }
   }
 }

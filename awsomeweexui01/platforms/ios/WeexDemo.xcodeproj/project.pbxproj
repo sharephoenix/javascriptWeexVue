@@ -14,6 +14,8 @@
 		0A86901F1E1E7872000A3F81 /* WeexDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A86901E1E1E7872000A3F81 /* WeexDemo-Info.plist */; };
 		0A996E0A1E249DAF0055CB7E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A996E091E249DAF0055CB7E /* libstdc++.tbd */; };
 		0AE277DC1DE56A5600C6D86A /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AE277DB1DE56A5600C6D86A /* config.xml */; };
+		18B194162211214800B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194142211214800B81322 /* AQXEventModule.m */; };
+		18B19419221141E800B81322 /* WeexCustomHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B19418221141E800B81322 /* WeexCustomHandler.m */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
 		775BEE801C1E8ECC008D1629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE7F1C1E8ECC008D1629 /* main.m */; };
 		775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE821C1E8ECC008D1629 /* AppDelegate.m */; };
@@ -58,6 +60,10 @@
 		0A996E091E249DAF0055CB7E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0AE277DB1DE56A5600C6D86A /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		0B4FAFDE2AD89EAFD12DB8C2 /* Pods-WeexUITestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexUITestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		18B194142211214800B81322 /* AQXEventModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AQXEventModule.m; path = ../../../../../OCWeexNative/OCWeexNative/BaseObjc/AQXEventModule.m; sourceTree = "<group>"; };
+		18B194152211214800B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AQXEventModule.h; path = ../../../../../OCWeexNative/OCWeexNative/BaseObjc/AQXEventModule.h; sourceTree = "<group>"; };
+		18B19417221141E800B81322 /* WeexCustomHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeexCustomHandler.h; sourceTree = "<group>"; };
+		18B19418221141E800B81322 /* WeexCustomHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeexCustomHandler.m; sourceTree = "<group>"; };
 		37DB381D5815C06F147D4D51 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
 		59EA0DA61D2E7D19004F904A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7453E3641C9FA971001EB427 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
@@ -132,10 +138,14 @@
 		0A4A05F21E0405070046E1BE /* WeexScanner */ = {
 			isa = PBXGroup;
 			children = (
+				18B194152211214800B81322 /* AQXEventModule.h */,
+				18B194142211214800B81322 /* AQXEventModule.m */,
 				0A4A05F31E0405070046E1BE /* UIViewController+WXDemoNaviBar.h */,
 				0A4A05F41E0405070046E1BE /* UIViewController+WXDemoNaviBar.m */,
 				0A4A05F51E0405070046E1BE /* WXDemoViewController.h */,
 				0A4A05F61E0405070046E1BE /* WXDemoViewController.m */,
+				18B19417221141E800B81322 /* WeexCustomHandler.h */,
+				18B19418221141E800B81322 /* WeexCustomHandler.m */,
 			);
 			path = WeexScanner;
 			sourceTree = "<group>";
@@ -514,6 +524,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B19419221141E800B81322 /* WeexCustomHandler.m in Sources */,
+				18B194162211214800B81322 /* AQXEventModule.m in Sources */,
 				0A3122AF1E1F41E30041B972 /* WeexSDKManager.m in Sources */,
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
