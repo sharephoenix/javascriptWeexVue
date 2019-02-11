@@ -15,6 +15,7 @@
 #import "UIViewController+WXDemoNaviBar.h"
 #import "DemoDefine.h"
 
+#import "AQXEventModule.h"
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
@@ -62,6 +63,8 @@
 #endif
     
     [self render];
+
+    [WXSDKEngine registerModule:@"event" withClass:[AQXEventModule class]];//event注册的关键字
 }
 
 - (void)viewDidAppear:(BOOL)animated

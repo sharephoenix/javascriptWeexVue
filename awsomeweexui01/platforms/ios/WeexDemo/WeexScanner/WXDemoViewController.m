@@ -15,6 +15,8 @@
 #import "UIViewController+WXDemoNaviBar.h"
 #import "DemoDefine.h"
 
+#import "AQXEventModule.h"
+#import "WeexCustomHandler.h"
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
@@ -62,6 +64,11 @@
 #endif
     
     [self render];
+//    [WXSDKEngine registerComponent:@"compnentname" withClass:[AQXEventModule class]];
+    [WXSDKEngine registerModule:@"event" withClass:[AQXEventModule class]];//event注册的关键字
+    [WXSDKEngine registerHandler:[WeexCustomHandler new] withProtocol:@protocol(HandleCustomProtocol)];
+    id<HandleCustomProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(HandleCustomProtocol)];
+    [imageLoader handlerTest];
 }
 
 - (void)viewDidAppear:(BOOL)animated
