@@ -24227,7 +24227,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 
 var modal = weex.requireModule('modal');
-
 exports.default = {
   name: 'WeexTabbar',
   components: {
@@ -24299,6 +24298,8 @@ exports.default = {
       console.log('minibarLeftButtonClick');
     },
     minibarRightButtonClick: function minibarRightButtonClick() {
+      var num = this.tabTitles[2].badge;
+      this.tabTitles[2].badge = num + 1;
       // weex.requireModule("event").weexSay("hello Weex")
       // weex.requireModule("event").weexSay("hello Weex222")
       var fff = weex.requireModule('event');
@@ -42846,26 +42847,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcTabBarCurrentTabSelected": _vm.wxcTabBarCurrentTabSelected
     }
-  }, [_c('div', {
-    staticClass: "item-container weex-ct weex-div",
-    style: (_vm._px2rem(_vm.contentStyle, 75)),
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('wxc-minibar', {
-    attrs: {
-      "title": "首页",
-      "background-color": "#009ff0",
-      "text-color": "#FFFFFF",
-      "right-text": "更多",
-      "data-evt-wxcMinibarLeftButtonClicked": "",
-      "data-evt-wxcMinibarRightButtonClicked": ""
-    },
-    on: {
-      "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick,
-      "wxcMinibarRightButtonClicked": _vm.minibarRightButtonClick
-    }
-  }), _vm._v(" "), _c('scroller', {
+  }, [_c('scroller', {
     staticClass: "main-list",
     attrs: {}
   }, [_c('kx-slider', {
@@ -42874,7 +42856,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('customview', {
     staticStyle: {
-      "width": "2.66667rem",
+      "width": "5.33333rem",
       "height": "2.66667rem"
     },
     attrs: {
@@ -42883,7 +42865,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "customLoaded": _vm.customLoaded
     }
-  })], 1)], 1), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c('div', {
     staticClass: "item-container weex-ct weex-div",
     style: (_vm._px2rem(_vm.contentStyle, 75)),
     attrs: {
@@ -42892,8 +42874,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('wxc-minibar', {
     attrs: {
       "title": "推荐",
-      "background-color": "#009ff0",
-      "text-color": "#FFFFFF",
+      "background-color": "#ffffff",
+      "text-color": "#000000",
       "right-text": "更多",
       "data-evt-wxcMinibarLeftButtonClicked": "",
       "data-evt-wxcMinibarRightButtonClicked": ""
@@ -42916,8 +42898,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('wxc-minibar', {
     attrs: {
       "title": "消息",
-      "background-color": "#F2F2F2",
-      "text-color": "#FFFFFF",
+      "background-color": "#ffffff",
+      "text-color": "#000000",
       "right-text": "更多",
       "data-evt-wxcMinibarLeftButtonClicked": "",
       "data-evt-wxcMinibarRightButtonClicked": ""
@@ -42940,8 +42922,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('wxc-minibar', {
     attrs: {
       "title": "我的主页",
-      "background-color": "#009ff0",
-      "text-color": "#FFFFFF",
+      "background-color": "#ffffff",
+      "text-color": "#000000",
       "right-text": "更多",
       "data-evt-wxcMinibarLeftButtonClicked": "",
       "data-evt-wxcMinibarRightButtonClicked": ""
@@ -42960,7 +42942,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(_vm._s(_vm.title) + " ==我的")])], 1)])
+  }, [_vm._v(_vm._s(_vm.title) + " ==我的")])], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

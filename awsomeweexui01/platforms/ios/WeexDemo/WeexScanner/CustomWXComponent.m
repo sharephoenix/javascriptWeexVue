@@ -35,8 +35,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor yellowColor];
-        button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 100, 100)];
+        button = [[UIButton alloc] init];
         button.backgroundColor = [UIColor greenColor];
+        [button setTitle:@"normalbutton" forState:UIControlStateNormal];
         [self addSubview:button];
         [button addTarget:self action:@selector(senderButton:) forControlEvents:UIControlEventTouchUpInside];
     }

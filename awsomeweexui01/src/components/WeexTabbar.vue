@@ -6,7 +6,7 @@
     @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected"
   >
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="contentStyle">
+    <!-- <div class="item-container" :style="contentStyle">
         <wxc-minibar
           title="首页"
           background-color="#009ff0"
@@ -14,12 +14,12 @@
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar>
+        ></wxc-minibar> -->
 
         <scroller class="main-list">
       <!-- 轮播图 -->
           <kx-slider :imageList="Banners"></kx-slider>
-          <customview style="width:200px;height:200px;" @customLoaded="customLoaded"></customview>
+          <customview style="width:400px;height:200px;" @customLoaded="customLoaded"></customview>
         </scroller>
     </div>
 
@@ -27,8 +27,8 @@
     <div class="item-container" :style="contentStyle">
       <wxc-minibar
           title="推荐"
-          background-color="#009ff0"
-          text-color="#FFFFFF"
+          background-color="#ffffff"
+          text-color="#000000"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
@@ -40,8 +40,8 @@
     <div class="item-container" :style="contentStyle">
       <wxc-minibar
           title="消息"
-          background-color="#F2F2F2"
-          text-color="#FFFFFF"
+          background-color="#ffffff"
+          text-color="#000000"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
@@ -53,8 +53,8 @@
     <div class="item-container" :style="contentStyle">
       <wxc-minibar
           title="我的主页"
-          background-color="#009ff0"
-          text-color="#FFFFFF"
+          background-color="#ffffff"
+          text-color="#000000"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
@@ -72,7 +72,6 @@ import Slider from './Slider.vue'
 import Config from './config'
 import AppCache from '../cache/weexCache.js'
 const modal = weex.requireModule('modal')
-
 export default {
   name: 'WeexTabbar',
   components: {
@@ -140,6 +139,8 @@ export default {
       console.log('minibarLeftButtonClick')
     },
     minibarRightButtonClick () {
+      const num = this.tabTitles[2].badge
+      this.tabTitles[2].badge = num + 1
       // weex.requireModule("event").weexSay("hello Weex")
       // weex.requireModule("event").weexSay("hello Weex222")
       const fff = weex.requireModule('event')

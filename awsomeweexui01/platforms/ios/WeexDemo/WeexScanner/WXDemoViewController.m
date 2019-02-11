@@ -67,7 +67,8 @@
     [self render];
 //    [WXSDKEngine registerComponent:@"compnentname" withClass:[AQXEventModule class]];
     [WXSDKEngine registerModule:@"event" withClass:[AQXEventModule class]];//event注册的关键字
-    [WXSDKEngine registerHandler:[WeexCustomHandler new] withProtocol:@protocol(HandleCustomProtocol)];
+    WeexCustomHandler *customhander = [WeexCustomHandler new];
+    [WXSDKEngine registerHandler:customhander withProtocol:@protocol(HandleCustomProtocol)];
     id<HandleCustomProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(HandleCustomProtocol)];
     [imageLoader handlerTest];
     [WXSDKEngine registerComponent:@"customview" withClass:[CustomWXComponent class]];

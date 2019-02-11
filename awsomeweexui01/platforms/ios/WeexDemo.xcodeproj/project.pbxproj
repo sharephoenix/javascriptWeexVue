@@ -143,14 +143,14 @@
 			children = (
 				18B194152211214800B81322 /* AQXEventModule.h */,
 				18B194142211214800B81322 /* AQXEventModule.m */,
-				0A4A05F31E0405070046E1BE /* UIViewController+WXDemoNaviBar.h */,
-				0A4A05F41E0405070046E1BE /* UIViewController+WXDemoNaviBar.m */,
-				0A4A05F51E0405070046E1BE /* WXDemoViewController.h */,
-				0A4A05F61E0405070046E1BE /* WXDemoViewController.m */,
 				18B19417221141E800B81322 /* WeexCustomHandler.h */,
 				18B19418221141E800B81322 /* WeexCustomHandler.m */,
 				18B1941A22114E8200B81322 /* CustomWXComponent.h */,
 				18B1941B22114E8200B81322 /* CustomWXComponent.m */,
+				0A4A05F31E0405070046E1BE /* UIViewController+WXDemoNaviBar.h */,
+				0A4A05F41E0405070046E1BE /* UIViewController+WXDemoNaviBar.m */,
+				0A4A05F51E0405070046E1BE /* WXDemoViewController.h */,
+				0A4A05F61E0405070046E1BE /* WXDemoViewController.m */,
 			);
 			path = WeexScanner;
 			sourceTree = "<group>";
