@@ -12,6 +12,14 @@
 
 @end
 
+@protocol CustomViewDelegate <NSObject>
+
+- (void)delegateAction;
+
+@end
+
 @interface CustomView : UIView
+
+@property(weak, nonatomic) id<CustomViewDelegate> delegate;
 
 @end

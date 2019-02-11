@@ -8,13 +8,24 @@
 
 #import "CustomWXComponent.h"
 
+@interface CustomWXComponent()<CustomViewDelegate>
+
+@end
+
 @implementation CustomWXComponent
 
 - (UIView *)loadView {
-    return [CustomView new];
+    CustomView * v = [CustomView new];
+    v.delegate = self;
+    return v;
+}
+
+- (void)delegateAction {
+    [self fireEvent:@"customLoaded" params:@{@"customKey":@"customValue"} domChanges:nil];
 }
 
 @end
+
 
 @implementation CustomView
 {
@@ -34,5 +45,8 @@
 
 - (void)senderButton:(id)sender {
     NSLog(@"fix_senderButton");
+    if ([self.delegate respondsToSelector:@selector(delegateAction)]) {
+        [self.delegate delegateAction];
+    }
 }
 @end

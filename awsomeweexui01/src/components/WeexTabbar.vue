@@ -19,7 +19,7 @@
         <scroller class="main-list">
       <!-- 轮播图 -->
           <kx-slider :imageList="Banners"></kx-slider>
-          <customview style="width:200px;height:200px"></customview>
+          <customview style="width:200px;height:200px;" @customLoaded="customLoaded"></customview>
         </scroller>
     </div>
 
@@ -119,6 +119,10 @@ export default {
       const index = e.page
       console.log(index)
       modal.toast({ 'message': index, 'duration': 1 })
+    },
+    customLoaded: function (params) {
+      console.log('===========' + JSON.stringify(params))
+      modal.toast({'message': JSON.stringify(params), 'duration': 1})
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行

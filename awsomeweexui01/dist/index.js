@@ -4468,6 +4468,10 @@ exports.default = {
       modal.toast({ 'message': index, 'duration': 1 });
     },
 
+    customLoaded: function customLoaded(params) {
+      console.log('===========' + JSON.stringify(params));
+      modal.toast({ 'message': JSON.stringify(params), 'duration': 1 });
+    },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
     // var self = this;
@@ -21665,6 +21669,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       width: "200px",
       height: "200px"
+    },
+    on: {
+      "customLoaded": _vm.customLoaded
     }
   })], 1)], 1), _c('div', {
     staticClass: ["item-container"],

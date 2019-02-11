@@ -24279,6 +24279,10 @@ exports.default = {
       modal.toast({ 'message': index, 'duration': 1 });
     },
 
+    customLoaded: function customLoaded(params) {
+      console.log('===========' + JSON.stringify(params));
+      modal.toast({ 'message': JSON.stringify(params), 'duration': 1 });
+    },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
     // var self = this;
@@ -42873,7 +42877,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "2.66667rem",
       "height": "2.66667rem"
     },
-    attrs: {}
+    attrs: {
+      "data-evt-customLoaded": ""
+    },
+    on: {
+      "customLoaded": _vm.customLoaded
+    }
   })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "item-container weex-ct weex-div",
     style: (_vm._px2rem(_vm.contentStyle, 75)),
