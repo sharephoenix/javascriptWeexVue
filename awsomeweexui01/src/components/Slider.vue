@@ -26,7 +26,7 @@ export default {
     mageBanners: function () {
       return this.props['imageList']
     }
-  }
+  },
 }
 </script>
 
