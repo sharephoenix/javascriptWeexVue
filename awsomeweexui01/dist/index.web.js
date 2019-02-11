@@ -24224,6 +24224,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 var modal = weex.requireModule('modal');
 
@@ -42867,6 +42868,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "imageList": _vm.Banners
     }
+  }), _vm._v(" "), _c('customview', {
+    staticStyle: {
+      "width": "2.66667rem",
+      "height": "2.66667rem"
+    },
+    attrs: {}
   })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "item-container weex-ct weex-div",
     style: (_vm._px2rem(_vm.contentStyle, 75)),

@@ -19,6 +19,7 @@
         <scroller class="main-list">
       <!-- 轮播图 -->
           <kx-slider :imageList="Banners"></kx-slider>
+          <customview style="width:200px;height:200px"></customview>
         </scroller>
     </div>
 

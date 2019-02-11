@@ -4413,6 +4413,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 var modal = weex.requireModule('modal');
 
@@ -21659,6 +21660,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('kx-slider', {
     attrs: {
       "imageList": _vm.Banners
+    }
+  }), _c('customview', {
+    staticStyle: {
+      width: "200px",
+      height: "200px"
     }
   })], 1)], 1), _c('div', {
     staticClass: ["item-container"],

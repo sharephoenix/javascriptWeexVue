@@ -16,6 +16,7 @@
 		0AE277DC1DE56A5600C6D86A /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AE277DB1DE56A5600C6D86A /* config.xml */; };
 		18B194162211214800B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194142211214800B81322 /* AQXEventModule.m */; };
 		18B19419221141E800B81322 /* WeexCustomHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B19418221141E800B81322 /* WeexCustomHandler.m */; };
+		18B1941C22114E8200B81322 /* CustomWXComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B1941B22114E8200B81322 /* CustomWXComponent.m */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
 		775BEE801C1E8ECC008D1629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE7F1C1E8ECC008D1629 /* main.m */; };
 		775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE821C1E8ECC008D1629 /* AppDelegate.m */; };
@@ -64,6 +65,8 @@
 		18B194152211214800B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AQXEventModule.h; path = ../../../../../OCWeexNative/OCWeexNative/BaseObjc/AQXEventModule.h; sourceTree = "<group>"; };
 		18B19417221141E800B81322 /* WeexCustomHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeexCustomHandler.h; sourceTree = "<group>"; };
 		18B19418221141E800B81322 /* WeexCustomHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeexCustomHandler.m; sourceTree = "<group>"; };
+		18B1941A22114E8200B81322 /* CustomWXComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomWXComponent.h; sourceTree = "<group>"; };
+		18B1941B22114E8200B81322 /* CustomWXComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomWXComponent.m; sourceTree = "<group>"; };
 		37DB381D5815C06F147D4D51 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
 		59EA0DA61D2E7D19004F904A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7453E3641C9FA971001EB427 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				0A4A05F61E0405070046E1BE /* WXDemoViewController.m */,
 				18B19417221141E800B81322 /* WeexCustomHandler.h */,
 				18B19418221141E800B81322 /* WeexCustomHandler.m */,
+				18B1941A22114E8200B81322 /* CustomWXComponent.h */,
+				18B1941B22114E8200B81322 /* CustomWXComponent.m */,
 			);
 			path = WeexScanner;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
 				0A4A05F91E0405070046E1BE /* UIViewController+WXDemoNaviBar.m in Sources */,
+				18B1941C22114E8200B81322 /* CustomWXComponent.m in Sources */,
 				775BEE801C1E8ECC008D1629 /* main.m in Sources */,
 				0A7758D71EA0D39C00AE9815 /* WXImgLoaderDefaultImpl.m in Sources */,
 			);

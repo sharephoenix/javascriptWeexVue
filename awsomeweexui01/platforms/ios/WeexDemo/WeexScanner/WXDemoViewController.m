@@ -17,6 +17,7 @@
 
 #import "AQXEventModule.h"
 #import "WeexCustomHandler.h"
+#import "CustomWXComponent.h"
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
@@ -69,6 +70,8 @@
     [WXSDKEngine registerHandler:[WeexCustomHandler new] withProtocol:@protocol(HandleCustomProtocol)];
     id<HandleCustomProtocol> imageLoader = [WXSDKEngine handlerForProtocol:@protocol(HandleCustomProtocol)];
     [imageLoader handlerTest];
+    [WXSDKEngine registerComponent:@"customview" withClass:[CustomWXComponent class]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
