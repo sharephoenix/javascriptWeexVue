@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1839A8132212B2A600E51E7B /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = 1839A8122212B2A600E51E7B /* test.css */; };
 		18B194132211138400B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194122211138400B81322 /* AQXEventModule.m */; };
 		18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F26B8A220533AB00018BF3 /* AppDelegate.m */; };
 		18F26B91220533AB00018BF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F26B8F220533AB00018BF3 /* Main.storyboard */; };
@@ -27,6 +26,8 @@
 		18F2AAC622053B2A00018BF3 /* weex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F2AAC322053B2A00018BF3 /* weex@2x.png */; };
 		18F2AACA2205410F00018BF3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2AAC92205410F00018BF3 /* BaseViewController.m */; };
 		18F2AACD2205413400018BF3 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2AACC2205413400018BF3 /* BaseNavigationController.m */; };
+		18F716E32212BDD200C345D7 /* test01.css in Resources */ = {isa = PBXBuildFile; fileRef = 18F716E22212BDD200C345D7 /* test01.css */; };
+		18F716E52212BE1A00C345D7 /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = 18F716E42212BE1A00C345D7 /* test.css */; };
 		49BE58ACDD820CD469E1DE31 /* libPods-OCWeexNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAA16D7443E65EA33E9A5BA /* libPods-OCWeexNative.a */; };
 /* End PBXBuildFile section */
 
@@ -38,9 +39,9 @@
 			fileType = pattern.proxy;
 			isEditable = 1;
 			outputFiles = (
-				"${INPUT_FILE_BASE}.css.c",
+				"$(INPUT_FILE_BASE).css.c",
 			);
-			script = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$INPUT_FILE_DIR\"  # move into file dir, otherwise xxd takes the full path for the symbol\n/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$DERIVED_SOURCES_DIR/$INPUT_FILE_BASE.css.c\" # builds a c file with a hex array\n";
+			script = "# Type a script or drag a script file from your workspace to insert its path.\ntouch test.txt\necho \"1\" >> test.txts\necho \"打印文件 $INPUT_FILE_NAME $?\" >> test.txts\necho \"打印文件 $INPUT_FILE_BASE $?\" >> test.txts\necho \"22\" >> test.txts\necho \"input dir : $INPUT_FILE_DIR\" >> test.txts\necho \"currentpath0: $work_path\" >> test.txts\n$(cd \"$INPUT_FILE_DIR/OCWeexNative\")  # move into file dir, otherwise xxd takes the full pathb for the symbol\n\necho \"cd input_file_dir $?\" >> test.txts\nwork_path=$(ls)\necho \"currentpath1: $work_path\" >> test.txts\n$(/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$SRCROOT/$INPUT_FILE_BASE.css.c\") # builds a c file with a hex array\necho \"compile $?\" >> test.txts\necho \"\" >> test.txts\necho \"\" >> test.txts\n\n";
 		};
 /* End PBXBuildRule section */
 
@@ -62,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1839A8122212B2A600E51E7B /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 		18B194112211138400B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQXEventModule.h; sourceTree = "<group>"; };
 		18B194122211138400B81322 /* AQXEventModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQXEventModule.m; sourceTree = "<group>"; };
 		18F26B86220533AB00018BF3 /* OCWeexNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCWeexNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +98,8 @@
 		18F2AAC92205410F00018BF3 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		18F2AACB2205413400018BF3 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		18F2AACC2205413400018BF3 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		18F716E22212BDD200C345D7 /* test01.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test01.css; sourceTree = "<group>"; };
+		18F716E42212BE1A00C345D7 /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 		3B3161E8D51A766956D64CB6 /* Pods-OCWeexNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWeexNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCWeexNative/Pods-OCWeexNative.release.xcconfig"; sourceTree = "<group>"; };
 		752BC5BBA543B3BD4D54E63C /* Pods-OCWeexNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWeexNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCWeexNative/Pods-OCWeexNative.debug.xcconfig"; sourceTree = "<group>"; };
 		8DAA16D7443E65EA33E9A5BA /* libPods-OCWeexNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCWeexNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +156,8 @@
 		18F26B88220533AB00018BF3 /* OCWeexNative */ = {
 			isa = PBXGroup;
 			children = (
-				1839A8122212B2A600E51E7B /* test.css */,
+				18F716E42212BE1A00C345D7 /* test.css */,
+				18F716E22212BDD200C345D7 /* test01.css */,
 				18F2AAC7220540EE00018BF3 /* BaseObjc */,
 				18F28B3D2205390600018BF3 /* WidgetsWeex */,
 				18F26B89220533AB00018BF3 /* AppDelegate.h */,
@@ -364,12 +367,13 @@
 			files = (
 				18F26B96220533AD00018BF3 /* LaunchScreen.storyboard in Resources */,
 				18F26B93220533AD00018BF3 /* Assets.xcassets in Resources */,
+				18F716E52212BE1A00C345D7 /* test.css in Resources */,
 				18F2AAC522053B2A00018BF3 /* weex.png in Resources */,
 				18F2AAC622053B2A00018BF3 /* weex@2x.png in Resources */,
 				18F2AAC422053B2A00018BF3 /* weex-icon.png in Resources */,
 				18F26B91220533AB00018BF3 /* Main.storyboard in Resources */,
 				18F2AAC022053ABB00018BF3 /* bundlejs in Resources */,
-				1839A8132212B2A600E51E7B /* test.css in Resources */,
+				18F716E32212BDD200C345D7 /* test01.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
