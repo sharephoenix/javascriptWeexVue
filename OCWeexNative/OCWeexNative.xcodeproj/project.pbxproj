@@ -40,8 +40,9 @@
 			isEditable = 1;
 			outputFiles = (
 				"$(INPUT_FILE_BASE).css.c",
+				"$(INPUT_FILE_BASE).ncss.c",
 			);
-			script = "# Type a script or drag a script file from your workspace to insert its path.\ntouch test.txt\necho \"1\" >> test.txts\necho \"打印文件 $INPUT_FILE_NAME $?\" >> test.txts\necho \"打印文件 $INPUT_FILE_BASE $?\" >> test.txts\necho \"22\" >> test.txts\necho \"input dir : $INPUT_FILE_DIR\" >> test.txts\necho \"currentpath0: $work_path\" >> test.txts\n$(cd \"$INPUT_FILE_DIR/OCWeexNative\")  # move into file dir, otherwise xxd takes the full pathb for the symbol\n\necho \"cd input_file_dir $?\" >> test.txts\nwork_path=$(ls)\necho \"currentpath1: $work_path\" >> test.txts\n$(/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$SRCROOT/$INPUT_FILE_BASE.css.c\") # builds a c file with a hex array\necho \"compile $?\" >> test.txts\necho \"\" >> test.txts\necho \"\" >> test.txts\n\n";
+			script = "# Type a script or drag a script file from your workspace to insert its path.\ntouch test.txt\necho \"1\" >> test.txts\necho \"打印文件 $INPUT_FILE_NAME $?\" >> test.txts\necho \"打印文件 $INPUT_FILE_BASE $?\" >> test.txts\necho \"22\" >> test.txts\necho \"input dir : $INPUT_FILE_DIR\" >> test.txts\necho \"currentpath0: $work_path\" >> test.txts\n\n$(cd \"$INPUT_FILE_DIR/OCWeexNative\")  # move into file dir, otherwise xxd takes the full pathb for the symbol\necho \"cd input_file_dir $?\" >> test.txts\nwork_path=$(ls)\necho \"currentpath1: $work_path\" >> test.txts\n$(/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$SRCROOT/$INPUT_FILE_BASE.css.c\") # builds a c file with a hex array\necho \"compile $?\" >> test.txts\necho \"\" >> test.txts\necho \"\" >> test.txts\n\n";
 		};
 /* End PBXBuildRule section */
 
