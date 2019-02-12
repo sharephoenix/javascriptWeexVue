@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1839A8132212B2A600E51E7B /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = 1839A8122212B2A600E51E7B /* test.css */; };
 		18B194132211138400B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194122211138400B81322 /* AQXEventModule.m */; };
 		18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F26B8A220533AB00018BF3 /* AppDelegate.m */; };
 		18F26B91220533AB00018BF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F26B8F220533AB00018BF3 /* Main.storyboard */; };
@@ -29,6 +30,20 @@
 		49BE58ACDD820CD469E1DE31 /* libPods-OCWeexNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAA16D7443E65EA33E9A5BA /* libPods-OCWeexNative.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		18B194702212769F00B81322 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.css";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"${INPUT_FILE_BASE}.css.c",
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$INPUT_FILE_DIR\"  # move into file dir, otherwise xxd takes the full path for the symbol\n/usr/bin/xxd -i \"$INPUT_FILE_NAME\" \"$DERIVED_SOURCES_DIR/$INPUT_FILE_BASE.css.c\" # builds a c file with a hex array\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		18F26B9F220533AD00018BF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -46,7 +61,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1839A8072212A69200E51E7B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1839A8122212B2A600E51E7B /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 		18B194112211138400B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQXEventModule.h; sourceTree = "<group>"; };
 		18B194122211138400B81322 /* AQXEventModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQXEventModule.m; sourceTree = "<group>"; };
 		18F26B86220533AB00018BF3 /* OCWeexNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCWeexNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +166,7 @@
 		18F26B88220533AB00018BF3 /* OCWeexNative */ = {
 			isa = PBXGroup;
 			children = (
+				1839A8122212B2A600E51E7B /* test.css */,
 				18F2AAC7220540EE00018BF3 /* BaseObjc */,
 				18F28B3D2205390600018BF3 /* WidgetsWeex */,
 				18F26B89220533AB00018BF3 /* AppDelegate.h */,
@@ -249,8 +278,12 @@
 				18F26B83220533AB00018BF3 /* Frameworks */,
 				18F26B84220533AB00018BF3 /* Resources */,
 				2207E671CD6E015595974441 /* [CP] Copy Pods Resources */,
+				1839A8052212963900E51E7B /* ShellScript */,
+				1839A8062212A3BD00E51E7B /* ShellScript */,
+				1839A8072212A69200E51E7B /* CopyFiles */,
 			);
 			buildRules = (
+				18B194702212769F00B81322 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -349,6 +382,7 @@
 				18F2AAC422053B2A00018BF3 /* weex-icon.png in Resources */,
 				18F26B91220533AB00018BF3 /* Main.storyboard in Resources */,
 				18F2AAC022053ABB00018BF3 /* bundlejs in Resources */,
+				1839A8132212B2A600E51E7B /* test.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +403,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1839A8052212963900E51E7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${SRCROOT}/test.sh\"\n\n";
+		};
+		1839A8062212A3BD00E51E7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/input-file-1.txt",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/output-file-1.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ntouch input-file-1.txt\necho \"running a very long build task!!!\"\necho \"llllllhhhhhh\" > \"${SCRIPT_INPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2207E671CD6E015595974441 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

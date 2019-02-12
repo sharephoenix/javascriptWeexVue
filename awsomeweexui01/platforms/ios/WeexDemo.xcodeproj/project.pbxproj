@@ -155,6 +155,13 @@
 			path = WeexScanner;
 			sourceTree = "<group>";
 		};
+		18B1946D221264EE00B81322 /* WeexWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = WeexWork;
+			sourceTree = "<group>";
+		};
 		327BB19797F63D5309FB91BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +179,7 @@
 		74CC79EC1C2B9FC600829368 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				18B1946D221264EE00B81322 /* WeexWork */,
 				D5ADF0861C77133B00597CA6 /* Source */,
 			);
 			name = Demo;
