@@ -61,18 +61,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1839A8072212A69200E51E7B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1839A8122212B2A600E51E7B /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 		18B194112211138400B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQXEventModule.h; sourceTree = "<group>"; };
@@ -280,7 +268,6 @@
 				2207E671CD6E015595974441 /* [CP] Copy Pods Resources */,
 				1839A8052212963900E51E7B /* ShellScript */,
 				1839A8062212A3BD00E51E7B /* ShellScript */,
-				1839A8072212A69200E51E7B /* CopyFiles */,
 			);
 			buildRules = (
 				18B194702212769F00B81322 /* PBXBuildRule */,
