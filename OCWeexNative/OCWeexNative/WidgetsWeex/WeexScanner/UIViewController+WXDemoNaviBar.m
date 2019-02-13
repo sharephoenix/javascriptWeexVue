@@ -67,6 +67,7 @@
                                                           style:UIBarButtonItemStylePlain
                                                          target:self
                                                          action:@selector(backButtonClicked:)];
+        [backButtonItem setTitle:@"back"];
         objc_setAssociatedObject(self, _cmd, backButtonItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return backButtonItem;

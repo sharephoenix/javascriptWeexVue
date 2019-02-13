@@ -24092,7 +24092,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.item-container[data-v-7297ab0c] {\n  width: 10rem;\n  background-color: #ff2222;\n  align-items: flex-start;\n  justify-content: flex-start;\n}\n.wrapper[data-v-7297ab0c]{\n}\n.iconfont[data-v-7297ab0c] {\n    font-family:iconfont;\n}\n.main-list[data-v-7297ab0c]{\n    position: static;\n    top: 1.21333rem;\n    left: 0;\n    right: 0;\n}\n", ""]);
+exports.push([module.i, "\n.item-container[data-v-7297ab0c] {\n  width: 10rem;\n  background-color: #ff2222;\n  align-items: flex-start;\n  justify-content: flex-start;\n}\n.wrapper[data-v-7297ab0c]{\n}\n.iconfont[data-v-7297ab0c] {\n    font-family:iconfont;\n}\n.main-list[data-v-7297ab0c]{\n    position: static;\n    top: 1.21333rem;\n    left: 0;\n    right: 0;\n}\n.textfont[data-v-7297ab0c] {\n    background-color: blueviolet;\n    font-size: 0.93333rem;\n    color: blue;\n}\n", ""]);
 
 // exports
 
@@ -24225,10 +24225,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 
 var modal = weex.requireModule('modal');
 exports.default = {
   name: 'WeexTabbar',
+  init: function init() {
+    modal.toast({ 'message': "data", 'duration': 10 });
+    console.log("-------------init---------------");
+  },
   components: {
     WxcTabBar: _weexUi.WxcTabBar,
     WxcMinibar: _weexUi.WxcMinibar,
@@ -24280,7 +24286,10 @@ exports.default = {
 
     customLoaded: function customLoaded(params) {
       console.log('===========' + JSON.stringify(params));
-      modal.toast({ 'message': JSON.stringify(params), 'duration': 1 });
+      // modal.toast({'message': JSON.stringify(params), 'duration': 1})
+      var content = weex.requireModule('event').userinfo;
+      console.log('mmmmmmmmmmmmmmmmmmm' + content);
+      modal.toast({ 'messsage': content, 'duration': 10 });
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
@@ -42847,7 +42856,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcTabBarCurrentTabSelected": _vm.wxcTabBarCurrentTabSelected
     }
-  }, [_c('scroller', {
+  }, [_c('div', {
+    staticClass: "item-container weex-ct weex-div",
+    style: (_vm._px2rem(_vm.contentStyle, 75)),
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "textfont weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("asdfasdfasdfa")])]), _vm._v(" "), _c('scroller', {
     staticClass: "main-list",
     attrs: {}
   }, [_c('kx-slider', {
@@ -42856,6 +42881,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('customview', {
     staticStyle: {
+      "background-color": "#f2f2f2",
       "width": "5.33333rem",
       "height": "2.66667rem"
     },
@@ -42865,7 +42891,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "customLoaded": _vm.customLoaded
     }
-  })], 1), _vm._v(" "), _c('div', {
+  })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "item-container weex-ct weex-div",
     style: (_vm._px2rem(_vm.contentStyle, 75)),
     attrs: {
@@ -42942,7 +42968,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(_vm._s(_vm.title) + " ==我的")])], 1)], 1)
+  }, [_vm._v(_vm._s(_vm.title) + " ==我的")])], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

@@ -6,8 +6,8 @@
     @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected"
   >
     <!-- 第一个页面内容-->
-    <!-- <div class="item-container" :style="contentStyle">
-        <wxc-minibar
+    <div class="item-container" :style="contentStyle">
+        <!-- <wxc-minibar
           title="首页"
           background-color="#009ff0"
           text-color="#FFFFFF"
@@ -15,11 +15,13 @@
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
         ></wxc-minibar> -->
-
+        <div>
+          <text class="textfont">asdfasdfasdfa</text>
+        </div>
         <scroller class="main-list">
       <!-- 轮播图 -->
           <kx-slider :imageList="Banners"></kx-slider>
-          <customview style="width:400px;height:200px;" @customLoaded="customLoaded"></customview>
+          <customview style="background-color:#f2f2f2;width:400px;height:200px;" @customLoaded="customLoaded"></customview>
         </scroller>
     </div>
 
@@ -74,6 +76,10 @@ import AppCache from '../cache/weexCache.js'
 const modal = weex.requireModule('modal')
 export default {
   name: 'WeexTabbar',
+  init: function () {
+    modal.toast({ 'message': "data", 'duration': 10 })
+    console.log("-------------init---------------")
+  },
   components: {
     WxcTabBar,
     WxcMinibar,
@@ -121,7 +127,10 @@ export default {
     },
     customLoaded: function (params) {
       console.log('===========' + JSON.stringify(params))
-      modal.toast({'message': JSON.stringify(params), 'duration': 1})
+      // modal.toast({'message': JSON.stringify(params), 'duration': 1})
+      const content = weex.requireModule('event').userinfo
+      console.log('mmmmmmmmmmmmmmmmmmm' + content)
+      modal.toast({'messsage': content, 'duration': 10})
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
@@ -181,5 +190,10 @@ export default {
     top: 91px;
     left: 0;
     right: 0;
+  }
+  .textfont {
+    background-color: blueviolet;
+    font-size: 70px;
+    color: blue;
   }
 </style>

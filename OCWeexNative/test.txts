@@ -304,3 +304,67 @@ test01.css.c
 compile 0
 
 
+1
+1
+打印文件 test.css 0
+打印文件 test01.css 0
+打印文件 test01 0
+22
+input dir : /Users/apple/MyClientRemote/javascriptWeexVue/OCWeexNative/OCWeexNative
+打印文件 test 0
+22
+currentpath0: 
+input dir : /Users/apple/MyClientRemote/javascriptWeexVue/OCWeexNative/OCWeexNative
+currentpath0: 
+cd input_file_dir 1
+cd input_file_dir 1
+currentpath1: OCWeexNative
+OCWeexNative.xcodeproj
+OCWeexNative.xcworkspace
+OCWeexNativeTests
+OCWeexNativeUITests
+Podfile
+Podfile.lock
+Pods
+TestLib
+aa.txt
+bundlejs
+fix.sh
+input-file-1.txt
+currentpath1: OCWeexNative
+output-file-1.txt
+test.css
+OCWeexNative.xcodeproj
+OCWeexNative.xcworkspace
+OCWeexNativeTests
+OCWeexNativeUITests
+Podfile
+Podfile.lock
+Pods
+TestLib
+aa.txt
+bundlejs
+fix.sh
+input-file-1.txt
+output-file-1.txt
+test.css
+test.css.c
+test.sh
+test.texs
+test.txt
+test.txts
+test01.css
+test01.css.c
+test.css.c
+test.sh
+test.texs
+test.txt
+test.txts
+test01.css
+test01.css.c
+compile 0
+
+
+compile 0
+
+

@@ -134,6 +134,7 @@
     CGFloat width = self.view.frame.size.width;
     [_instance destroyInstance];
     _instance = [[WXSDKInstance alloc] init];
+     _instance.userInfo = [[NSMutableDictionary alloc] initWithDictionary:@{@"name":@"alexluan",@"address":@"shanghai"}];
     _instance.viewController = self;
     _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);
     
@@ -174,7 +175,7 @@
     }
     NSURL *URL = [self testURL: [self.url absoluteString]];
     NSString *randomURL = [NSString stringWithFormat:@"%@%@random=%d",URL.absoluteString,URL.query?@"&":@"?",arc4random()];
-    [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@"bundleUrl":URL.absoluteString} data:nil];
+    [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@"bundleUrl":URL.absoluteString} data:@{@"name":@"alexluan",@"address":@"shanghai"}];
 }
 
 - (void)updateInstanceState:(WXState)state

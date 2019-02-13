@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182EC9832213F90E00D302C3 /* WeexCustomHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 182EC9812213F90E00D302C3 /* WeexCustomHandler.m */; };
+		182EC9842213F90E00D302C3 /* CustomWXComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 182EC9822213F90E00D302C3 /* CustomWXComponent.m */; };
 		18B194132211138400B81322 /* AQXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B194122211138400B81322 /* AQXEventModule.m */; };
 		18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F26B8A220533AB00018BF3 /* AppDelegate.m */; };
 		18F26B91220533AB00018BF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F26B8F220533AB00018BF3 /* Main.storyboard */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182EC97F2213F90D00D302C3 /* CustomWXComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWXComponent.h; sourceTree = "<group>"; };
+		182EC9802213F90E00D302C3 /* WeexCustomHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexCustomHandler.h; sourceTree = "<group>"; };
+		182EC9812213F90E00D302C3 /* WeexCustomHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexCustomHandler.m; sourceTree = "<group>"; };
+		182EC9822213F90E00D302C3 /* CustomWXComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWXComponent.m; sourceTree = "<group>"; };
 		18B194112211138400B81322 /* AQXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AQXEventModule.h; sourceTree = "<group>"; };
 		18B194122211138400B81322 /* AQXEventModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQXEventModule.m; sourceTree = "<group>"; };
 		18F26B86220533AB00018BF3 /* OCWeexNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCWeexNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +226,10 @@
 		18F29D162205391800018BF3 /* WeexScanner */ = {
 			isa = PBXGroup;
 			children = (
+				182EC97F2213F90D00D302C3 /* CustomWXComponent.h */,
+				182EC9822213F90E00D302C3 /* CustomWXComponent.m */,
+				182EC9802213F90E00D302C3 /* WeexCustomHandler.h */,
+				182EC9812213F90E00D302C3 /* WeexCustomHandler.m */,
 				18F29D172205391800018BF3 /* WXDemoViewController.h */,
 				18F29D192205391800018BF3 /* WXDemoViewController.m */,
 				18F29D182205391800018BF3 /* UIViewController+WXDemoNaviBar.m */,
@@ -494,6 +504,7 @@
 				18F28B3C2205382400018BF3 /* ViewController.m in Sources */,
 				18B194132211138400B81322 /* AQXEventModule.m in Sources */,
 				18F2AACA2205410F00018BF3 /* BaseViewController.m in Sources */,
+				182EC9842213F90E00D302C3 /* CustomWXComponent.m in Sources */,
 				18F2AABC2205391D00018BF3 /* UIViewController+WXDemoNaviBar.m in Sources */,
 				18F29D1B2205391800018BF3 /* WeexSDKManager.m in Sources */,
 				18F2AABD2205391D00018BF3 /* WXDemoViewController.m in Sources */,
@@ -501,6 +512,7 @@
 				18F29D1C2205391800018BF3 /* WXImgLoaderDefaultImpl.m in Sources */,
 				18F26B99220533AD00018BF3 /* main.m in Sources */,
 				18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */,
+				182EC9832213F90E00D302C3 /* WeexCustomHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +686,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZMDZ97XAH;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SocketRocket\"",
+					"\"${PODS_ROOT}/Headers/Public/WeexPluginLoader\"",
+					"\"${PODS_ROOT}/Headers/Public/WeexSDK\"",
+				);
 				INFOPLIST_FILE = OCWeexNative/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -700,6 +720,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZMDZ97XAH;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SocketRocket\"",
+					"\"${PODS_ROOT}/Headers/Public/WeexPluginLoader\"",
+					"\"${PODS_ROOT}/Headers/Public/WeexSDK\"",
+				);
 				INFOPLIST_FILE = OCWeexNative/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

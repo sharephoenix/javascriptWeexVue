@@ -22,6 +22,7 @@ WX_EXPORT_METHOD(@selector(weexSay:callback:))
 
 - (void)weexSay:(NSString *)string callback:(WXModuleKeepAliveCallback)callback
 {
+    NSLog(@"aaaaa:%@",weexInstance.userInfo);
     NSLog(@"js invoke native weexSay:%@",string);
     callback(string,true);// 此处设置true，该回调function 可以多次回调执行，可以写循环测试.
 }

@@ -4316,6 +4316,11 @@ module.exports = {
     "top": "91",
     "left": 0,
     "right": 0
+  },
+  "textfont": {
+    "backgroundColor": "#8A2BE2",
+    "fontSize": "70",
+    "color": "#0000FF"
   }
 }
 
@@ -4414,10 +4419,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 
 var modal = weex.requireModule('modal');
 exports.default = {
   name: 'WeexTabbar',
+  init: function init() {
+    modal.toast({ 'message': "data", 'duration': 10 });
+    console.log("-------------init---------------");
+  },
   components: {
     WxcTabBar: _weexUi.WxcTabBar,
     WxcMinibar: _weexUi.WxcMinibar,
@@ -4469,7 +4480,10 @@ exports.default = {
 
     customLoaded: function customLoaded(params) {
       console.log('===========' + JSON.stringify(params));
-      modal.toast({ 'message': JSON.stringify(params), 'duration': 1 });
+      // modal.toast({'message': JSON.stringify(params), 'duration': 1})
+      var content = weex.requireModule('event').userinfo;
+      console.log('mmmmmmmmmmmmmmmmmmm' + content);
+      modal.toast({ 'messsage': content, 'duration': 10 });
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
@@ -21646,7 +21660,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcTabBarCurrentTabSelected": _vm.wxcTabBarCurrentTabSelected
     }
-  }, [_c('scroller', {
+  }, [_c('div', {
+    staticClass: ["item-container"],
+    style: _vm.contentStyle
+  }, [_c('div', [_c('text', {
+    staticClass: ["textfont"]
+  }, [_vm._v("asdfasdfasdfa")])]), _c('scroller', {
     staticClass: ["main-list"]
   }, [_c('kx-slider', {
     attrs: {
@@ -21654,13 +21673,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('customview', {
     staticStyle: {
+      backgroundColor: "#f2f2f2",
       width: "400px",
       height: "200px"
     },
     on: {
       "customLoaded": _vm.customLoaded
     }
-  })], 1), _c('div', {
+  })], 1)]), _c('div', {
     staticClass: ["item-container"],
     style: _vm.contentStyle
   }, [_c('wxc-minibar', {
