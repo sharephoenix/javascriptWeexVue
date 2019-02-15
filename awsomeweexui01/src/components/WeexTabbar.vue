@@ -7,21 +7,22 @@
   >
     <!-- 第一个页面内容-->
     <div class="item-container" :style="contentStyle">
-        <!-- <wxc-minibar
+        <wxc-minibar
           title="首页"
-          background-color="#009ff0"
-          text-color="#FFFFFF"
+          background-color="#FFFFFF"
+          text-color="#000000"
           right-text="更多"
           @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
           @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar> -->
+        ></wxc-minibar>
         <div>
-          <text class="textfont">asdfasdfasdfa</text>
+          <text class="textfont">this is text</text>
         </div>
         <scroller class="main-list">
       <!-- 轮播图 -->
           <kx-slider :imageList="Banners"></kx-slider>
           <customview style="background-color:#f2f2f2;width:400px;height:200px;" @customLoaded="customLoaded"></customview>
+          <div class="presentCls" @click="presentAction"> {{present}} </div>
         </scroller>
     </div>
 
@@ -105,7 +106,8 @@ export default {
       {title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
       {title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg'}],
     testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg',
-    title: 'title'
+    title: 'title',
+    present: 'presentController'
   }),
   computed: {
     list: function () {
@@ -123,14 +125,19 @@ export default {
     wxcTabBarCurrentTabSelected (e) {
       const index = e.page
       console.log(index)
-      modal.toast({ 'message': index, 'duration': 1 })
+      modal.toast({ 'message': index + '妈的', 'duration': 1 })
     },
     customLoaded: function (params) {
-      console.log('===========' + JSON.stringify(params))
-      // modal.toast({'message': JSON.stringify(params), 'duration': 1})
-      const content = weex.requireModule('event').userinfo
-      console.log('mmmmmmmmmmmmmmmmmmm' + content)
-      modal.toast({'messsage': content, 'duration': 10})
+      // const content = weex.requireModule('event').userinfo
+       modal.toast({'message': params + '我靠', 'duration': 1})
+      // weex.requireModule('event').weexSay('message_callback', (params) => {
+      //   modal.toast({'message': params, 'duration': 1})
+      // })
+    },
+    presentAction: function () {
+      weex.requireModule('event').weexSay('message_callback', (params) => {
+        modal.toast({'message': params, 'duration': 1})
+      })
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
@@ -152,11 +159,11 @@ export default {
       this.tabTitles[2].badge = num + 1
       // weex.requireModule("event").weexSay("hello Weex")
       // weex.requireModule("event").weexSay("hello Weex222")
-      const fff = weex.requireModule('event')
+      // const fff = weex.requireModule('event')
       console.log(fff.params)
-      weex.requireModule('event').weexSay('message_callback', (params) => {
-        modal.toast({'message': params, 'duration': 1})
-      })
+      // weex.requireModule('event').weexSay('message_callback', (params) => {
+      //   modal.toast({'message': params, 'duration': 1})
+      // })
       const b = weex.requireModule("event").callbacktest("hello Weex")
       // this.$call("event", "weexSay", "Hello, Weex!");//event注册的关键字
       // this.compnentname.weexSay('this is callback')
@@ -195,5 +202,10 @@ export default {
     background-color: blueviolet;
     font-size: 70px;
     color: blue;
+  }
+  .presentCls {
+    background-color: bisque;
+    width: auto;
+    height: 44px;
   }
 </style>

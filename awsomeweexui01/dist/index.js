@@ -4321,6 +4321,10 @@ module.exports = {
     "backgroundColor": "#8A2BE2",
     "fontSize": "70",
     "color": "#0000FF"
+  },
+  "presentCls": {
+    "backgroundColor": "#FFE4C4",
+    "height": "44"
   }
 }
 
@@ -4352,6 +4356,7 @@ var _weexCache2 = _interopRequireDefault(_weexCache);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
+//
 //
 //
 //
@@ -4454,7 +4459,8 @@ exports.default = {
       tabStyles: _config2.default.tabStyles,
       Banners: [{ title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg' }, { title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg' }, { title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg' }],
       testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg',
-      title: 'title'
+      title: 'title',
+      present: 'presentController'
     };
   },
   computed: {
@@ -4475,15 +4481,20 @@ exports.default = {
     wxcTabBarCurrentTabSelected: function wxcTabBarCurrentTabSelected(e) {
       var index = e.page;
       console.log(index);
-      modal.toast({ 'message': index, 'duration': 1 });
+      modal.toast({ 'message': index + '妈的', 'duration': 1 });
     },
 
     customLoaded: function customLoaded(params) {
-      console.log('===========' + JSON.stringify(params));
-      // modal.toast({'message': JSON.stringify(params), 'duration': 1})
-      var content = weex.requireModule('event').userinfo;
-      console.log('mmmmmmmmmmmmmmmmmmm' + content);
-      modal.toast({ 'messsage': content, 'duration': 10 });
+      // const content = weex.requireModule('event').userinfo
+      modal.toast({ 'message': params + '我靠', 'duration': 1 });
+      // weex.requireModule('event').weexSay('message_callback', (params) => {
+      //   modal.toast({'message': params, 'duration': 1})
+      // })
+    },
+    presentAction: function presentAction() {
+      weex.requireModule('event').weexSay('message_callback', function (params) {
+        modal.toast({ 'message': params, 'duration': 1 });
+      });
     },
     // updateHandler : function(e){
     // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
@@ -4505,11 +4516,11 @@ exports.default = {
       this.tabTitles[2].badge = num + 1;
       // weex.requireModule("event").weexSay("hello Weex")
       // weex.requireModule("event").weexSay("hello Weex222")
-      var fff = weex.requireModule('event');
+      // const fff = weex.requireModule('event')
       console.log(fff.params);
-      weex.requireModule('event').weexSay('message_callback', function (params) {
-        modal.toast({ 'message': params, 'duration': 1 });
-      });
+      // weex.requireModule('event').weexSay('message_callback', (params) => {
+      //   modal.toast({'message': params, 'duration': 1})
+      // })
       var b = weex.requireModule("event").callbacktest("hello Weex");
       // this.$call("event", "weexSay", "Hello, Weex!");//event注册的关键字
       // this.compnentname.weexSay('this is callback')
@@ -21663,9 +21674,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: ["item-container"],
     style: _vm.contentStyle
-  }, [_c('div', [_c('text', {
+  }, [_c('wxc-minibar', {
+    attrs: {
+      "title": "首页",
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#000000",
+      "rightText": "更多"
+    },
+    on: {
+      "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick,
+      "wxcMinibarRightButtonClicked": _vm.minibarRightButtonClick
+    }
+  }), _c('div', [_c('text', {
     staticClass: ["textfont"]
-  }, [_vm._v("asdfasdfasdfa")])]), _c('scroller', {
+  }, [_vm._v("this is text")])]), _c('scroller', {
     staticClass: ["main-list"]
   }, [_c('kx-slider', {
     attrs: {
@@ -21680,7 +21702,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "customLoaded": _vm.customLoaded
     }
-  })], 1)]), _c('div', {
+  }), _c('div', {
+    staticClass: ["presentCls"],
+    on: {
+      "click": _vm.presentAction
+    }
+  }, [_vm._v(" " + _vm._s(_vm.present) + " ")])], 1)], 1), _c('div', {
     staticClass: ["item-container"],
     style: _vm.contentStyle
   }, [_c('wxc-minibar', {
