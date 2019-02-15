@@ -1,71 +1,11 @@
 <template>
-  <wxc-tab-bar
-    :tab-titles="tabTitles"
-    :tab-styles="tabStyles"
-    title-type="icon"
-    @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected"
-  >
     <!-- 第一个页面内容-->
     <div class="item-container" :style="contentStyle">
-        <wxc-minibar
-          title="首页"
-          background-color="#FFFFFF"
-          text-color="#000000"
-          right-text="更多"
-          @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
-          @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar>
-        <div>
-          <text class="textfont">this is text</text>
-        </div>
-        <scroller class="main-list">
-      <!-- 轮播图 -->
-          <kx-slider :imageList="Banners"></kx-slider>
-          <customview style="background-color:#f2f2f2;width:400px;height:200px;" @customLoaded="customLoaded"></customview>
-          <div class="presentCls" @click="presentAction"> {{present}} </div>
-        </scroller>
+          <div class="presentCls" v-on:click="presentAction"> {{present}} </div>
+          <input type="text" class="input" value="" placeholder="输入自己想要的"  :autofocus=false @change="onchange" @input="oninput"/>
+          <text> {{inputcontent}} </text>
+          <div class="presentCls" v-on:click="pushOnePage"> {{pushOnenPage}} </div>
     </div>
-
-    <!-- 第二个页面内容-->
-    <div class="item-container" :style="contentStyle">
-      <wxc-minibar
-          title="推荐"
-          background-color="#ffffff"
-          text-color="#000000"
-          right-text="更多"
-          @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
-          @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar>
-      <text>特别推荐</text>
-    </div>
-
-    <!-- 第三个页面内容-->
-    <div class="item-container" :style="contentStyle">
-      <wxc-minibar
-          title="消息"
-          background-color="#ffffff"
-          text-color="#000000"
-          right-text="更多"
-          @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
-          @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar>
-      <text>消息中心</text>
-    </div>
-
-    <!-- 第四个页面内容-->
-    <div class="item-container" :style="contentStyle">
-      <wxc-minibar
-          title="我的主页"
-          background-color="#ffffff"
-          text-color="#000000"
-          right-text="更多"
-          @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
-          @wxcMinibarRightButtonClicked="minibarRightButtonClick"
-        ></wxc-minibar>
-        <text>{{title}}</text>
-      <text>{{title}} ==我的</text>
-    </div>
-  </wxc-tab-bar>
 </template>
 
 <script>
@@ -99,15 +39,11 @@ export default {
     })
   },
   data: () => ({
-    tabTitles: Config.tabTitles,
     tabStyles: Config.tabStyles,
-    Banners: [
-      {title: '1', src: 'http://app.kuitao8.com/images/banner/1.jpg'},
-      {title: '2', src: 'http://app.kuitao8.com/images/banner/2.jpg'},
-      {title: '3', src: 'http://app.kuitao8.com/images/banner/3.jpg'}],
-    testimagurl: 'http://app.kuitao8.com/images/banner/3.jpg',
     title: 'title',
-    present: 'presentController'
+    present: '启动下一个小程序-请点击我！！！',
+    pushOnenPage: 'push 一个页面',
+    inputcontent: 'default'
   }),
   computed: {
     list: function () {
@@ -127,6 +63,13 @@ export default {
       console.log(index)
       modal.toast({ 'message': index + '妈的', 'duration': 1 })
     },
+    onchange: function (input) {
+      modal.toast({'message': input.value, 'duration': 1})
+      this.inputcontent = input.value
+    },
+    oninput: function (input) {
+      this.inputcontent = input.value
+    },
     customLoaded: function (params) {
       // const content = weex.requireModule('event').userinfo
        modal.toast({'message': params + '我靠', 'duration': 1})
@@ -139,18 +82,9 @@ export default {
         modal.toast({'message': params, 'duration': 1})
       })
     },
-    // updateHandler : function(e){
-    // //千万记得这句（先在外部声明),不能在回调中直接使用this.function(),不然不执行
-    // var self = this;
-    // var eventModule = require('@weex-module/event'); 
-
-    //   eventModule.openURL('test.js',function(ret) { 
-    //                     //回调执行
-    //     self.loadVersionData(ret.result);
-                      
-
-    //   });
-    // },
+    pushOnePage: function () {
+      this.$router.push("/helloworld")
+    },
     minibarLeftButtonClick () {
       console.log('minibarLeftButtonClick')
     },
@@ -207,5 +141,11 @@ export default {
     background-color: bisque;
     width: auto;
     height: 44px;
+    margin-top: 10px;
+  }
+  .input {
+    font-size: 60px;
+    height: 80px;
+    width: 750px;
   }
 </style>
