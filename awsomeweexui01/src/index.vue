@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" @viewappear="onViewappear">
     <keep-alive>
       <router-view/>
     </keep-alive>
@@ -7,11 +7,22 @@
 </template>
 
 <script>
+
+const modal = weex.requireModule('modal')
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  modal.toast({ 'message': "get geolocation ++++ " + e, 'duration': 2 })
+});
 export default {
   name: 'App',
   data () {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
+    }
+  },
+  methods: {
+    onViewappear (params) {
+      modal.toast({'message': '我靠 viewappear' + params, 'duration': 1})
     }
   }
 }
@@ -19,22 +30,6 @@ export default {
 
 <style scoped>
   .wrapper {
-    justify-content: center;
-    align-items: center;
-  }
-  .logo {
-    width: 424px;
-    height: 200px;
-  }
-  .greeting {
-    text-align: center;
-    margin-top: 70px;
-    font-size: 50px;
-    color: #41B883;
-  }
-  .message {
-    margin: 30px;
-    font-size: 32px;
-    color: #727272;
+    background-color: lightgray;
   }
 </style>

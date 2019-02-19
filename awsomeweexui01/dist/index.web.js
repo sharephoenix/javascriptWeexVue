@@ -24348,6 +24348,12 @@ var navigator = weex.requireModule('navigator');
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 
 var modal = weex.requireModule('modal');
+
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  // modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
+});
+
 exports.default = {
   name: 'WeexTabbar',
   init: function init() {
@@ -24465,7 +24471,13 @@ exports.default = {
     showNewWeex: function showNewWeex(params) {
       modal.toast({ 'message': '我靠', 'duration': 1 });
       weex.requireModule("event").showNewWeex({ url: 'http://192.168.2.241:8080/index.js', title: 'title' });
+    },
+    onViewappear: function onViewappear(params) {
+      modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
     }
+  },
+  onViewappear: function onViewappear(params) {
+    modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
   }
 };
 
@@ -42988,7 +43000,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-container weex-ct weex-div",
     style: (_vm._px2rem(_vm.contentStyle, 75)),
     attrs: {
-      "weex-type": "div"
+      "weex-type": "div",
+      "data-evt-viewappear": ""
+    },
+    on: {
+      "viewappear": _vm.onViewappear
     }
   }, [_c('div', {
     staticClass: "presentCls weex-ct weex-div",
@@ -43192,7 +43208,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-13822e66] {\n  justify-content: center;\n  align-items: center;\n}\n.logo[data-v-13822e66] {\n  width: 5.65333rem;\n  height: 2.66667rem;\n}\n.greeting[data-v-13822e66] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-13822e66] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-13822e66] {\n  background-color: lightgray;\n}\n", ""]);
 
 // exports
 
@@ -43216,12 +43232,24 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+
+var modal = weex.requireModule('modal');
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  modal.toast({ 'message': "get geolocation ++++ " + e, 'duration': 2 });
+});
 exports.default = {
   name: 'App',
   data: function data() {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
     };
+  },
+
+  methods: {
+    onViewappear: function onViewappear(params) {
+      modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
+    }
   }
 };
 
@@ -43233,7 +43261,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "wrapper weex-ct weex-div",
     attrs: {
-      "weex-type": "div"
+      "weex-type": "div",
+      "data-evt-viewappear": ""
+    },
+    on: {
+      "viewappear": _vm.onViewappear
     }
   }, [_c('keep-alive', [_c('router-view')], 1)], 1)
 },staticRenderFns: []}

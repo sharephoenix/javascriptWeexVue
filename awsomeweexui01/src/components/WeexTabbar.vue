@@ -1,6 +1,6 @@
 <template>
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="contentStyle">
+    <div class="item-container" :style="contentStyle" @viewappear="onViewappear">
           <div class="presentCls" v-on:click="presentAction"> {{present}} </div>
           <input type="text" class="input" value="" placeholder="输入自己想要的"  :autofocus=false @change="onchange" @input="oninput"/>
           <text> {{inputcontent}} </text>
@@ -21,6 +21,12 @@ var navigator = weex.requireModule('navigator')
 import Config from './config'
 import AppCache from '../cache/weexCache.js'
 const modal = weex.requireModule('modal')
+
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  // modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
+});
+
 export default {
   name: 'WeexTabbar',
   init: function () {
@@ -131,7 +137,13 @@ export default {
     showNewWeex (params) {
       modal.toast({'message': '我靠', 'duration': 1})
       weex.requireModule("event").showNewWeex({url: 'http://192.168.2.241:8080/index.js', title: 'title'})
+    },
+    onViewappear (params) {
+      modal.toast({'message': '我靠 viewappear' + params, 'duration': 1})
     }
+  },
+  onViewappear (params) {
+    modal.toast({'message': '我靠 viewappear' + params, 'duration': 1})
   }
 }
 </script>

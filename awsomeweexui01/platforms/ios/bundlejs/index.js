@@ -4504,6 +4504,12 @@ var navigator = weex.requireModule('navigator');
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 
 var modal = weex.requireModule('modal');
+
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  // modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
+});
+
 exports.default = {
   name: 'WeexTabbar',
   init: function init() {
@@ -4621,7 +4627,13 @@ exports.default = {
     showNewWeex: function showNewWeex(params) {
       modal.toast({ 'message': '我靠', 'duration': 1 });
       weex.requireModule("event").showNewWeex({ url: 'http://192.168.2.241:8080/index.js', title: 'title' });
+    },
+    onViewappear: function onViewappear(params) {
+      modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
     }
+  },
+  onViewappear: function onViewappear(params) {
+    modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
   }
 };
 
@@ -21753,7 +21765,10 @@ exports.default = { saveData: saveData, getData: getData };
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["item-container"],
-    style: _vm.contentStyle
+    style: _vm.contentStyle,
+    on: {
+      "viewappear": _vm.onViewappear
+    }
   }, [_c('div', {
     staticClass: ["presentCls"],
     on: {
@@ -21855,26 +21870,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "wrapper": {
-    "justifyContent": "center",
-    "alignItems": "center"
-  },
-  "logo": {
-    "width": "424",
-    "height": "200"
-  },
-  "greeting": {
-    "textAlign": "center",
-    "marginTop": "70",
-    "fontSize": "50",
-    "color": "#41B883"
-  },
-  "message": {
-    "marginTop": "30",
-    "marginRight": "30",
-    "marginBottom": "30",
-    "marginLeft": "30",
-    "fontSize": "32",
-    "color": "#727272"
+    "backgroundColor": "#D3D3D3"
   }
 }
 
@@ -21897,12 +21893,24 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+
+var modal = weex.requireModule('modal');
+var globalEvent = weex.requireModule('globalEvent');
+globalEvent.addEventListener("geolocation", function (e) {
+  modal.toast({ 'message': "get geolocation ++++ " + e, 'duration': 2 });
+});
 exports.default = {
   name: 'App',
   data: function data() {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
     };
+  },
+
+  methods: {
+    onViewappear: function onViewappear(params) {
+      modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });
+    }
   }
 };
 
@@ -21912,7 +21920,10 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
+    staticClass: ["wrapper"],
+    on: {
+      "viewappear": _vm.onViewappear
+    }
   }, [_c('keep-alive', [_c('router-view')], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
