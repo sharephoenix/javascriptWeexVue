@@ -24296,7 +24296,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.item-container[data-v-7297ab0c] {\n  width: 10rem;\n  background-color: #ff2222;\n  align-items: flex-start;\n  justify-content: flex-start;\n}\n.wrapper[data-v-7297ab0c]{\n}\n.iconfont[data-v-7297ab0c] {\n    font-family:iconfont;\n}\n.main-list[data-v-7297ab0c]{\n    position: static;\n    top: 1.21333rem;\n    left: 0;\n    right: 0;\n}\n.textfont[data-v-7297ab0c] {\n    background-color: blueviolet;\n    font-size: 0.93333rem;\n    color: blue;\n}\n.presentCls[data-v-7297ab0c] {\n    background-color: bisque;\n    width: auto;\n    height: 0.58667rem;\n    margin-top: 0.13333rem;\n}\n.input[data-v-7297ab0c] {\n    font-size: 0.8rem;\n    height: 1.06667rem;\n    width: 10rem;\n}\n", ""]);
+exports.push([module.i, "\n.item-container[data-v-7297ab0c] {\n  width: 10rem;\n  background-color: #ff2222;\n}\n.wrapper[data-v-7297ab0c]{\n}\n.iconfont[data-v-7297ab0c] {\n    font-family:iconfont;\n}\n.main-list[data-v-7297ab0c]{\n    position: static;\n    top: 1.21333rem;\n    left: 0;\n    right: 0;\n}\n.textfont[data-v-7297ab0c] {\n    background-color: blueviolet;\n    font-size: 0.93333rem;\n    color: blue;\n}\n.presentCls[data-v-7297ab0c] {\n    background-color: bisque;\n    width: auto;\n    height: 0.58667rem;\n    margin-top: 0.13333rem;\n}\n.input[data-v-7297ab0c] {\n    font-size: 0.8rem;\n    height: 1.06667rem;\n    width: 10rem;\n}\n.webContentCls[data-v-7297ab0c] {\n    flex: 1;\n    margin-top: 0.13333rem;\n    width: 10rem;\n}\n", ""]);
 
 // exports
 
@@ -24328,17 +24328,24 @@ var _weexCache2 = _interopRequireDefault(_weexCache);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var navigator = weex.requireModule('navigator');
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 var modal = weex.requireModule('modal');
 exports.default = {
@@ -24372,7 +24379,9 @@ exports.default = {
       title: 'title',
       present: '启动下一个小程序-请点击我！！！',
       pushOnenPage: 'push 一个页面',
-      inputcontent: 'default'
+      popOnenPage: 'pop 一个页面',
+      inputcontent: 'default',
+      shownewweex: '启动 weex 小程序'
     };
   },
   computed: {
@@ -24416,7 +24425,18 @@ exports.default = {
       });
     },
     pushOnePage: function pushOnePage() {
-      this.$router.push("/helloworld");
+      navigator.push({
+        url: 'http://192.168.2.241:8080/index.js',
+        animated: "true"
+      }, function (event) {
+        modal.toast({ message: 'callback: ' + event });
+      });
+      navigator.setNavBarRightItem({ titleColor: red, title: 'rightButton' });
+      // this.$router.push("/helloworld")
+    },
+    popOnePage: function popOnePage() {
+      navigator.pop();
+      // this.$router.push("/helloworld")
     },
     minibarLeftButtonClick: function minibarLeftButtonClick() {
       console.log('minibarLeftButtonClick');
@@ -24440,8 +24460,11 @@ exports.default = {
       modal.toast({ 'message': 'updatedidloadupdatedidload', 'duration': 1 });
     },
     fixtest: function fixtest(params) {
-      modal.toast({ 'message': params, 'duration': 1 });
-      weex.requireModule("event").weexSay("fixtestfixtestfixtest");
+      weex.requireModule("event").showvc({ url: 'http://192.168.2.241:8080/index.js' }, 'title');
+    },
+    showNewWeex: function showNewWeex(params) {
+      modal.toast({ 'message': '我靠', 'duration': 1 });
+      weex.requireModule("event").showNewWeex({ url: 'http://192.168.2.241:8080/index.js', title: 'title' });
     }
   }
 };
@@ -43015,10 +43038,72 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
+        return _vm.fixtest($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" custompush ")])]), _vm._v(" "), _c('div', {
+    staticClass: "presentCls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
         return _vm.pushOnePage($event)
       }
     }
-  }, [_vm._v(" " + _vm._s(_vm.pushOnenPage) + " ")])])
+  }, [_vm._v(" " + _vm._s(_vm.pushOnenPage) + " ")]), _vm._v(" "), _c('div', {
+    staticClass: "presentCls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.popOnePage($event)
+      }
+    }
+  }, [_vm._v(" " + _vm._s(_vm.popOnenPage) + " ")]), _vm._v(" "), _c('div', {
+    staticClass: "presentCls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.showNewWeex($event)
+      }
+    }
+  }, [_vm._v(" " + _vm._s(_vm.shownewweex) + " ")]), _vm._v(" "), _c('web', {
+    staticClass: "webContentCls",
+    attrs: {
+      "src": "https://mp.weixin.qq.com/s/U8Ls0nCDkIlVLPgEgrHlaA"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "presentCls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.showNewWeex($event)
+      }
+    }
+  }, [_vm._v(" " + _vm._s(_vm.shownewweex) + " ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

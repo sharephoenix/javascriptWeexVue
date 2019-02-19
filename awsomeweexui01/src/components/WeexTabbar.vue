@@ -4,13 +4,19 @@
           <div class="presentCls" v-on:click="presentAction"> {{present}} </div>
           <input type="text" class="input" value="" placeholder="输入自己想要的"  :autofocus=false @change="onchange" @input="oninput"/>
           <text> {{inputcontent}} </text>
-          <div class="presentCls" v-on:click="pushOnePage"> {{pushOnenPage}} </div>
+          <div class="presentCls" v-on:click="fixtest"> <text> custompush </text></div>
+          <div class="presentCls" v-on:click="pushOnePage"> {{ pushOnenPage }} </div>
+          <div class="presentCls" v-on:click="popOnePage"> {{ popOnenPage }} </div>
+          <div class="presentCls" v-on:click="showNewWeex"> {{ shownewweex }} </div>
+          <web class="webContentCls" src="https://mp.weixin.qq.com/s/U8Ls0nCDkIlVLPgEgrHlaA"></web>
+          <div class="presentCls" v-on:click="showNewWeex"> {{ shownewweex }} </div>
     </div>
 </template>
 
 <script>
 import { WxcTabBar, WxcMinibar, Utils } from 'weex-ui'
 import Slider from './Slider.vue'
+var navigator = weex.requireModule('navigator')
 // https://github.com/alibaba/weex-ui/blob/master/example/tab-bar/config.js
 import Config from './config'
 import AppCache from '../cache/weexCache.js'
@@ -43,7 +49,9 @@ export default {
     title: 'title',
     present: '启动下一个小程序-请点击我！！！',
     pushOnenPage: 'push 一个页面',
-    inputcontent: 'default'
+    popOnenPage: 'pop 一个页面',
+    inputcontent: 'default',
+    shownewweex: '启动 weex 小程序'
   }),
   computed: {
     list: function () {
@@ -83,7 +91,18 @@ export default {
       })
     },
     pushOnePage: function () {
-      this.$router.push("/helloworld")
+      navigator.push({
+          url: 'http://192.168.2.241:8080/index.js',
+          animated: "true"
+        }, event => {
+          modal.toast({ message: 'callback: ' + event })
+        })
+        navigator.setNavBarRightItem({titleColor: red, title: 'rightButton'})
+      // this.$router.push("/helloworld")
+    },
+    popOnePage: function () {
+      navigator.pop()
+      // this.$router.push("/helloworld")
     },
     minibarLeftButtonClick () {
       console.log('minibarLeftButtonClick')
@@ -107,8 +126,11 @@ export default {
       modal.toast({ 'message': 'updatedidloadupdatedidload', 'duration': 1 })
     },
     fixtest (params) {
-      modal.toast({ 'message': params, 'duration': 1 })
-      weex.requireModule("event").weexSay("fixtestfixtestfixtest")
+      weex.requireModule("event").showvc({url: 'http://192.168.2.241:8080/index.js'}, 'title')
+    },
+    showNewWeex (params) {
+      modal.toast({'message': '我靠', 'duration': 1})
+      weex.requireModule("event").showNewWeex({url: 'http://192.168.2.241:8080/index.js', title: 'title'})
     }
   }
 }
@@ -118,8 +140,6 @@ export default {
 .item-container {
   width: 750px;
   background-color: #ff2222;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 .wrapper{
   }
@@ -146,6 +166,11 @@ export default {
   .input {
     font-size: 60px;
     height: 80px;
+    width: 750px;
+  }
+  .webContentCls {
+    flex: 1;
+    margin-top: 10px;
     width: 750px;
   }
 </style>
