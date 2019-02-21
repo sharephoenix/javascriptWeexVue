@@ -24351,7 +24351,7 @@ var modal = weex.requireModule('modal');
 
 var globalEvent = weex.requireModule('globalEvent');
 globalEvent.addEventListener("geolocation", function (e) {
-  // modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
+  modal.toast({ 'message': "get geolocation" + e, 'duration': 2 });
 });
 
 exports.default = {
@@ -24432,7 +24432,7 @@ exports.default = {
     },
     pushOnePage: function pushOnePage() {
       navigator.push({
-        url: 'http://192.168.2.241:8080/index.js',
+        url: 'http://192.168.1.117:8080/index.js',
         animated: "true"
       }, function (event) {
         modal.toast({ message: 'callback: ' + event });
@@ -24466,11 +24466,11 @@ exports.default = {
       modal.toast({ 'message': 'updatedidloadupdatedidload', 'duration': 1 });
     },
     fixtest: function fixtest(params) {
-      weex.requireModule("event").showvc({ url: 'http://192.168.2.241:8080/index.js' }, 'title');
+      weex.requireModule("event").showvc({ url: 'http://192.168.1.117:8080/index.js' }, 'title');
     },
     showNewWeex: function showNewWeex(params) {
       modal.toast({ 'message': '我靠', 'duration': 1 });
-      weex.requireModule("event").showNewWeex({ url: 'http://192.168.2.241:8080/index.js', title: 'title' });
+      weex.requireModule("event").showNewWeex({ url: 'http://192.168.1.117:8080/index.js', title: 'title' });
     },
     onViewappear: function onViewappear(params) {
       modal.toast({ 'message': '我靠 viewappear' + params, 'duration': 1 });

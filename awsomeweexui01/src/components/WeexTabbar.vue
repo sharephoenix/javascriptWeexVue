@@ -24,7 +24,7 @@ const modal = weex.requireModule('modal')
 
 var globalEvent = weex.requireModule('globalEvent');
 globalEvent.addEventListener("geolocation", function (e) {
-  // modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
+  modal.toast({ 'message': "get geolocation" + e, 'duration': 2 })
 });
 
 export default {
@@ -98,7 +98,7 @@ export default {
     },
     pushOnePage: function () {
       navigator.push({
-          url: 'http://192.168.2.241:8080/index.js',
+          url: 'http://192.168.1.117:8080/index.js',
           animated: "true"
         }, event => {
           modal.toast({ message: 'callback: ' + event })
@@ -132,11 +132,11 @@ export default {
       modal.toast({ 'message': 'updatedidloadupdatedidload', 'duration': 1 })
     },
     fixtest (params) {
-      weex.requireModule("event").showvc({url: 'http://192.168.2.241:8080/index.js'}, 'title')
+      weex.requireModule("event").showvc({url: 'http://192.168.1.117:8080/index.js'}, 'title')
     },
     showNewWeex (params) {
       modal.toast({'message': '我靠', 'duration': 1})
-      weex.requireModule("event").showNewWeex({url: 'http://192.168.2.241:8080/index.js', title: 'title'})
+      weex.requireModule("event").showNewWeex({url: 'http://192.168.1.117:8080/index.js', title: 'title'})
     },
     onViewappear (params) {
       modal.toast({'message': '我靠 viewappear' + params, 'duration': 1})
