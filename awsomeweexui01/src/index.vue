@@ -1,18 +1,19 @@
 <template>
-  <div class="wrapper" @viewappear="onViewappear">
-    <keep-alive>
+  <!-- <div class="wrapper" @viewappear="onViewappear"> -->
+    <!-- <keep-alive> -->
       <router-view/>
-    </keep-alive>
-  </div>
+    <!-- </keep-alive> -->
+  <!-- </div> -->
 </template>
 
 <script>
 
 const modal = weex.requireModule('modal')
-var globalEvent = weex.requireModule('globalEvent');
-globalEvent.addEventListener("geolocation", function (e) {
-  modal.toast({ 'message': "get geolocation ++++ " + e, 'duration': 2 })
-});
+var globalEvent = weex.requireModule('globalEvent')
+globalEvent.addEventListener('geolocation', function (e) {
+  modal.toast({ 'message': 'get geolocation ++++ ' + e, 'duration': 2 })
+})
+
 export default {
   name: 'App',
   data () {
@@ -30,6 +31,7 @@ export default {
 
 <style scoped>
   .wrapper {
-    background-color: lightgray;
+    position: relative;
+    background-color: red;
   }
 </style>

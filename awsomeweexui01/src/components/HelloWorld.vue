@@ -10,7 +10,7 @@ const modal = weex.requireModule('modal')
 export default {
   name: 'HelloWorld',
   data: () => ({
-    modulename: "modulename"
+    modulename: 'modulename'
   }),
   methods: {
     popAction: function () {
