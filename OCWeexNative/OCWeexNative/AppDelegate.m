@@ -28,7 +28,6 @@
     BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-
     return YES;
 }
 #pragma mark

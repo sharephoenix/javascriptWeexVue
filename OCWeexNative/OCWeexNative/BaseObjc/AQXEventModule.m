@@ -35,4 +35,7 @@ WX_EXPORT_METHOD(@selector(weexSay:callback:))
     NSLog(@"WeexOpenURL");
 }
 
+- (void)neverRegisterAction {
+    NSLog(@"neverRegisterActionneverRegisterActionneverRegisterAction");
+}
 @end

@@ -18,6 +18,7 @@
 #import "AQXEventModule.h"
 #import "WeexCustomHandler.h"
 #import "CustomWXComponent.h"
+#import "NativeView.h"
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
@@ -31,9 +32,18 @@
 @property (nonatomic, assign) CGFloat weexHeight;
 @property (nonatomic, weak) id<UIScrollViewDelegate> originalDelegate;
 
+@property (nonatomic, strong) NativeView *nativeView;
+
 @end
 
 @implementation WXDemoViewController
+
+- (NativeView *)nativeView {
+    if (!_nativeView) {
+        _nativeView = [[[NSBundle mainBundle] loadNibNamed:@"NativeView" owner:nil options:nil] firstObject];
+    }
+    return _nativeView;
+}
 
 - (instancetype)init
 {
@@ -136,12 +146,36 @@
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
     _instance.frame = CGRectMake(self.view.frame.size.width-width, 0, width, _weexHeight);
-    
     __weak typeof(self) weakSelf = self;
+    self.nativeView.callBack = ^(NSDictionary *event) {
+        if (event.allKeys.count > 0) {
+            NSString * eventName = event.allKeys[0];
+            NSDictionary * params = event[eventName];
+            if ([eventName isEqualToString:@"one"]) {
+                [[WXSDKManager bridgeMgr] fireEvent:weakSelf.instance.instanceId ref:WX_SDK_ROOT_REF type:@"oneAction" params:nil domChanges:nil];
+            }
+            if ([eventName isEqualToString:@"two"]) {
+                [[WXSDKManager bridgeMgr] fireEvent:weakSelf.instance.instanceId ref:WX_SDK_ROOT_REF type:@"twoAction" params:nil domChanges:nil];
+            }
+            if ([eventName isEqualToString:@"three"]) {
+                [weakSelf.instance fireModuleEvent:[AQXEventModule class] eventName:@"neverRegisterAction" params:@{}];
+            }
+            if ([eventName isEqualToString:@"four"]) {
+                [weakSelf.instance fireGlobalEvent:@"globalEvent" params:@{@"action": @"globalEvent"}];
+            }
+            self.nativeView.info.text = [NSString stringWithFormat:@"%@+%@",eventName, params];
+        }
+    };
+
+
     _instance.onCreate = ^(UIView *view) {
         [weakSelf.weexView removeFromSuperview];
         weakSelf.weexView = view;
         [weakSelf.view addSubview:weakSelf.weexView];
+        CGRect bounds = weakSelf.view.bounds;
+        weakSelf.weexView.frame = CGRectMake(0, 0, bounds.size.width, bounds.size.height/2);
+        [weakSelf.view addSubview:weakSelf.nativeView];
+        weakSelf.nativeView.frame = CGRectMake(0, bounds.size.height/2, bounds.size.width, bounds.size.height/2);
         UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, weakSelf.weexView);
     };
     _instance.onFailed = ^(NSError *error) {

@@ -31,6 +31,8 @@
 		18F716E32212BDD200C345D7 /* test01.css in Resources */ = {isa = PBXBuildFile; fileRef = 18F716E22212BDD200C345D7 /* test01.css */; };
 		18F716E52212BE1A00C345D7 /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = 18F716E42212BE1A00C345D7 /* test.css */; };
 		49BE58ACDD820CD469E1DE31 /* libPods-OCWeexNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAA16D7443E65EA33E9A5BA /* libPods-OCWeexNative.a */; };
+		D063CBC2223186000079FC80 /* NativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D063CBC1223186000079FC80 /* NativeView.xib */; };
+		D063CBC4223186080079FC80 /* NativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D063CBC3223186080079FC80 /* NativeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -110,6 +112,9 @@
 		3B3161E8D51A766956D64CB6 /* Pods-OCWeexNative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWeexNative.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCWeexNative/Pods-OCWeexNative.release.xcconfig"; sourceTree = "<group>"; };
 		752BC5BBA543B3BD4D54E63C /* Pods-OCWeexNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWeexNative.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCWeexNative/Pods-OCWeexNative.debug.xcconfig"; sourceTree = "<group>"; };
 		8DAA16D7443E65EA33E9A5BA /* libPods-OCWeexNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCWeexNative.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D063CBC0223185FF0079FC80 /* NativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeView.h; sourceTree = "<group>"; };
+		D063CBC1223186000079FC80 /* NativeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeView.xib; sourceTree = "<group>"; };
+		D063CBC3223186080079FC80 /* NativeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +246,9 @@
 		18F2AAC7220540EE00018BF3 /* BaseObjc */ = {
 			isa = PBXGroup;
 			children = (
+				D063CBC0223185FF0079FC80 /* NativeView.h */,
+				D063CBC3223186080079FC80 /* NativeView.m */,
+				D063CBC1223186000079FC80 /* NativeView.xib */,
 				18F2AAC82205410F00018BF3 /* BaseViewController.h */,
 				18F2AAC92205410F00018BF3 /* BaseViewController.m */,
 				18F2AACB2205413400018BF3 /* BaseNavigationController.h */,
@@ -385,6 +393,7 @@
 				18F26B91220533AB00018BF3 /* Main.storyboard in Resources */,
 				18F2AAC022053ABB00018BF3 /* bundlejs in Resources */,
 				18F716E32212BDD200C345D7 /* test01.css in Resources */,
+				D063CBC2223186000079FC80 /* NativeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +520,7 @@
 				18F2AACD2205413400018BF3 /* BaseNavigationController.m in Sources */,
 				18F29D1C2205391800018BF3 /* WXImgLoaderDefaultImpl.m in Sources */,
 				18F26B99220533AD00018BF3 /* main.m in Sources */,
+				D063CBC4223186080079FC80 /* NativeView.m in Sources */,
 				18F26B8B220533AB00018BF3 /* AppDelegate.m in Sources */,
 				182EC9832213F90E00D302C3 /* WeexCustomHandler.m in Sources */,
 			);
