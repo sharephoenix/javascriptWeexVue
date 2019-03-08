@@ -83,6 +83,11 @@
     [imageLoader handlerTest];
     [WXSDKEngine registerComponent:@"customview" withClass:[CustomWXComponent class]];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TestNotific:) name:@"TestNotific" object:[WXDemoViewController class]];
+}
+
+- (void)TestNotific:(NSNotification *)notic {
+    NSLog(@"%@", notic.userInfo);
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -159,6 +164,7 @@
             }
             if ([eventName isEqualToString:@"three"]) {
                 [weakSelf.instance fireModuleEvent:[AQXEventModule class] eventName:@"neverRegisterAction" params:@{}];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"TestNotific" object:[WXDemoViewController class] userInfo:@{@"alex": @"name"}];
             }
             if ([eventName isEqualToString:@"four"]) {
                 [weakSelf.instance fireGlobalEvent:@"globalEvent" params:@{@"action": @"globalEvent"}];
