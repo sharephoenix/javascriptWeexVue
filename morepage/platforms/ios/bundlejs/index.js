@@ -2795,12 +2795,20 @@ module.exports = {
     "color": "#FF0000",
     "fontSize": "33wx"
   },
+  "input": {
+    "height": "33wx",
+    "backgroundColor": "#D3D3D3",
+    "marginLeft": "15wx",
+    "marginRight": "15wx"
+  },
   "button": {
     "marginTop": "10wx",
     "height": "33wx",
     "backgroundColor": "#FF0000",
     "border": "1px solid yellow",
-    "borderRadius": "16.5wx"
+    "borderRadius": "16.5wx",
+    "marginLeft": "15wx",
+    "marginRight": "15wx"
   },
   "button-text": {
     "lineHeight": "33wx",
@@ -2899,6 +2907,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _c('input', {
     ref: "inputRef",
+    staticClass: ["input"],
     attrs: {
       "value": (_vm.inputValue)
     },

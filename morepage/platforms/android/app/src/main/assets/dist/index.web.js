@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n", ""]);
+exports.push([module.i, "\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -22944,6 +22944,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var navigator = weex.requireModule('navigator');
 exports.default = {
@@ -22956,12 +22957,20 @@ exports.default = {
 
   methods: {
     getInitialData: function getInitialData() {},
+    toFocus: function toFocus() {
+      // 下面一行是为了兼容 Android
+      this.$refs.inputRef.blur();
+      this.$refs.inputRef.focus();
+    },
+    toHide: function toHide() {
+      this.$refs.inputRef.blur();
+    },
     abc: function abc() {
       console.log('click');
     }
   },
   created: function created() {
-    navigator.setNavBarTitle('title');
+    navigator.setNavBarTitle({ title: 'title' });
   }
 };
 
@@ -23029,6 +23038,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "inputValue"
     }],
     ref: "inputRef",
+    staticClass: "input",
     attrs: {},
     domProps: {
       "value": (_vm.inputValue)
@@ -23040,16 +23050,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }), _vm._v(" "), _c('div', {
-    staticClass: " weex-ct weex-div",
+    staticClass: "button weex-ct weex-div",
     attrs: {
-      "weex-type": "div"
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.toFocus($event)
+      }
     }
   }, [_c('p', {
-    staticClass: " weex-el weex-text",
+    staticClass: "button-text weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("change input focus")])])], 1)
+  }, [_vm._v("change input focus")])]), _vm._v(" "), _c('div', {
+    staticClass: "button weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.toHide($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: "button-text weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("change input hide")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23138,7 +23174,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n  justify-content: center;\n  align-items: center;\n}\n.logo[data-v-296d580a] {\n  width: 5.65333rem;\n  height: 2.66667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
 
 // exports
 
@@ -23153,7 +23189,6 @@ exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n  justify-content: cente
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
 //
 //
 //
@@ -23188,12 +23223,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-img-src": _vm.logo,
       "weex-type": "image"
     }
-  }), _vm._v(" "), _c('p', {
-    staticClass: "greeting weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("The environment is ready!")]), _vm._v(" "), _c('router-view')], 1)
+  }), _vm._v(" "), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
