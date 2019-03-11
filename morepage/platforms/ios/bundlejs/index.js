@@ -78,7 +78,7 @@
 var _require = __webpack_require__(1),
     router = _require.router;
 
-var App = __webpack_require__(6);
+var App = __webpack_require__(7);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -2750,14 +2750,14 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(10)
+__vue_styles__.push(__webpack_require__(4)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(4)
+__vue_exports__ = __webpack_require__(5)
 
 /* template */
-var __vue_template__ = __webpack_require__(5)
+var __vue_template__ = __webpack_require__(6)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2788,6 +2788,28 @@ module.exports = __vue_exports__
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "texmessaget": {
+    "color": "#FF0000",
+    "fontSize": "33wx"
+  },
+  "button": {
+    "marginTop": "10wx",
+    "height": "33wx",
+    "backgroundColor": "#FF0000",
+    "border": "1px solid yellow",
+    "borderRadius": "16.5wx"
+  },
+  "button-text": {
+    "lineHeight": "33wx",
+    "textAlign": "center"
+  }
+}
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2803,23 +2825,57 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
 
+var navigator = weex.requireModule('navigator');
 exports.default = {
   name: 'HelloWorld',
+  data: function data() {
+    return {
+      inputValue: ''
+    };
+  },
+
   methods: {
     getInitialData: function getInitialData() {},
+    toFocus: function toFocus() {
+      // 下面一行是为了兼容 Android
+      this.$refs.inputRef.blur();
+      this.$refs.inputRef.focus();
+    },
+    toHide: function toHide() {
+      this.$refs.inputRef.blur();
+    },
     abc: function abc() {
       console.log('click');
     }
+  },
+  created: function created() {
+    navigator.setNavBarTitle({ title: 'title' });
   }
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('image', {
+  return _c('scroller', [_c('wxc-navpage', {
+    attrs: {
+      "title": "首页",
+      "backgroundColor": "#3683FF",
+      "onclick": "onClickTitle",
+      "titleColor": "#FF0000",
+      "leftItemTitle": "搜索",
+      "leftItemColor": "#EA80FF",
+      "rightItemTitle": "跳转",
+      "rightItemColor": "#EA80FF"
+    }
+  }), _c('image', {
     ref: "logoimage",
     staticStyle: {
       width: "100wx",
@@ -2841,26 +2897,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.abc,
       "bbb": _vm.bbb
     }
-  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")])])
+  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _c('input', {
+    ref: "inputRef",
+    attrs: {
+      "value": (_vm.inputValue)
+    },
+    on: {
+      "input": function($event) {
+        _vm.inputValue = $event.target.attr.value
+      }
+    }
+  }), _c('div', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toFocus
+    }
+  }, [_c('text', {
+    staticClass: ["button-text"]
+  }, [_vm._v("change input focus")])]), _c('div', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toHide
+    }
+  }, [_c('text', {
+    staticClass: ["button-text"]
+  }, [_vm._v("change input hide")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(7)
+__vue_styles__.push(__webpack_require__(8)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(8)
+__vue_exports__ = __webpack_require__(9)
 
 /* template */
-var __vue_template__ = __webpack_require__(9)
+var __vue_template__ = __webpack_require__(10)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2890,17 +2970,13 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = {
-  "wrapper": {
-    "justifyContent": "center",
-    "alignItems": "center"
-  },
   "logo": {
-    "width": "424",
-    "height": "200"
+    "width": "42",
+    "height": "20"
   },
   "greeting": {
     "textAlign": "center",
@@ -2919,7 +2995,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2928,7 +3004,6 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
 //
 //
 //
@@ -2947,7 +3022,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2958,22 +3033,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": _vm.logo
     }
-  }), _c('text', {
-    staticClass: ["greeting"]
-  }, [_vm._v("The environment is ready!")]), _c('router-view')], 1)
+  }), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "texmessaget": {
-    "color": "#FF0000",
-    "fontSize": "33wx"
-  }
-}
 
 /***/ })
 /******/ ]);

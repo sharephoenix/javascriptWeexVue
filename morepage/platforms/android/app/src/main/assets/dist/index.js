@@ -2794,6 +2794,17 @@ module.exports = {
   "texmessaget": {
     "color": "#FF0000",
     "fontSize": "33wx"
+  },
+  "button": {
+    "marginTop": "10wx",
+    "height": "33wx",
+    "backgroundColor": "#FF0000",
+    "border": "1px solid yellow",
+    "borderRadius": "16.5wx"
+  },
+  "button-text": {
+    "lineHeight": "33wx",
+    "textAlign": "center"
   }
 }
 
@@ -2816,18 +2827,35 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 var navigator = weex.requireModule('navigator');
 exports.default = {
   name: 'HelloWorld',
+  data: function data() {
+    return {
+      inputValue: ''
+    };
+  },
+
   methods: {
     getInitialData: function getInitialData() {},
+    toFocus: function toFocus() {
+      // 下面一行是为了兼容 Android
+      this.$refs.inputRef.blur();
+      this.$refs.inputRef.focus();
+    },
+    toHide: function toHide() {
+      this.$refs.inputRef.blur();
+    },
     abc: function abc() {
       console.log('click');
     }
   },
   created: function created() {
-    navigator.setNavBarTitle('title');
+    navigator.setNavBarTitle({ title: 'title' });
   }
 };
 
@@ -2836,7 +2864,7 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('wxc-navpage', {
+  return _c('scroller', [_c('wxc-navpage', {
     attrs: {
       "title": "首页",
       "backgroundColor": "#3683FF",
@@ -2869,7 +2897,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.abc,
       "bbb": _vm.bbb
     }
-  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")])], 1)
+  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _c('input', {
+    ref: "inputRef",
+    attrs: {
+      "value": (_vm.inputValue)
+    },
+    on: {
+      "input": function($event) {
+        _vm.inputValue = $event.target.attr.value
+      }
+    }
+  }), _c('div', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toFocus
+    }
+  }, [_c('text', {
+    staticClass: ["button-text"]
+  }, [_vm._v("change input focus")])]), _c('div', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toHide
+    }
+  }, [_c('text', {
+    staticClass: ["button-text"]
+  }, [_vm._v("change input hide")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2922,13 +2974,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
-  "wrapper": {
-    "justifyContent": "center",
-    "alignItems": "center"
-  },
   "logo": {
-    "width": "424",
-    "height": "200"
+    "width": "42",
+    "height": "20"
   },
   "greeting": {
     "textAlign": "center",
@@ -2963,7 +3011,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
 
 exports.default = {
   name: 'App',
@@ -2986,9 +3033,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": _vm.logo
     }
-  }), _c('text', {
-    staticClass: ["greeting"]
-  }, [_vm._v("The environment is ready!")]), _c('router-view')], 1)
+  }), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
