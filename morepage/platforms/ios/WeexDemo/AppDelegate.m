@@ -25,12 +25,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [WeexSDKManager setup];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [WeexSDKManager setup];
+        [self.window makeKeyAndVisible];
+        // Override point for customization after application launch.
+        [self startSplashScreen];
+    });
     
-    [self.window makeKeyAndVisible];
-    
-    // Override point for customization after application launch.
-    [self startSplashScreen];
+
     
     return YES;
 }

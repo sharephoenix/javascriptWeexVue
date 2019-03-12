@@ -1,27 +1,26 @@
-# Introduction
+# <center>需要的技术栈</center>
 
-This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and `weex-loader`. 
+## Java
 
-## Quickstart
+## Kotlin
 
-To use this template, scaffold a project with [weexpack v1.1.1+](https://github.com/weexteam/weex-pack).
+## Objective-C
 
-``` bash
-$ npm install -g weex-toolkit
-$ weex create my-project # default will create the webpack template
-$ cd my-project && npm start
-```
+## Swift
 
-## How to use less/sass/pug
+## JavaScript
 
-Take `sass` for example:
+## Css and Scss
 
-```
-$ npm i node-sass sass-loader --save
-```
+## Vue webpack
+### 如何设置，多界面
 
-Then, you just need to change the `style` tag as: `<style lang="sass"><style>`.
+------------
 
-## How to create your own template
+# 注： 使用 各种 lint 规范代码，做到能当众写代码 而不是 面向浏览器编程
 
-See [How-to-create-your-own-template](https://github.com/weex-templates/How-to-create-your-own-template).
+## <center> weex 一般注意事项
+  1. weex 的所有布局都是 flexbox 进行布局的。
+  2. weex position: flex;  会超过安全区的。一般建议使用 asbolute.
+  3. weex 的 image 组件需要各平台实现缓存方法。
+  4. weex 所有的 css 布局相关的参数 使用 'wx' 而不是 'px'。 例如：width: 10wx; 不要写成 10px; / font-size: 16wx;不要写成 font-size: 16px;
