@@ -1,5 +1,5 @@
-./morepage/platforms/ios/Pods
-./morepage/node_modules
+/morepage/platforms/ios/Pods
+/morepage/node_modules
 
 # Logs
 logs
