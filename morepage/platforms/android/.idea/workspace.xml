@@ -6,23 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9469c24-8ab1-4f33-b50a-6b5a78b25db5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mvall.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../mvall.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AndroidReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidReadMe.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/dist/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/dist/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/bundlejs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/bundlejs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/bundlejs/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/bundlejs/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/HelloWorld.vue" afterDir="false" />
-    </list>
+    <list default="true" id="e9469c24-8ab1-4f33-b50a-6b5a78b25db5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +144,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/dist/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -656,6 +640,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32374868" />
       <window_info id="Structure" side_tool="true" />
@@ -1039,7 +1024,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>

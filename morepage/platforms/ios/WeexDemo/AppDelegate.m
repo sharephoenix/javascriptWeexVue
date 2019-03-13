@@ -11,6 +11,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import "WeexSDKManager.h"
+#import "WeexDemo-Swift.h"
 
 @interface AppDelegate ()
 @end
@@ -31,9 +32,21 @@
         // Override point for customization after application launch.
         [self startSplashScreen];
     });
-    
 
-    
+    {
+        NSString *appPath = [[WXCacheManager instance] getAppPath: @"testid"];
+        NSString *fileName = @"package-lock.json";
+        CacheDownLoad *downManager = [[CacheDownLoad alloc] init:appPath fileName:fileName];
+        [downManager downLoadFileWithUrl:[NSURL URLWithString:@"http://192.168.0.102:8080/package-lock.json"] toPath:[[WXCacheManager instance] getRootPath]];
+    }
+
+    {
+        NSString *appPath = [[WXCacheManager instance] getAppPath: @"testid"];
+        NSString *fileName = @"index.html";
+        CacheDownLoad *downManager = [[CacheDownLoad alloc] init:appPath fileName:fileName];
+        [downManager downLoadFileWithUrl:[NSURL URLWithString:@"http://192.168.0.102:8080/index.html"] toPath:[[WXCacheManager instance] getRootPath]];
+    }
+
     return YES;
 }
 

@@ -24,6 +24,8 @@
 		84361D3B1CA10F8E00F43825 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE7F1C1E8ECC008D1629 /* main.m */; };
 		84361D5B1CA10F8E00F43825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775BEE8A1C1E8ECC008D1629 /* Assets.xcassets */; };
 		84D7CAC71CE3266C00D48D46 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */; };
+		D0FC4D85223947D70049E694 /* WXCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC4D84223947D70049E694 /* WXCacheManager.swift */; };
+		D0FC4D8722394C310049E694 /* CacheDownLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC4D8622394C310049E694 /* CacheDownLoad.swift */; };
 		D3DB97659EA84DC3ADEFA660 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B116DBF2254E48A0816816AE /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5FFB0F3F6F246E9A93F5369 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983B223F3951480F8D2048E3 /* CoreLocation.framework */; };
 		DC5E503E1D0D97130059F0EB /* weex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5E503C1D0D97130059F0EB /* weex.png */; };
@@ -78,6 +80,9 @@
 		B116DBF2254E48A0816816AE /* ImageIO.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B16099883D828D1227C710E2 /* libPods-WeexDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeexDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECB15C78BC5454C86CFBC04 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D0FC4D83223947D70049E694 /* WeexDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeexDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0FC4D84223947D70049E694 /* WXCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXCacheManager.swift; sourceTree = "<group>"; };
+		D0FC4D8622394C310049E694 /* CacheDownLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDownLoad.swift; sourceTree = "<group>"; };
 		DC5E503C1D0D97130059F0EB /* weex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weex.png; sourceTree = "<group>"; };
 		DC5E503D1D0D97130059F0EB /* weex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weex@2x.png"; sourceTree = "<group>"; };
 		DC65C4F91CEB032F00B2F84F /* bundlejs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundlejs; sourceTree = "<group>"; };
@@ -226,9 +231,20 @@
 			path = WeexDemoTests;
 			sourceTree = "<group>";
 		};
+		D0FC4D82223947AA0049E694 /* CacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				D0FC4D84223947D70049E694 /* WXCacheManager.swift */,
+				D0FC4D8622394C310049E694 /* CacheDownLoad.swift */,
+				D0FC4D83223947D70049E694 /* WeexDemo-Bridging-Header.h */,
+			);
+			path = CacheManager;
+			sourceTree = "<group>";
+		};
 		D5ADF0861C77133B00597CA6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D0FC4D82223947AA0049E694 /* CacheManager */,
 				0A4A05F21E0405070046E1BE /* WeexScanner */,
 				0A3122A61E1F41E30041B972 /* WeexConfig */,
 				775BEE811C1E8ECC008D1629 /* AppDelegate.h */,
@@ -321,6 +337,7 @@
 				TargetAttributes = {
 					775BEE7A1C1E8ECC008D1629 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 					775BEE931C1E8ECC008D1629 = {
@@ -514,7 +531,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FC4D85223947D70049E694 /* WXCacheManager.swift in Sources */,
 				0A3122AF1E1F41E30041B972 /* WeexSDKManager.m in Sources */,
+				D0FC4D8722394C310049E694 /* CacheDownLoad.swift in Sources */,
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
 				0A4A05F91E0405070046E1BE /* UIViewController+WXDemoNaviBar.m in Sources */,
@@ -643,6 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
@@ -675,6 +695,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo/CacheManager/WeexDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -685,6 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
@@ -717,6 +741,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo/CacheManager/WeexDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -724,6 +750,7 @@
 		775BEEAC1C1E8ECC008D1629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WeexDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -737,6 +764,7 @@
 		775BEEAD1C1E8ECC008D1629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WeexDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
