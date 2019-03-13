@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "WeexSDKManager.h"
 #import "WeexDemo-Swift.h"
+#import <SSZipArchive/ZipArchive.h>
 
 @interface AppDelegate ()
 @end
@@ -33,6 +34,24 @@
         [self startSplashScreen];
     });
 
+//    [self unZip];
+//    [self downloadCase];
+
+    return YES;
+}
+
+// 解压文件
+
+- (void)unZip {
+    {
+        NSString *zipPath = [[NSBundle mainBundle] pathForResource:@"file" ofType:@"zip"];
+        NSString *unzipPath = [[WXCacheManager instance] getAppPath:@"testid"];
+        [SSZipArchive unzipFileAtPath:zipPath toDestination:unzipPath];
+    }
+}
+
+// 下载文件
+- (void)downloadCase {
     {
         NSString *appPath = [[WXCacheManager instance] getAppPath: @"testid"];
         NSString *fileName = @"package-lock.json";
@@ -46,8 +65,6 @@
         CacheDownLoad *downManager = [[CacheDownLoad alloc] init:appPath fileName:fileName];
         [downManager downLoadFileWithUrl:[NSURL URLWithString:@"http://192.168.0.102:8080/index.html"] toPath:[[WXCacheManager instance] getRootPath]];
     }
-
-    return YES;
 }
 
 #pragma mark 
