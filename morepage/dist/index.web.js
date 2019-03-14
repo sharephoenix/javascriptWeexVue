@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  height: 5.33333rem;\n  background-color: red;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  height: 1.33333rem;\n  background-color: red;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n", ""]);
 
 // exports
 
@@ -22933,6 +22933,9 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
 //
 //
 //
@@ -23001,15 +23004,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "right-item-color": "#EA80FF"
     }
   }), _vm._v(" "), _c('figure', {
-    ref: "logoimage",
+    ref: "logoimagevvs",
     staticClass: " weex-el weex-image",
     staticStyle: {
       "width": "100px",
-      "height": "200we"
+      "height": "200we",
+      "background-color": "red"
     },
     attrs: {
-      "src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png",
-      "data-img-src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png",
+      "src": "file:///images/flower.png",
+      "data-img-src": "file:///images/flower.png",
       "weex-type": "image",
       "data-evt-click": "",
       "data-evt-name": ""
@@ -23095,7 +23099,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("change input hide")])]), _vm._v(" "), _c('web', {
+  }, [_vm._v("change input hide")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('figure', {
+    ref: "logoimagevvs",
+    staticClass: "image-div weex-el weex-image",
+    attrs: {
+      "src": "file:///images/flower.png",
+      "data-img-src": "file:///images/flower.png",
+      "weex-type": "image",
+      "data-evt-click": "",
+      "data-evt-name": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "name": _vm.alex,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.abc($event)
+      }
+    }
+  })]), _vm._v(" "), _c('web', {
     staticClass: "web-cls",
     attrs: {
       "src": _vm.srcs

@@ -2792,7 +2792,7 @@ module.exports = __vue_exports__
 
 module.exports = {
   "web-cls": {
-    "height": "400wx",
+    "height": "100wx",
     "backgroundColor": "#FF0000"
   },
   "texmessaget": {
@@ -2817,6 +2817,10 @@ module.exports = {
   "button-text": {
     "lineHeight": "33wx",
     "textAlign": "center"
+  },
+  "image-div": {
+    "height": "200wx",
+    "backgroundColor": "#FF0000"
   }
 }
 
@@ -2830,6 +2834,9 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
 //
 //
 //
@@ -2898,13 +2905,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "rightItemColor": "#EA80FF"
     }
   }), _c('image', {
-    ref: "logoimage",
+    ref: "logoimagevvs",
     staticStyle: {
       width: "100wx",
-      height: "200we"
+      height: "200we",
+      backgroundColor: "red"
     },
     attrs: {
-      "src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png"
+      "src": "file:///images/flower.png"
     },
     on: {
       "click": _vm.abc,
@@ -2944,7 +2952,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["button-text"]
-  }, [_vm._v("change input hide")])]), _c('web', {
+  }, [_vm._v("change input hide")])]), _c('div', [_c('image', {
+    ref: "logoimagevvs",
+    staticClass: ["image-div"],
+    attrs: {
+      "src": "file:///images/flower.png"
+    },
+    on: {
+      "click": _vm.abc,
+      "name": _vm.alex
+    }
+  })]), _c('web', {
     staticClass: ["web-cls"],
     attrs: {
       "src": _vm.srcs

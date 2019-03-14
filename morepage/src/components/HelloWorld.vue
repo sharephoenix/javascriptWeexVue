@@ -1,12 +1,15 @@
 <template>
   <scroller>
     <wxc-navpage title="首页" background-color="#3683FF"  onclick="onClickTitle" title-color="#FF0000" left-item-title="搜索" left-item-color="#EA80FF" right-item-title="跳转" right-item-color="#EA80FF"></wxc-navpage>
-
-    <image ref="logoimage" style="width: 100wx; height: 200we;" src="http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png" @click="abc" @name="alex"></image>
+    <image ref="logoimagevvs" style="width: 100wx; height: 200we; background-color: red;" src="file:///images/flower.png" @click="abc" @name="alex"></image>
+    <!-- <image ref="logoimage" style="width: 100wx; height: 200we;" src="http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png" @click="abc" @name="alex"></image> -->
     <text class="message" style="font-size: 10wx;" @click="abc" @bbb="bbb">Now, let's use Vue.js to build your Weex app.lk;lk;lk</text>
-    <input ref="inputRef" class="input" v-model="inputValue"> </input>
+    <input ref="inputRef" class="input" v-model="inputValue">
     <div class="button" @click="toFocus"><text class="button-text">change input focus</text></div>
     <div class="button" @click="toHide"><text class="button-text">change input hide</text></div>
+  <div>
+      <image ref="logoimagevvs" class="image-div" src="file:///images/flower.png" @click="abc" @name="alex"></image>
+  </div>
     <web class="web-cls" :src="srcs"></web>
   </scroller>
 </template>
@@ -50,7 +53,7 @@ export default {
 </script>
 <style scoped>
   .web-cls {
-    height: 400wx;
+    height: 100wx;
     background-color: red;
   }
   .texmessaget {
@@ -78,5 +81,10 @@ export default {
   .button-text {
     line-height: 33wx;
     text-align: center;
+  }
+
+  .image-div {
+    height: 200wx;
+    background-color: red;
   }
 </style>

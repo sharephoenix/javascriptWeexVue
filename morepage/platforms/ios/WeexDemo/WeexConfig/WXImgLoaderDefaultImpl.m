@@ -8,6 +8,7 @@
 
 #import "WXImgLoaderDefaultImpl.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "WeexDemo-Swift.h"
 
 #define MIN_IMAGE_WIDTH 36
 #define MIN_IMAGE_HEIGHT 36
@@ -39,24 +40,37 @@
 - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
 {
 
-    if (userInfo[@"instanceId"] != nil && [url hasPrefix:@"/"]) {
+    if (userInfo[@"instanceId"] != nil && [url hasPrefix:@"file:///"]) {
         // 本地图片加载
-
-        return;
-    }
-    id vcg = [WXSDKManager instanceForID:userInfo[@"instanceId"]].viewController;
-    NSLog(@"%@", vcg);
-    if ([url hasPrefix:@"//"]) {
-        url = [@"http:" stringByAppendingString:url];
+        NSString *appPath = [[WXCacheManager instance] getAppPath: @"testid"];
+        NSURL *fileUrl = [NSURL URLWithString:url];
+        appPath = [appPath stringByAppendingString:[NSString stringWithFormat:@"%@", fileUrl.path]];
+        fileUrl = [NSURL fileURLWithPath:appPath];
+        UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:fileUrl]];
+        completedBlock(image, nil, image == nil ? NO : YES);
+        return (id<WXImageOperationProtocol>)[LocalImage new];
     }
     return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+
         if (completedBlock) {
             completedBlock(image, error, finished);
         }
     }];
 }
 
+
+@end
+
+@interface LocalImage()<WXImageOperationProtocol>
+
+@end
+
+@implementation LocalImage
+
+- (void)cancel {
+
+}
 
 @end
