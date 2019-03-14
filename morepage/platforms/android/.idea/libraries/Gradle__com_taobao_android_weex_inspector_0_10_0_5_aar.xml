@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.taobao.android:weex_inspector:0.10.0.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_inspector-0.10.0.5.aar/239fa577056c104dd5ec1d61879b5f65/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_inspector-0.10.0.5.aar/239fa577056c104dd5ec1d61879b5f65/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_inspector-0.10.0.5.aar/3ce32bddc9ed3427609f2c67c9f47ab3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_inspector-0.10.0.5.aar/3ce32bddc9ed3427609f2c67c9f47ab3/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
