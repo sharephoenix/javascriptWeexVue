@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <image :src="logo" class="logo" />
-    <div class="image-cls"></div>
     <router-view/>
   </div>
 </template>

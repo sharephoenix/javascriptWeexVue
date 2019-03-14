@@ -2792,8 +2792,9 @@ module.exports = __vue_exports__
 
 module.exports = {
   "web-cls": {
-    "height": "100wx",
-    "backgroundColor": "#FF0000"
+    "height": "700wx",
+    "backgroundColor": "#FF0000",
+    "flex": 1
   },
   "texmessaget": {
     "color": "#FF0000",
@@ -2850,6 +2851,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var navigator = weex.requireModule('navigator');
 var localWeb = weex.requireModule('localWeb');
@@ -2864,6 +2866,15 @@ exports.default = {
   },
 
   methods: {
+    postMessage: function postMessage(val) {
+      console.log('vpostMessagepostMessagepostMessagepostMessage' + val);
+    },
+    firstEvent: function firstEvent() {
+      console.log('firstEventfirstEventfirstEvent');
+    },
+    secondEvent: function secondEvent() {
+      console.log('secondEventsecondEventsecondEvent');
+    },
     reloadWeb: function reloadWeb() {
       this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
       // '?q=score%3d0%26desc%3d阿嫂'
@@ -2893,81 +2904,17 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', [_c('wxc-navpage', {
-    attrs: {
-      "title": "首页",
-      "backgroundColor": "#3683FF",
-      "onclick": "onClickTitle",
-      "titleColor": "#FF0000",
-      "leftItemTitle": "搜索",
-      "leftItemColor": "#EA80FF",
-      "rightItemTitle": "跳转",
-      "rightItemColor": "#EA80FF"
-    }
-  }), _c('image', {
-    ref: "logoimagevvs",
-    staticStyle: {
-      width: "100wx",
-      height: "200we",
-      backgroundColor: "red"
-    },
-    attrs: {
-      "src": "file:///images/flower.png"
-    },
-    on: {
-      "click": _vm.abc,
-      "name": _vm.alex
-    }
-  }), _c('text', {
-    staticClass: ["message"],
-    staticStyle: {
-      fontSize: "10wx"
-    },
-    on: {
-      "click": _vm.abc,
-      "bbb": _vm.bbb
-    }
-  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _c('input', {
-    ref: "inputRef",
-    staticClass: ["input"],
-    attrs: {
-      "value": (_vm.inputValue)
-    },
-    on: {
-      "input": function($event) {
-        _vm.inputValue = $event.target.attr.value
-      }
-    }
-  }), _c('div', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toFocus
-    }
-  }, [_c('text', {
-    staticClass: ["button-text"]
-  }, [_vm._v("change input focus")])]), _c('div', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toHide
-    }
-  }, [_c('text', {
-    staticClass: ["button-text"]
-  }, [_vm._v("change input hide")])]), _c('div', [_c('image', {
-    ref: "logoimagevvs",
-    staticClass: ["image-div"],
-    attrs: {
-      "src": "file:///images/flower.png"
-    },
-    on: {
-      "click": _vm.abc,
-      "name": _vm.alex
-    }
-  })]), _c('web', {
+  return _c('scroller', [_c('web', {
     staticClass: ["web-cls"],
     attrs: {
       "src": _vm.srcs
+    },
+    on: {
+      "message": _vm.postMessage,
+      "firstEvent": _vm.firstEvent,
+      "secondEvent": _vm.secondEvent
     }
-  })], 1)
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3061,7 +3008,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
 
 exports.default = {
   name: 'App',
@@ -3084,8 +3030,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": _vm.logo
     }
-  }), _c('div', {
-    staticClass: ["image-cls"]
   }), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
