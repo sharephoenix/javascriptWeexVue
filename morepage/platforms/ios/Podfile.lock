@@ -3,6 +3,7 @@ PODS:
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - SocketRocket (0.4.2)
+  - SSZipArchive (2.1.4)
   - WeexPluginLoader (0.0.1.9.1):
     - WeexSDK
   - WeexSDK (0.20.1)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - SDWebImage (= 3.7.5)
   - SocketRocket (= 0.4.2)
+  - SSZipArchive (~> 2.1.4)
   - WeexPluginLoader
   - WeexSDK
 
@@ -17,15 +19,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SDWebImage
     - SocketRocket
+    - SSZipArchive
     - WeexPluginLoader
     - WeexSDK
 
 SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
   WeexSDK: ced3f2ef2f0cb48d1d76fd2f03c645572c632d21
 
-PODFILE CHECKSUM: ec0e31166e143bcabfaa1962c9ed874f00c462e6
+PODFILE CHECKSUM: 71576030c6d1d40c8e20afece31d5ad47fe43627
 
 COCOAPODS: 1.5.3
