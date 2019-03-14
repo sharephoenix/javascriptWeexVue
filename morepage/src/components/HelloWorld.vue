@@ -7,19 +7,28 @@
     <input ref="inputRef" class="input" v-model="inputValue"> </input>
     <div class="button" @click="toFocus"><text class="button-text">change input focus</text></div>
     <div class="button" @click="toHide"><text class="button-text">change input hide</text></div>
+    <web class="web-cls" :src="srcs"></web>
   </scroller>
 </template>
 
 <script>
 const navigator = weex.requireModule('navigator')
+var localWeb = weex.requireModule('localWeb')
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      inputValue: ''
+      inputValue: '',
+      source: '',
+      srcs: ''
     }
   },
   methods: {
+    reloadWeb () {
+      this.srcs = localWeb.getLocalUrl({score: '1001',desc: '小王GGb'})
+      // '?q=score%3d0%26desc%3d阿嫂'
+      console.log('url::::' + this.srcs)
+    },
     getInitialData () {},
     toFocus () {
       // 下面一行是为了兼容 Android
@@ -35,10 +44,15 @@ export default {
   },
   created () {
     navigator.setNavBarTitle({title: 'title'})
+    this.reloadWeb()
   }
 }
 </script>
 <style scoped>
+  .web-cls {
+    height: 400wx;
+    background-color: red;
+  }
   .texmessaget {
     color: red;
     font-size: 33wx;

@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <image :src="logo" class="logo" />
+    <div class="image-cls"></div>
     <router-view/>
   </div>
 </template>
@@ -33,5 +34,10 @@ export default {
     margin: 30px;
     font-size: 32px;
     color: #727272;
+  }
+
+  .image-cls {
+    height: 300wx;
+    background: url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png');
   }
 </style>

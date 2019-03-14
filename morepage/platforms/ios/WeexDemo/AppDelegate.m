@@ -34,14 +34,13 @@
         [self startSplashScreen];
     });
 
-//    [self unZip];
+    [self unZip];
 //    [self downloadCase];
 
     return YES;
 }
 
 // 解压文件
-
 - (void)unZip {
     {
         NSString *zipPath = [[NSBundle mainBundle] pathForResource:@"file" ofType:@"zip"];

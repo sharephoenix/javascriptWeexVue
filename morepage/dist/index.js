@@ -2769,7 +2769,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-469af010"
@@ -2791,6 +2791,10 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "web-cls": {
+    "height": "400wx",
+    "backgroundColor": "#FF0000"
+  },
   "texmessaget": {
     "color": "#FF0000",
     "fontSize": "33wx"
@@ -2838,17 +2842,26 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var navigator = weex.requireModule('navigator');
+var localWeb = weex.requireModule('localWeb');
 exports.default = {
   name: 'HelloWorld',
   data: function data() {
     return {
-      inputValue: ''
+      inputValue: '',
+      source: '',
+      srcs: ''
     };
   },
 
   methods: {
+    reloadWeb: function reloadWeb() {
+      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
+      // '?q=score%3d0%26desc%3d阿嫂'
+      console.log('url::::' + this.srcs);
+    },
     getInitialData: function getInitialData() {},
     toFocus: function toFocus() {
       // 下面一行是为了兼容 Android
@@ -2864,6 +2877,7 @@ exports.default = {
   },
   created: function created() {
     navigator.setNavBarTitle({ title: 'title' });
+    this.reloadWeb();
   }
 };
 
@@ -2930,7 +2944,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["button-text"]
-  }, [_vm._v("change input hide")])])], 1)
+  }, [_vm._v("change input hide")])]), _c('web', {
+    staticClass: ["web-cls"],
+    attrs: {
+      "src": _vm.srcs
+    }
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2961,7 +2980,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/phoenix/git550709871/javascriptWeexVue/morepage/src/index.vue"
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-2964abc9"
@@ -3000,6 +3019,10 @@ module.exports = {
     "marginLeft": "30",
     "fontSize": "32",
     "color": "#727272"
+  },
+  "image-cls": {
+    "height": "300wx",
+    "background": "url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png')"
   }
 }
 
@@ -3013,6 +3036,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -3042,6 +3066,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "src": _vm.logo
     }
+  }), _c('div', {
+    staticClass: ["image-cls"]
   }), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true

@@ -31,12 +31,21 @@
 @end
 
 @implementation WXImgLoaderDefaultImpl
+@synthesize weexInstance;
 
 #pragma mark -
 #pragma mark WXImgLoaderProtocol
 
 - (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
 {
+
+    if (userInfo[@"instanceId"] != nil && [url hasPrefix:@"/"]) {
+        // 本地图片加载
+
+        return;
+    }
+    id vcg = [WXSDKManager instanceForID:userInfo[@"instanceId"]].viewController;
+    NSLog(@"%@", vcg);
     if ([url hasPrefix:@"//"]) {
         url = [@"http:" stringByAppendingString:url];
     }
@@ -48,5 +57,6 @@
         }
     }];
 }
+
 
 @end

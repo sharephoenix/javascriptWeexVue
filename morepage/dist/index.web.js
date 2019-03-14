@@ -22827,7 +22827,7 @@ var Component = __webpack_require__(4)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/phoenix/git550709871/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
+Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] HelloWorld.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  height: 5.33333rem;\n  background-color: red;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -22945,17 +22945,26 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var navigator = weex.requireModule('navigator');
+var localWeb = weex.requireModule('localWeb');
 exports.default = {
   name: 'HelloWorld',
   data: function data() {
     return {
-      inputValue: ''
+      inputValue: '',
+      source: '',
+      srcs: ''
     };
   },
 
   methods: {
+    reloadWeb: function reloadWeb() {
+      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
+      // '?q=score%3d0%26desc%3d阿嫂'
+      console.log('url::::' + this.srcs);
+    },
     getInitialData: function getInitialData() {},
     toFocus: function toFocus() {
       // 下面一行是为了兼容 Android
@@ -22971,6 +22980,7 @@ exports.default = {
   },
   created: function created() {
     navigator.setNavBarTitle({ title: 'title' });
+    this.reloadWeb();
   }
 };
 
@@ -23085,7 +23095,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("change input hide")])])], 1)
+  }, [_vm._v("change input hide")])]), _vm._v(" "), _c('web', {
+    staticClass: "web-cls",
+    attrs: {
+      "src": _vm.srcs
+    }
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23116,7 +23131,7 @@ var Component = __webpack_require__(4)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/phoenix/git550709871/javascriptWeexVue/morepage/src/index.vue"
+Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -23174,7 +23189,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n.image-cls[data-v-296d580a] {\n  height: 4rem;\n  background: url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png');\n}\n", ""]);
 
 // exports
 
@@ -23189,6 +23204,7 @@ exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -23222,6 +23238,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": _vm.logo,
       "data-img-src": _vm.logo,
       "weex-type": "image"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "image-cls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
     }
   }), _vm._v(" "), _c('router-view')], 1)
 },staticRenderFns: []}
