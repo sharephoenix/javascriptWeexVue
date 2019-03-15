@@ -250,6 +250,7 @@ WX_EXPORT_METHOD(@selector(goForward))
 
     NSString *code = [NSString stringWithFormat:@"(function (){window.dispatchEvent(new MessageEvent('message', %@));}())", json];
 //    [_jsContext evaluateScript:code];
+    // 替换，不然可能会主线程原子操作的s阻塞问题
     [_jsContext performSelectorOnMainThread:@selector(evaluateScript:) withObject:code waitUntilDone:NO];
 }
 
