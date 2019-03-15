@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'WKWebView',
   data () {
     return {
       msg: 'message'
