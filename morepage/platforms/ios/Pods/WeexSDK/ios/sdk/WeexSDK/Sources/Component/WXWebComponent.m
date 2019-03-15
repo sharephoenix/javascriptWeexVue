@@ -249,7 +249,8 @@ WX_EXPORT_METHOD(@selector(goForward))
     NSString *json = [WXUtility JSONString:initDic];
 
     NSString *code = [NSString stringWithFormat:@"(function (){window.dispatchEvent(new MessageEvent('message', %@));}())", json];
-    [_jsContext evaluateScript:code];
+//    [_jsContext evaluateScript:code];
+    [_jsContext performSelectorOnMainThread:@selector(evaluateScript:) withObject:code waitUntilDone:NO];
 }
 
 #pragma mark Webview Delegate

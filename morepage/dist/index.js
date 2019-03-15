@@ -2792,9 +2792,8 @@ module.exports = __vue_exports__
 
 module.exports = {
   "web-cls": {
-    "height": "700wx",
     "backgroundColor": "#FF0000",
-    "flex": 1
+    "height": "800"
   },
   "texmessaget": {
     "color": "#FF0000",
@@ -2866,8 +2865,22 @@ exports.default = {
   },
 
   methods: {
-    postMessage: function postMessage(val) {
-      console.log('vpostMessagepostMessagepostMessagepostMessage' + val);
+    postMessage: function postMessage(e) {
+      // web 调用 native 的方法
+      console.log('-----------------');
+      console.log(e.type); // message
+      console.log(e.origin); // event
+      console.log(JSON.stringify(e.data)); // params
+      console.log('-----------------');
+      // html 调用方法
+      // window.postMessage({'params01': 'params011111',
+      //                 'params02': 'params02222'}, 'event');
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      // html 直接定义全局方法
+      // function MessageEvent(e, data) {
+      // }
+      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
     },
     firstEvent: function firstEvent() {
       console.log('firstEventfirstEventfirstEvent');
@@ -2905,16 +2918,21 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('scroller', [_c('web', {
+    ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": _vm.srcs
+      "src": "http://192.168.3.127:9003/"
     },
     on: {
       "message": _vm.postMessage,
       "firstEvent": _vm.firstEvent,
       "secondEvent": _vm.secondEvent
     }
-  })])
+  }), _c('div', {
+    on: {
+      "click": _vm.postMessageToWeb
+    }
+  }, [_c('text', [_vm._v(" postmessage to webs ")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  height: 9.33333rem;\n  background-color: red;\n  flex: 1;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n", ""]);
+exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  background-color: red;\n  height: 10.66667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n", ""]);
 
 // exports
 
@@ -22964,8 +22964,22 @@ exports.default = {
   },
 
   methods: {
-    postMessage: function postMessage(val) {
-      console.log('vpostMessagepostMessagepostMessagepostMessage' + val);
+    postMessage: function postMessage(e) {
+      // web 调用 native 的方法
+      console.log('-----------------');
+      console.log(e.type); // message
+      console.log(e.origin); // event
+      console.log(JSON.stringify(e.data)); // params
+      console.log('-----------------');
+      // html 调用方法
+      // window.postMessage({'params01': 'params011111',
+      //                 'params02': 'params02222'}, 'event');
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      // html 直接定义全局方法
+      // function MessageEvent(e, data) {
+      // }
+      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
     },
     firstEvent: function firstEvent() {
       console.log('firstEventfirstEventfirstEvent');
@@ -23003,9 +23017,10 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('scroller', [_c('web', {
+    ref: "rootWeb",
     staticClass: "web-cls",
     attrs: {
-      "src": _vm.srcs,
+      "src": "http://192.168.3.127:9003/",
       "data-evt-message": "",
       "data-evt-firstEvent": "",
       "data-evt-secondEvent": ""
@@ -23015,7 +23030,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "firstEvent": _vm.firstEvent,
       "secondEvent": _vm.secondEvent
     }
-  })], 1)
+  }), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.postMessageToWeb($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" postmessage to webs ")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
