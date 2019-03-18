@@ -1,6 +1,6 @@
 <template>
   <scroller>
-    <web ref="rootWeb" class="web-cls" src="http://192.168.3.127:9003/?v=777" @message="postMessage" @firstEvent="firstEvent" @secondEvent="secondEvent"></web>
+    <web ref="rootWeb" class="web-cls" src="http://192.168.3.127:9003/?v=99" @message="postMessage" @firstEvent="firstEvent" @secondEvent="secondEvent"></web>
     <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessage to web</text></div>
     
     <!-- <wxc-navpage title="首页" background-color="#3683FF"  onclick="onClickTitle" title-color="#FF0000" left-item-title="搜索" left-item-color="#EA80FF" right-item-title="跳转" right-item-color="#EA80FF"></wxc-navpage>
