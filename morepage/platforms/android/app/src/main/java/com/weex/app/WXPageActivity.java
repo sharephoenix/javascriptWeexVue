@@ -121,6 +121,7 @@ public class WXPageActivity extends AbsWeexActivity implements
       getSupportActionBar().hide();
     }
     loadUrl(url);
+    this.setTitle("this my title");
   }
 
   private String getUrl(Uri uri) {
