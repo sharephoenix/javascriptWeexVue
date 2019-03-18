@@ -3,8 +3,6 @@
     <text>top</text>
     <image :src="logo" class="logo" />
     <router-view/>
-    <text>bottom</text>
-    <image :src="logo" class="logo" />
   </div>
 </template>
 

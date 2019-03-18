@@ -495,11 +495,12 @@ public abstract class AbsWeexActivity extends AppCompatActivity implements IWXRe
 //        if (mRefreshListener != null) {
 //          mRefreshListener.onRefresh();
 //        }
-//      } else if (WXSDKEngine.JS_FRAMEWORK_RELOAD.equals(intent.getAction())) {
-//        if (mReloadListener != null) {
-//          mReloadListener.onReload();
-//        }
-//      }
+//      } else
+      if (WXSDKEngine.JS_FRAMEWORK_RELOAD.equals(intent.getAction())) {
+        if (mReloadListener != null) {
+          mReloadListener.onReload();
+        }
+      }
     }
   }
 }
