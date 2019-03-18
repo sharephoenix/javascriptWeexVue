@@ -1,3 +1,46 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        <script language="javascript">
+
+        //JS执行window.webkit.messageHandlers.Share.postMessage(<messageBody>)
+        function shareClick() {
+            window.webkit.messageHandlers.message.postMessage({title:'测试分享的标题',content:'测试分享的内容',url:'https://github.com/maying1992'});
+        }
+        
+        //分享回调结果显示
+        function shareResult(channel_id,share_channel,share_url) {
+            var content = channel_id+","+share_channel+","+share_url;
+            alert(content);
+            document.getElementById("returnValue").value = content;
+        }
+        
+        //JS执行window.webkit.messageHandlers.Camera.postMessage(<messageBody>)
+        function cameraClick() {
+            window.webkit.messageHandlers.Camera.postMessage(null);
+        }
+        
+        //调用相册回调结果显示
+        function cameraResult(result) {
+            alert(result);
+            document.getElementById("returnValue").value = result;
+        }
+            </script>
+        </head>
+
+<body>
+    <h1>这是按钮调用</h1>
+    <input type="button" value="分享" onclick="shareClick()" />
+    <input type="button" value="相机" onclick="cameraClick()" />
+
+    <h1>回调展示区</h1>
+    <textarea id ="returnValue" type="value" rows="5" cols="40">
+        
+    </textarea>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +50,30 @@
   <title>测试交互界面</title>
   <link rel="stylesheet" href="./index.css">
   <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><!-- 
+   <script language="javascript">
+
+	//JS执行window.webkit.messageHandlers.Share.postMessage(<messageBody>)
+	function shareClick() {
+	    window.webkit.messageHandlers.message.postMessage({title:'测试分享的标题',content:'测试分享的内容',url:'https://github.com/maying1992'});
+	}
+        
+            </script> -->
 </head>
 <body>
+  <input id="returnValue" type="text" name="">
  	<div class="btn-div">
  		<button onclick="alertgs();">按钮名称</button>
  	</div>
  	<div class="btn-div">
  		<button onclick="postMessageToNative()">点击 post to native</button>
  	</div>
+ 	<div class="btn-div">
+ 		<button onclick="shareClick()">点击调用 iOS handler</button>
+ 	</div>
+ 	<script src="./index.js"></script>
 </body>
-<script src="./index.js"></script>
+
 </html>

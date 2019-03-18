@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -8509,54 +8509,10 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(7).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(13)
-}
-var Component = __webpack_require__(5)(
-  /* script */
-  __webpack_require__(16),
-  /* template */
-  __webpack_require__(17),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-5a260b5e",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] HelloWorld.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a260b5e", Component.options)
-  } else {
-    hotAPI.reload("data-v-5a260b5e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /*
@@ -8638,7 +8594,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -8866,7 +8822,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -8963,7 +8919,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8973,7 +8929,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _weexVueRender = __webpack_require__(10);
+var _weexVueRender = __webpack_require__(9);
 
 var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 
@@ -8984,7 +8940,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(10),
     router = _require.router;
 
 var App = __webpack_require__(18);
@@ -8993,7 +8949,7 @@ new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App
 router.push('/');
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -9049,7 +9005,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(8);
+__webpack_require__(7);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -9063,7 +9019,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -9253,10 +9209,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(8)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9446,7 +9402,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20188,7 +20144,7 @@ console.log('START WEEX VUE RENDER: 1.0.36, Build 2018-12-29 17:52.');
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20203,11 +20159,11 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(12);
+var _vueRouter = __webpack_require__(11);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _HelloWorld = __webpack_require__(2);
+var _HelloWorld = __webpack_require__(12);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
@@ -20224,7 +20180,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22850,6 +22806,50 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(13)
+}
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(16),
+  /* template */
+  __webpack_require__(17),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-5a260b5e",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] HelloWorld.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5a260b5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5a260b5e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22860,7 +22860,7 @@ var content = __webpack_require__(14);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("2365c693", content, false, {});
+var update = __webpack_require__(3)("2365c693", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -22879,12 +22879,12 @@ if(false) {
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.body[data-v-5a260b5e] {\n  background-color: blue;\n  width: 1.33333rem;\n  height: 6.66667rem;\n}\n.web-cls[data-v-5a260b5e] {\n    background-color: red;\n    height: 10.66667rem;\n}\n.button-cls[data-v-5a260b5e] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n    color: red;\n    font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n    height: 0.44rem;\n    background-color: lightgray;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n    height: 2.66667rem;\n    background-color: red;\n}\n.text-cls[data-v-5a260b5e] {\n    background-color: red;\n    font-size: 0.21333rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-5a260b5e] {\n}\n.web-cls[data-v-5a260b5e] {\n    background-color: red;\n    height: 10.66667rem;\n}\n.button-cls[data-v-5a260b5e] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n    color: red;\n    font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n    height: 0.44rem;\n    background-color: lightgray;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n    height: 2.66667rem;\n    background-color: red;\n}\n.text-cls[data-v-5a260b5e] {\n    background-color: red;\n    font-size: 0.21333rem;\n}\n", ""]);
 
 // exports
 
@@ -22932,7 +22932,6 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
 //
 //
 //
@@ -23019,12 +23018,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('scroller', {
     staticClass: "body",
     attrs: {}
+  }, [_c('web', {
+    ref: "rootWeb",
+    staticClass: "web-cls",
+    attrs: {
+      "src": "http://192.168.3.127:9003/?v=998",
+      "data-evt-message": "",
+      "data-evt-firstEvent": "",
+      "data-evt-secondEvent": ""
+    },
+    nativeOn: {
+      "message": _vm.postMessage,
+      "firstEvent": _vm.firstEvent,
+      "secondEvent": _vm.secondEvent
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "button-cls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.postMessageToWeb($event)
+      }
+    }
   }, [_c('p', {
-    staticClass: " weex-el weex-text",
+    staticClass: "text-cls weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("cococcoccococooco")])])
+  }, [_vm._v(" postmessage to web")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23043,7 +23069,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(19)
 }
-var Component = __webpack_require__(5)(
+var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(21),
   /* template */
@@ -23089,7 +23115,7 @@ var content = __webpack_require__(20);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("75f9b35a", content, false, {});
+var update = __webpack_require__(3)("75f9b35a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23108,7 +23134,7 @@ if(false) {
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -23129,7 +23155,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _HelloWorld = __webpack_require__(2);
+var _HelloWorld = __webpack_require__(12);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
@@ -23152,8 +23178,6 @@ exports.default = {
 //
 //
 //
-//
-//
 
 /***/ }),
 /* 22 */
@@ -23165,19 +23189,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('p', {
-    staticClass: " weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("top")]), _vm._v(" "), _c('figure', {
-    staticClass: "logo weex-el weex-image",
-    attrs: {
-      "src": _vm.logo,
-      "data-img-src": _vm.logo,
-      "weex-type": "image"
-    }
-  }), _vm._v(" "), _c('router-view')], 1)
+  }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

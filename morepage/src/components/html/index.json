@@ -1,1 +1,15 @@
-{"data":{"message":"essageContent"},"timestamp":1552628178600,"type":"message","origin":"origincontent","target":{"ref":"101","type":"web","attr":{"@styleScope":"data-v-469af010","src":"http://192.168.3.127:9003/"},"style":{"backgroundColor":"#FF0000","flex":1},"event":["message","firstEvent","secondEvent"]},"currentTarget":{"ref":"101","type":"web","attr":{"@styleScope":"data-v-469af010","src":"http://192.168.3.127:9003/"},"style":{"backgroundColor":"#FF0000","flex":1},"event":["message","firstEvent","secondEvent"]}}
+{"data":
+	{"message":"essageContent"},
+	"timestamp":1552628178600,
+	"type":"message",
+	"origin":"origincontent",
+	"target":
+	{"ref":"101","type":"web","attr":
+		{"@styleScope":"data-v-469af010","src":"http://192.168.3.127:9003/"},
+		"style":{"backgroundColor":"#FF0000","flex":1},
+	"event":["message","firstEvent","secondEvent"]},
+	"currentTarget":{"ref":"101","type":"web","attr":{"@styleScope":"data-v-469af010","src":"http://192.168.3.127:9003/"},"style":{"backgroundColor":"#FF0000","flex":1}
+
+,"event":["message","firstEvent","secondEvent"]
+}
+}

@@ -1,7 +1,5 @@
 <template>
   <div class="wrapper">
-    <text>top</text>
-    <image :src="logo" class="logo" />
     <router-view/>
   </div>
 </template>
