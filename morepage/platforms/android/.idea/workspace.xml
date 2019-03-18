@@ -10,40 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9469c24-8ab1-4f33-b50a-6b5a78b25db5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_alibaba_fastjson_1_2_8_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_taobao_android_weex_inspector_0_18_10_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_taobao_android_weex_inspector_0_18_68_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_taobao_android_weex_inspector_0_20_3_0_beta_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_taobao_android_weex_sdk_0_20_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_taobao_android_weex_sdk_0_20_3_0_beta_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/captures/com.weex.app_2019.03.18_16.39.li" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/captures/com.weex.app_2019.03.18_16.44.li" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.temp/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../.temp/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mvall.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../mvall.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/annotation-processors.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/dist/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/dist/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/bundlejs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/bundlejs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/bundlejs/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/bundlejs/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/components/HelloWorld.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,21 +104,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="6" />
-          <entry key="java" value="115" />
+          <entry key="gradle" value="15" />
+          <entry key="java" value="118" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="6" />
-          <entry key="JAVA" value="115" />
+          <entry key="Groovy" value="15" />
+          <entry key="JAVA" value="118" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
           <entry key="gradle" value="2" />
-          <entry key="java" value="1" />
+          <entry key="java" value="2" />
           <entry key="li" value="2" />
         </counts>
       </usages-collector>
@@ -148,7 +126,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="2" />
           <entry key="Layout Inspector" value="2" />
         </counts>
       </usages-collector>
@@ -156,14 +134,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="168" column="12" lean-forward="true" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+            <state relative-caret-position="181">
+              <caret line="239" column="17" selection-start-line="239" selection-start-column="17" selection-end-line="239" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5406#5424#0" expanded="true" />
                 <element signature="e#6355#6396#0" expanded="true" />
               </folding>
             </state>
@@ -171,10 +148,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.taobao.android/weex_sdk/0.16.0/7f4e344a9b06f973d6569e6aef9820278851b112/weex_sdk-0.16.0-sources.jar!/com/taobao/weex/WXRenderErrorCode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="282" selection-start-line="282" selection-end-line="282" />
+            <state relative-caret-position="118">
+              <caret line="493" column="8" selection-start-line="493" selection-start-column="8" selection-end-line="501" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#13188#13189#0" expanded="true" />
@@ -184,11 +170,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="61" column="51" lean-forward="true" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+            <state relative-caret-position="229">
+              <caret line="73" column="62" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -219,18 +205,6 @@
             </state>
           </provider>
           <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/weex/app/WXApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -268,8 +242,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ACTION_VIEW</find>
-      <find>createWeexInstance</find>
       <find>modal</find>
       <find>registerModule</find>
       <find>WXText</find>
@@ -292,11 +264,13 @@
       <find>oncreat</find>
       <find>8086</find>
       <find>getJavaCompiler</find>
-      <find>IWXDebugProxy</find>
       <find>&lt;artifactId&gt;weex_inspector</find>
       <find>maven</find>
-      <find>inspector</find>
       <find>WX_NETWORK_ERROR</find>
+      <find>IWXDebugProxy</find>
+      <find>g</find>
+      <find>WXDebugProx</find>
+      <find>inspector</find>
       <find>WXRenderErrorCode</find>
     </findStrings>
   </component>
@@ -336,10 +310,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/weex/app/util/AppConfig.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java" />
       </list>
     </option>
   </component>
@@ -523,6 +497,8 @@
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-mi_6x-7b6ccc16" />
     <property name="DEBUGGABLE_PROCESS" value="com.weex.app" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android.project.structure.last.selected" value="app" />
+    <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="device.picker.selection" value="7b6ccc16" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -615,11 +591,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.32761088" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.32761088" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
@@ -634,7 +609,7 @@
       <window_info anchor="bottom" id="Run" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="8" visible="true" weight="0.2180723" />
+      <window_info active="true" anchor="bottom" id="Build" order="8" visible="true" weight="0.44457832" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -658,13 +633,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java</url>
-          <line>168</line>
+          <line>167</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java</url>
-          <line>163</line>
+          <line>162</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -672,9 +647,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -963,10 +935,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.taobao.android/weex_sdk/0.16.0/7f4e344a9b06f973d6569e6aef9820278851b112/weex_sdk-0.16.0-sources.jar!/com/taobao/weex/WXRenderErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/weex/app/AbsWeexActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="282" selection-start-line="282" selection-end-line="282" />
+        <state relative-caret-position="118">
+          <caret line="493" column="8" selection-start-line="493" selection-start-column="8" selection-end-line="501" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#13188#13189#0" expanded="true" />
@@ -975,29 +961,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="229">
+          <caret line="73" column="62" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/weex/app/WXPageActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="168" column="12" lean-forward="true" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+        <state relative-caret-position="181">
+          <caret line="239" column="17" selection-start-line="239" selection-start-column="17" selection-end-line="239" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5406#5424#0" expanded="true" />
             <element signature="e#6355#6396#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="61" column="51" lean-forward="true" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
         </state>
       </provider>
     </entry>
