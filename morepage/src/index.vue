@@ -1,17 +1,24 @@
 <template>
   <div class="wrapper">
-    <!-- <image :src="logo" class="logo" /> -->
+    <text>top</text>
+    <image :src="logo" class="logo" />
     <router-view/>
+    <text>bottom</text>
+    <image :src="logo" class="logo" />
   </div>
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld'
 export default {
   name: 'App',
   data () {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
     }
+  },
+  components: {
+    HelloWorld
   }
 }
 </script>

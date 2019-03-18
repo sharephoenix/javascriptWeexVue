@@ -1,8 +1,8 @@
 <template>
-  <scroller>
-    <web ref="rootWeb" class="web-cls" src="http://192.168.3.127:9003/?v=99" @message="postMessage" @firstEvent="firstEvent" @secondEvent="secondEvent"></web>
-    <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessage to web</text></div>
-    
+  <scroller class="body">
+    <text>cococcoccococooco</text>
+    <!-- <web ref="rootWeb" class="web-cls" src="http://192.168.3.127:9003/?v=99" @message="postMessage" @firstEvent="firstEvent" @secondEvent="secondEvent"></web>
+    <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessage to web</text></div> -->
     <!-- <wxc-navpage title="首页" background-color="#3683FF"  onclick="onClickTitle" title-color="#FF0000" left-item-title="搜索" left-item-color="#EA80FF" right-item-title="跳转" right-item-color="#EA80FF"></wxc-navpage>
     <image ref="logoimagevvs" style="width: 100wx; height: 100wx; background-color: red;" src="file:///images/flower.png" @click="abc" @name="alex"></image>
     <image ref="logoimage" style="width: 100wx; height: 200we;" src="http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png" @click="abc" @name="alex"></image>
@@ -30,11 +30,11 @@ export default {
   },
   methods: {
     postMessage (e) { // web 调用 native 的方法
-    console.log('-----------------')
-    console.log(e.type)  // message
-    console.log(e.origin) // event
-    console.log(JSON.stringify(e.data)) // params
-    console.log('-----------------')
+      console.log('-----------------')
+      console.log(e.type)
+      console.log(e.origin)
+      console.log(JSON.stringify(e.data))
+      console.log('-----------------')
     // html 调用方法
     // window.postMessage({'params01': 'params011111',
     //                 'params02': 'params02222'}, 'event');
@@ -52,7 +52,7 @@ export default {
       console.log('secondEventsecondEventsecondEvent')
     },
     reloadWeb () {
-      this.srcs = localWeb.getLocalUrl({score: '1001',desc: '小王GGb'})
+      this.srcs = localWeb.getLocalUrl({score: '1001', desc: '小王GGb'})
       // '?q=score%3d0%26desc%3d阿嫂'
       console.log('url::::' + this.srcs)
     },
@@ -76,6 +76,11 @@ export default {
 }
 </script>
 <style scoped>
+.body {
+  background-color: blue;
+  width: 100wx;
+  height: 500wx;
+}
   .web-cls {
     background-color: red;
     height: 800px;

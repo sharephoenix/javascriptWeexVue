@@ -107,7 +107,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* global Vue */
 Vue.use(_vueRouter2.default);
-
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
@@ -2791,6 +2790,11 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "body": {
+    "backgroundColor": "#0000FF",
+    "width": "100wx",
+    "height": "500wx"
+  },
   "web-cls": {
     "backgroundColor": "#FF0000",
     "height": "800"
@@ -2878,9 +2882,9 @@ exports.default = {
     postMessage: function postMessage(e) {
       // web 调用 native 的方法
       console.log('-----------------');
-      console.log(e.type); // message
-      console.log(e.origin); // event
-      console.log(JSON.stringify(e.data)); // params
+      console.log(e.type);
+      console.log(e.origin);
+      console.log(JSON.stringify(e.data));
       console.log('-----------------');
       // html 调用方法
       // window.postMessage({'params01': 'params011111',
@@ -2927,26 +2931,12 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', [_c('web', {
-    ref: "rootWeb",
-    staticClass: ["web-cls"],
-    attrs: {
-      "src": "http://192.168.3.127:9003/?v=99"
-    },
-    on: {
-      "message": _vm.postMessage,
-      "firstEvent": _vm.firstEvent,
-      "secondEvent": _vm.secondEvent
-    }
-  }), _c('div', {
-    staticClass: ["button-cls"],
-    on: {
-      "click": _vm.postMessageToWeb
-    }
-  }, [_c('text', {
-    staticClass: ["text-cls"]
-  }, [_vm._v(" postmessage to web")])])])
-},staticRenderFns: []}
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('scroller', {
+    staticClass: ["body"]
+  }, [_c('text', [_vm._v("cococcoccococooco")])])
+}]}
 module.exports.render._withStripped = true
 
 /***/ }),
@@ -3032,13 +3022,12 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
+
+var _HelloWorld = __webpack_require__(3);
+
+var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   name: 'App',
@@ -3046,8 +3035,21 @@ exports.default = {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
     };
+  },
+
+  components: {
+    HelloWorld: _HelloWorld2.default
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 10 */
@@ -3056,7 +3058,17 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('router-view')], 1)
+  }, [_c('text', [_vm._v("top")]), _c('image', {
+    staticClass: ["logo"],
+    attrs: {
+      "src": _vm.logo
+    }
+  }), _c('router-view'), _c('text', [_vm._v("bottom")]), _c('image', {
+    staticClass: ["logo"],
+    attrs: {
+      "src": _vm.logo
+    }
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
