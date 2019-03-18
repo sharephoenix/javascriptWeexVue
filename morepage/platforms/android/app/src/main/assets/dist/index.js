@@ -2792,8 +2792,13 @@ module.exports = __vue_exports__
 
 module.exports = {
   "web-cls": {
-    "height": "400wx",
-    "backgroundColor": "#FF0000"
+    "backgroundColor": "#FF0000",
+    "height": "800"
+  },
+  "button-cls": {
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
   },
   "texmessaget": {
     "color": "#FF0000",
@@ -2817,6 +2822,14 @@ module.exports = {
   "button-text": {
     "lineHeight": "33wx",
     "textAlign": "center"
+  },
+  "image-div": {
+    "height": "200wx",
+    "backgroundColor": "#FF0000"
+  },
+  "text-cls": {
+    "backgroundColor": "#FF0000",
+    "fontSize": "16wx"
   }
 }
 
@@ -2830,6 +2843,11 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2857,10 +2875,33 @@ exports.default = {
   },
 
   methods: {
+    postMessage: function postMessage(e) {
+      // web 调用 native 的方法
+      console.log('-----------------');
+      console.log(e.type); // message
+      console.log(e.origin); // event
+      console.log(JSON.stringify(e.data)); // params
+      console.log('-----------------');
+      // html 调用方法
+      // window.postMessage({'params01': 'params011111',
+      //                 'params02': 'params02222'}, 'event');
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      // html 直接定义全局方法
+      // function MessageEvent(e, data) {
+      // }
+      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
+    },
+    firstEvent: function firstEvent() {
+      console.log('firstEventfirstEventfirstEvent');
+    },
+    secondEvent: function secondEvent() {
+      console.log('secondEventsecondEventsecondEvent');
+    },
     reloadWeb: function reloadWeb() {
-      this.srcs = localWeb.getLocalUrl();
-      // + '?q=score%3d0%26desc%3d阿嫂'
-      console.log(this.srcs);
+      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
+      // '?q=score%3d0%26desc%3d阿嫂'
+      console.log('url::::' + this.srcs);
     },
     getInitialData: function getInitialData() {},
     toFocus: function toFocus() {
@@ -2886,70 +2927,25 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', [_c('wxc-navpage', {
-    attrs: {
-      "title": "首页",
-      "backgroundColor": "#3683FF",
-      "onclick": "onClickTitle",
-      "titleColor": "#FF0000",
-      "leftItemTitle": "搜索",
-      "leftItemColor": "#EA80FF",
-      "rightItemTitle": "跳转",
-      "rightItemColor": "#EA80FF"
-    }
-  }), _c('image', {
-    ref: "logoimage",
-    staticStyle: {
-      width: "100wx",
-      height: "200we"
-    },
-    attrs: {
-      "src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png"
-    },
-    on: {
-      "click": _vm.abc,
-      "name": _vm.alex
-    }
-  }), _c('text', {
-    staticClass: ["message"],
-    staticStyle: {
-      fontSize: "10wx"
-    },
-    on: {
-      "click": _vm.abc,
-      "bbb": _vm.bbb
-    }
-  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _c('input', {
-    ref: "inputRef",
-    staticClass: ["input"],
-    attrs: {
-      "value": (_vm.inputValue)
-    },
-    on: {
-      "input": function($event) {
-        _vm.inputValue = $event.target.attr.value
-      }
-    }
-  }), _c('div', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toFocus
-    }
-  }, [_c('text', {
-    staticClass: ["button-text"]
-  }, [_vm._v("change input focus")])]), _c('div', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toHide
-    }
-  }, [_c('text', {
-    staticClass: ["button-text"]
-  }, [_vm._v("change input hide")])]), _c('web', {
+  return _c('scroller', [_c('web', {
+    ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": _vm.srcs
+      "src": "http://192.168.3.127:9003/?v=777"
+    },
+    on: {
+      "message": _vm.postMessage,
+      "firstEvent": _vm.firstEvent,
+      "secondEvent": _vm.secondEvent
     }
-  })], 1)
+  }), _c('div', {
+    staticClass: ["button-cls"],
+    on: {
+      "click": _vm.postMessageToWeb
+    }
+  }, [_c('text', {
+    staticClass: ["text-cls"]
+  }, [_vm._v(" postmessage to web")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3019,6 +3015,10 @@ module.exports = {
     "marginLeft": "30",
     "fontSize": "32",
     "color": "#727272"
+  },
+  "image-cls": {
+    "height": "300wx",
+    "background": "url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png')"
   }
 }
 
@@ -3056,12 +3056,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('image', {
-    staticClass: ["logo"],
-    attrs: {
-      "src": _vm.logo
-    }
-  }), _c('router-view')], 1)
+  }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

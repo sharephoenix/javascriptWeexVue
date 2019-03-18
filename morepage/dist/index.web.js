@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  background-color: red;\n  height: 10.66667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n", ""]);
+exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  background-color: red;\n  height: 10.66667rem;\n}\n.button-cls[data-v-5a260b5e] {\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n.text-cls[data-v-5a260b5e] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n", ""]);
 
 // exports
 
@@ -22933,6 +22933,7 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -23020,7 +23021,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: "web-cls",
     attrs: {
-      "src": "http://192.168.3.127:9003/",
+      "src": "http://192.168.3.127:9003/?v=777",
       "data-evt-message": "",
       "data-evt-firstEvent": "",
       "data-evt-secondEvent": ""
@@ -23031,7 +23032,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "secondEvent": _vm.secondEvent
     }
   }), _vm._v(" "), _c('div', {
-    staticClass: " weex-ct weex-div",
+    staticClass: "button-cls weex-ct weex-div",
     attrs: {
       "weex-type": "div",
       "data-evt-click": ""
@@ -23044,11 +23045,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_c('p', {
-    staticClass: " weex-el weex-text",
+    staticClass: "text-cls weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(" postmessage to webs ")])])], 1)
+  }, [_vm._v(" postmessage to web")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23179,14 +23180,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('figure', {
-    staticClass: "logo weex-el weex-image",
-    attrs: {
-      "src": _vm.logo,
-      "data-img-src": _vm.logo,
-      "weex-type": "image"
-    }
-  }), _vm._v(" "), _c('router-view')], 1)
+  }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

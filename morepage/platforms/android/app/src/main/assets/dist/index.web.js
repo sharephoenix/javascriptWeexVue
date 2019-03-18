@@ -22885,7 +22885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  height: 5.33333rem;\n  background-color: red;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.web-cls[data-v-5a260b5e] {\n  background-color: red;\n  height: 10.66667rem;\n}\n.button-cls[data-v-5a260b5e] {\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n  color: red;\n  font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n  height: 0.44rem;\n  background-color: lightgray;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n  margin-top: 0.13333rem;\n  height: 0.44rem;\n  background-color: red;\n  border: 1px solid yellow;\n  border-radius: 0.22rem;\n  margin-left: 0.2rem;\n  margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n  line-height: 0.44rem;\n  text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n  height: 2.66667rem;\n  background-color: red;\n}\n.text-cls[data-v-5a260b5e] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n", ""]);
 
 // exports
 
@@ -22946,6 +22946,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
 
 var navigator = weex.requireModule('navigator');
 var localWeb = weex.requireModule('localWeb');
@@ -22960,10 +22964,33 @@ exports.default = {
   },
 
   methods: {
+    postMessage: function postMessage(e) {
+      // web 调用 native 的方法
+      console.log('-----------------');
+      console.log(e.type); // message
+      console.log(e.origin); // event
+      console.log(JSON.stringify(e.data)); // params
+      console.log('-----------------');
+      // html 调用方法
+      // window.postMessage({'params01': 'params011111',
+      //                 'params02': 'params02222'}, 'event');
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      // html 直接定义全局方法
+      // function MessageEvent(e, data) {
+      // }
+      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
+    },
+    firstEvent: function firstEvent() {
+      console.log('firstEventfirstEventfirstEvent');
+    },
+    secondEvent: function secondEvent() {
+      console.log('secondEventsecondEventsecondEvent');
+    },
     reloadWeb: function reloadWeb() {
-      this.srcs = localWeb.getLocalUrl();
-      // + '?q=score%3d0%26desc%3d阿嫂'
-      console.log(this.srcs);
+      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
+      // '?q=score%3d0%26desc%3d阿嫂'
+      console.log('url::::' + this.srcs);
     },
     getInitialData: function getInitialData() {},
     toFocus: function toFocus() {
@@ -22989,118 +23016,39 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', [_c('wxc-navpage', {
-    attrs: {
-      "title": "首页",
-      "background-color": "#3683FF",
-      "onclick": "onClickTitle",
-      "title-color": "#FF0000",
-      "left-item-title": "搜索",
-      "left-item-color": "#EA80FF",
-      "right-item-title": "跳转",
-      "right-item-color": "#EA80FF"
-    }
-  }), _vm._v(" "), _c('figure', {
-    ref: "logoimage",
-    staticClass: " weex-el weex-image",
-    staticStyle: {
-      "width": "100px",
-      "height": "200we"
-    },
-    attrs: {
-      "src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png",
-      "data-img-src": "http://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png",
-      "weex-type": "image",
-      "data-evt-click": "",
-      "data-evt-name": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "name": _vm.alex,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.abc($event)
-      }
-    }
-  }), _vm._v(" "), _c('p', {
-    staticClass: "message weex-el weex-text",
-    staticStyle: {
-      "font-size": "10px"
-    },
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": "",
-      "data-evt-bbb": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "bbb": _vm.bbb,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.abc($event)
-      }
-    }
-  }, [_vm._v("Now, let's use Vue.js to build your Weex app.lk;lk;lk")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.inputValue),
-      expression: "inputValue"
-    }],
-    ref: "inputRef",
-    staticClass: "input",
-    attrs: {},
-    domProps: {
-      "value": (_vm.inputValue)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.inputValue = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "button weex-ct weex-div",
-    attrs: {
-      "weex-type": "div",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.toFocus($event)
-      }
-    }
-  }, [_c('p', {
-    staticClass: "button-text weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("change input focus")])]), _vm._v(" "), _c('div', {
-    staticClass: "button weex-ct weex-div",
-    attrs: {
-      "weex-type": "div",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.toHide($event)
-      }
-    }
-  }, [_c('p', {
-    staticClass: "button-text weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("change input hide")])]), _vm._v(" "), _c('web', {
+  return _c('scroller', [_c('web', {
+    ref: "rootWeb",
     staticClass: "web-cls",
     attrs: {
-      "src": _vm.srcs
+      "src": "http://192.168.3.127:9003/?v=777",
+      "data-evt-message": "",
+      "data-evt-firstEvent": "",
+      "data-evt-secondEvent": ""
+    },
+    nativeOn: {
+      "message": _vm.postMessage,
+      "firstEvent": _vm.firstEvent,
+      "secondEvent": _vm.secondEvent
     }
-  })], 1)
+  }), _vm._v(" "), _c('div', {
+    staticClass: "button-cls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.postMessageToWeb($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: "text-cls weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(" postmessage to web")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23189,7 +23137,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n.image-cls[data-v-296d580a] {\n  height: 4rem;\n  background: url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png');\n}\n", ""]);
 
 // exports
 
@@ -23231,14 +23179,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('figure', {
-    staticClass: "logo weex-el weex-image",
-    attrs: {
-      "src": _vm.logo,
-      "data-img-src": _vm.logo,
-      "weex-type": "image"
-    }
-  }), _vm._v(" "), _c('router-view')], 1)
+  }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

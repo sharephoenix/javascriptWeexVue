@@ -2795,6 +2795,11 @@ module.exports = {
     "backgroundColor": "#FF0000",
     "height": "800"
   },
+  "button-cls": {
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
+  },
   "texmessaget": {
     "color": "#FF0000",
     "fontSize": "33wx"
@@ -2821,6 +2826,10 @@ module.exports = {
   "image-div": {
     "height": "200wx",
     "backgroundColor": "#FF0000"
+  },
+  "text-cls": {
+    "backgroundColor": "#FF0000",
+    "fontSize": "16wx"
   }
 }
 
@@ -2834,6 +2843,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -2921,7 +2931,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.3.127:9003/"
+      "src": "http://192.168.3.127:9003/?v=777"
     },
     on: {
       "message": _vm.postMessage,
@@ -2929,10 +2939,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "secondEvent": _vm.secondEvent
     }
   }), _c('div', {
+    staticClass: ["button-cls"],
     on: {
       "click": _vm.postMessageToWeb
     }
-  }, [_c('text', [_vm._v(" postmessage to webs ")])])])
+  }, [_c('text', {
+    staticClass: ["text-cls"]
+  }, [_vm._v(" postmessage to web")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3043,12 +3056,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["wrapper"]
-  }, [_c('image', {
-    staticClass: ["logo"],
-    attrs: {
-      "src": _vm.logo
-    }
-  }), _c('router-view')], 1)
+  }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

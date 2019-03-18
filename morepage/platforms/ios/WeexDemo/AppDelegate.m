@@ -29,6 +29,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [WeexSDKManager setup];
+        [WXSDKEngine registerComponent:@"web" withClass:NSClassFromString(@"WKWebComponent")];
         [self.window makeKeyAndVisible];
         // Override point for customization after application launch.
         [self startSplashScreen];
