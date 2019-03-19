@@ -61,6 +61,7 @@ public class BridgeWebView extends WebView {
 	}
 
     protected BridgeWebViewClient generateBridgeWebViewClient() {
+
         return new BridgeWebViewClient(this);
     }
 

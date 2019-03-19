@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.taobao.android:weex_sdk:0.20.0.2@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/f0c18c7edc9132324431bdbe4428dec4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/ba2d49c3c4c24b0eadefda07d0964e00/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/f0c18c7edc9132324431bdbe4428dec4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/f0c18c7edc9132324431bdbe4428dec4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/ba2d49c3c4c24b0eadefda07d0964e00/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.20.0.2.aar/ba2d49c3c4c24b0eadefda07d0964e00/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

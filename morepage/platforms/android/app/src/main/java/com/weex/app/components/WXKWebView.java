@@ -13,6 +13,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.JsPromptResult;
@@ -32,6 +33,7 @@ import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.github.lzyzsd.jsbridge.BridgeHandler;
 import com.github.lzyzsd.jsbridge.BridgeWebView;
+import com.github.lzyzsd.jsbridge.BridgeWebViewClient;
 import com.github.lzyzsd.jsbridge.CallBackFunction;
 import com.taobao.weex.ui.view.IWebView;
 import com.taobao.weex.utils.WXLogUtils;
@@ -44,7 +46,7 @@ public class WXKWebView implements IWebView {
 
     private Context mContext;
     private String mOrigin;
-    public BridgeWebView mWebView;
+    private BridgeWebView mWebView;
     private ProgressBar mProgressBar;
     private boolean mShowLoading = true;
     private Handler mMessageHandler;
@@ -70,7 +72,8 @@ public class WXKWebView implements IWebView {
         FrameLayout root = new FrameLayout(mContext);
         root.setBackgroundColor(Color.WHITE);
 
-        mWebView = new BridgeWebView(mContext);//mContext.getApplicationContext();
+        mWebView = new BridgeWebView(mContext);
+        // 布局代码一定要放在前面，不然会有报错
         FrameLayout.LayoutParams wvLayoutParams =
                 new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
                         FrameLayout.LayoutParams.MATCH_PARENT);
@@ -78,6 +81,57 @@ public class WXKWebView implements IWebView {
         mWebView.setLayoutParams(wvLayoutParams);
         root.addView(mWebView);
         initWebView(mWebView);
+
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+
+        WebSettings webSettings = mWebView.getSettings();
+        //设置user-agent
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setSupportZoom(true);
+        // 扩大比例的缩放
+        webSettings.setUseWideViewPort(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            webSettings.setPluginState(WebSettings.PluginState.ON);
+            webSettings.setAllowFileAccessFromFileURLs(true);
+            webSettings.setDomStorageEnabled(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //5.0以上https和http混合地址默认异常处理，打开总是允许避免这种情况
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+
+        mWebView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+            }
+
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+            }
+        });
+
+        mWebView.setWebViewClient(new BridgeWebViewClient(mWebView) {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return super.shouldOverrideUrlLoading(view, url);
+            }
+
+            @Override
+            public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
+                return super.shouldOverrideKeyEvent(view, event);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+        });
+
+
+
 
         mProgressBar = new ProgressBar(mContext);
         showProgressBar(false);
@@ -93,10 +147,11 @@ public class WXKWebView implements IWebView {
     }
 
     private void registHandlers() {
-        mWebView.registerHandler("scanClick", new BridgeHandler() {
+        mWebView.registerHandler("shareWeb", new BridgeHandler() {
             @Override
             public void handler(String data, CallBackFunction function) {
                 Log.d("Tag", "message");
+                function.onCallBack("aaaa");
             }
         });
     }
@@ -148,6 +203,16 @@ public class WXKWebView implements IWebView {
     @Override
     public void postMessage(Object msg) {
         if (getWebView() == null) return;
+
+        //指定接收参数 functionInJs
+        mWebView.callHandler("functionInJs", "发送数据给js指定接收", new CallBackFunction() {
+            @Override
+            public void onCallBack(String data) { //处理js回传的数据
+                System.out.print("asdfasdf");
+//                Toast.makeText(WebTestActivity.this, data, Toast.LENGTH_LONG).show();
+            }
+        });
+
         mWebView.callHandler("testJavaScriptFunction","test", new CallBackFunction() {
             @Override
             public void onCallBack(String data) {

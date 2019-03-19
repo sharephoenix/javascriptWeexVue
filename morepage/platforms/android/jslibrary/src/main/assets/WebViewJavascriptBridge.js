@@ -23,7 +23,7 @@
 	var sendMessageQueue = [];
 	var messageHandlers = {};
 
-	var CUSTOM_PROTOCOL_SCHEME = 'http';
+	var CUSTOM_PROTOCOL_SCHEME = 'wvjbscheme';
 	var QUEUE_HAS_MESSAGE = '__WVJB_QUEUE_MESSAGE__';
 
 	var responseCallbacks = {};

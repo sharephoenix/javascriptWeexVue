@@ -27,7 +27,7 @@ public class WXKWeb extends WXComponent {
     public static final String GO_FORWARD = "goForward";
     public static final String RELOAD = "reload";
     public static final String POST_MESSAGE = "postMessage";
-    protected IWebView mWebView;
+    protected WXKWebView mWebView;
 
     @Deprecated
     public WXKWeb(WXSDKInstance instance, WXVContainer parent, String instanceId, boolean isLazy, BasicComponentData basicComponentData) {
@@ -58,48 +58,48 @@ public class WXKWeb extends WXComponent {
 
     @Override
     protected View initComponentHostView(@NonNull Context context) {
-        mWebView.setOnErrorListener(new IWebView.OnErrorListener() {
-            @Override
-            public void onError(String type, Object message) {
-                fireEvent(type, message);
-            }
-        });
-        mWebView.setOnPageListener(new IWebView.OnPageListener() {
-            @Override
-            public void onReceivedTitle(String title) {
-                if (getEvents().contains(Constants.Event.RECEIVEDTITLE)) {
-                    Map<String, Object> params = new HashMap<>();
-                    params.put("title", title);
-                    fireEvent(Constants.Event.RECEIVEDTITLE, params);
-                }
-            }
-
-            @Override
-            public void onPageStart(String url) {
-                if (getEvents().contains(Constants.Event.PAGESTART)) {
-                    Map<String, Object> params = new HashMap<>();
-                    params.put("url", url);
-                    fireEvent(Constants.Event.PAGESTART, params);
-                }
-            }
-
-            @Override
-            public void onPageFinish(String url, boolean canGoBack, boolean canGoForward) {
-                if (getEvents().contains(Constants.Event.PAGEFINISH)) {
-                    Map<String, Object> params = new HashMap<>();
-                    params.put("url", url);
-                    params.put("canGoBack", canGoBack);
-                    params.put("canGoForward", canGoForward);
-                    fireEvent(Constants.Event.PAGEFINISH, params);
-                }
-            }
-        });
-        mWebView.setOnMessageListener(new IWebView.OnMessageListener() {
-            @Override
-            public void onMessage(Map<String, Object> params) {
-                fireEvent(Constants.Event.ONMESSAGE, params);
-            }
-        });
+//        mWebView.setOnErrorListener(new IWebView.OnErrorListener() {
+//            @Override
+//            public void onError(String type, Object message) {
+//                fireEvent(type, message);
+//            }
+//        });
+//        mWebView.setOnPageListener(new IWebView.OnPageListener() {
+//            @Override
+//            public void onReceivedTitle(String title) {
+//                if (getEvents().contains(Constants.Event.RECEIVEDTITLE)) {
+//                    Map<String, Object> params = new HashMap<>();
+//                    params.put("title", title);
+//                    fireEvent(Constants.Event.RECEIVEDTITLE, params);
+//                }
+//            }
+//
+//            @Override
+//            public void onPageStart(String url) {
+//                if (getEvents().contains(Constants.Event.PAGESTART)) {
+//                    Map<String, Object> params = new HashMap<>();
+//                    params.put("url", url);
+//                    fireEvent(Constants.Event.PAGESTART, params);
+//                }
+//            }
+//
+//            @Override
+//            public void onPageFinish(String url, boolean canGoBack, boolean canGoForward) {
+//                if (getEvents().contains(Constants.Event.PAGEFINISH)) {
+//                    Map<String, Object> params = new HashMap<>();
+//                    params.put("url", url);
+//                    params.put("canGoBack", canGoBack);
+//                    params.put("canGoForward", canGoForward);
+//                    fireEvent(Constants.Event.PAGEFINISH, params);
+//                }
+//            }
+//        });
+//        mWebView.setOnMessageListener(new IWebView.OnMessageListener() {
+//            @Override
+//            public void onMessage(Map<String, Object> params) {
+//                fireEvent(Constants.Event.ONMESSAGE, params);
+//            }
+//        });
         return mWebView.getView();
     }
 
