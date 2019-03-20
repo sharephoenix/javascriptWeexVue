@@ -35,6 +35,9 @@ public class SplashActivity extends AppCompatActivity {
 
       @Override
       public void onAnimationEnd(Animation animation) {
+//        BridgeWebView.Companion.launch(SplashActivity.this, "http://192.168.2.95:9003");
+//        finish();
+
         Intent intent = new Intent(SplashActivity.this, WXPageActivity.class);
         Uri data = getIntent().getData();
         if (data != null) {
