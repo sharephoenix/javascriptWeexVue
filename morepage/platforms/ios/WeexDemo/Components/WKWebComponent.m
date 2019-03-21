@@ -87,7 +87,7 @@ WX_EXPORT_METHOD(@selector(goForward))
         responseCallback(@"扫描结果 : www.baidu.com");
     }];
 
-    [_jsBridge registerHandler:@"colorClick" handler:^(id data, WVJBResponseCallback responseCallback) {
+    [_jsBridge registerHandler:@"shareWeb" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"dataFrom JS : %@",data[@"data"]);
 
         responseCallback(@"扫描结果 : www.baidu.com");
@@ -177,7 +177,7 @@ WX_EXPORT_METHOD(@selector(goForward))
 //        NSLog(@"JS 的返回值: %@",responseData);
 //    }];
 
-    [_jsBridge callHandler:@"testJavaScriptFunction" data:@"传递给 JS 的参数" responseCallback:^(id responseData) {
+    [_jsBridge callHandler:@"updateStatus" data:@"传递给 JS 的参数" responseCallback:^(id responseData) {
         NSLog(@"JS 的返回值: %@",responseData);
     }];
 //    [_jsBridge callHandler:@"testJavaScriptFunction"];

@@ -1,5 +1,6 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" @viewappear="viewappear">
+
     <router-view/>
   </div>
 </template>
@@ -11,6 +12,20 @@ export default {
   data () {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png'
+    }
+  },
+  init: function () {
+    console.log('initinitinitinitinitinitinitinit')
+  },
+  ready: function () {
+    console.log('readyreadyreadyreadyreadyreadyready')
+  },
+  created () {
+    console.log('createdcreatedcreatedcreated')
+  },
+  methods: {
+    viewappear () {
+      console.log('viewappearviewappearviewappear')
     }
   },
   components: {

@@ -179,6 +179,8 @@
         else if (state == WeexInstanceDisappear) {
             [[WXSDKManager bridgeMgr] fireEvent:_instance.instanceId ref:WX_SDK_ROOT_REF type:@"viewdisappear" params:nil domChanges:nil];
         }
+    } else {
+        NSLog(@"");
     }
 }
 

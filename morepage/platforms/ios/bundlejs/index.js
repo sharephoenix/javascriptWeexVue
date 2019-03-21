@@ -2931,7 +2931,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.2.95:9003"
+      "src": "http://192.168.2.95:9003/#/weexbasic"
     },
     on: {
       "message": _vm.postMessage,
@@ -3047,10 +3047,26 @@ exports.default = {
     };
   },
 
+  init: function init() {
+    console.log('initinitinitinitinitinitinitinit');
+  },
+  ready: function ready() {
+    console.log('readyreadyreadyreadyreadyreadyready');
+  },
+  created: function created() {
+    console.log('createdcreatedcreatedcreated');
+  },
+
+  methods: {
+    viewappear: function viewappear() {
+      console.log('viewappearviewappearviewappear');
+    }
+  },
   components: {
     HelloWorld: _HelloWorld2.default
   }
 }; //
+//
 //
 //
 //
@@ -3063,7 +3079,10 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
+    staticClass: ["wrapper"],
+    on: {
+      "viewappear": _vm.viewappear
+    }
   }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true

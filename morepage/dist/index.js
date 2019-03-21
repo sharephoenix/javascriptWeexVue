@@ -147,15 +147,23 @@ var _HelloWorld = __webpack_require__(0);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
+var _wkwebview = __webpack_require__(11);
+
+var _wkwebview2 = _interopRequireDefault(_wkwebview);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global Vue */
-Vue.use(_vueRouter2.default);
+Vue.use(_vueRouter2.default); /* global Vue */
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
     name: 'HelloWorld',
-    component: _HelloWorld2.default
+    component: _HelloWorld2.default,
+    redirect: '/wkwebview'
+  }, {
+    path: '/wkwebview',
+    name: 'WKWebView',
+    component: _wkwebview2.default
   }]
 });
 
@@ -2931,7 +2939,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.2.95:9003"
+      "src": "http://192.168.2.95:9003/#/weexbasic"
     },
     on: {
       "message": _vm.postMessage,
@@ -3047,10 +3055,26 @@ exports.default = {
     };
   },
 
+  init: function init() {
+    console.log('initinitinitinitinitinitinitinit');
+  },
+  ready: function ready() {
+    console.log('readyreadyreadyreadyreadyreadyready');
+  },
+  created: function created() {
+    console.log('createdcreatedcreatedcreated');
+  },
+
+  methods: {
+    viewappear: function viewappear() {
+      console.log('viewappearviewappearviewappear');
+    }
+  },
   components: {
     HelloWorld: _HelloWorld2.default
   }
 }; //
+//
 //
 //
 //
@@ -3063,10 +3087,211 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
+    staticClass: ["wrapper"],
+    on: {
+      "viewappear": _vm.viewappear
+    }
   }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(12)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(13)
+
+/* template */
+var __vue_template__ = __webpack_require__(14)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/wkwebview.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-5b868445"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "web-cls": {
+    "backgroundColor": "#FF0000",
+    "height": "800"
+  },
+  "button-cls": {
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
+  },
+  "text-cls": {
+    "backgroundColor": "#FF0000",
+    "fontSize": "16wx"
+  }
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+var storage = weex.requireModule('storage');
+exports.default = {
+  name: 'WKWebView',
+  data: function data() {
+    return {
+      msg: 'message'
+    };
+  },
+
+  methods: {
+    postMessageToWeb: function postMessageToWeb() {
+      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
+    },
+    storageEvent: function storageEvent(_ref) {
+      var _this = this;
+
+      var reqId = _ref.reqId,
+          module = _ref.module,
+          event = _ref.event,
+          params = _ref.params;
+
+      console.log(reqId + '++++' + module + '++++' + event + '++++' + JSON.stringify(params) + '++++');
+      if (event === 'setItem') {
+        for (var key in params) {
+          console.log('**************');
+          console.log(key, params[key]);
+          storage.setItem(key, params[key], function (event) {
+            console.log('set success');
+          });
+        }
+
+        this.$refs.rootWeb.postMessage({
+          module: module,
+          event: event,
+          reqId: reqId,
+          params: {
+            info: 'success'
+          }
+        });
+      }
+      if (event === 'getItem') {
+        var _event = event;
+        var _key = params;
+        var _params = {};
+        storage.getItem(params, function (event) {
+          console.log('get value:', event.data);
+          _params[_key] = event.data;
+          var xxxx = {
+            module: module,
+            reqId: reqId,
+            event: _event,
+            params: _params
+          };
+          _this.$refs.rootWeb.postMessage(xxxx);
+        });
+      }
+    }
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["body"]
+  }, [_c('web', {
+    ref: "rootWeb",
+    staticClass: ["web-cls"],
+    attrs: {
+      "src": "http://192.168.2.95:9003/#/"
+    },
+    on: {
+      "storage": _vm.storageEvent
+    }
+  }), _c('div', {
+    staticClass: ["button-cls"],
+    on: {
+      "click": _vm.postMessageToWeb
+    }
+  }, [_c('text', {
+    staticClass: ["text-cls"]
+  }, [_vm._v(" postmessageToWebgg")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
 
 /***/ })
 /******/ ]);
