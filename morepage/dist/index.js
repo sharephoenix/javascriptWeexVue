@@ -3049,6 +3049,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 var storage = weex.requireModule('storage');
+var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
 exports.default = {
   name: 'WKWebView',
   data: function data() {
@@ -3058,15 +3059,42 @@ exports.default = {
   },
 
   methods: {
-    postMessageToWeb: function postMessageToWeb() {
-      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
-    },
-    storageEvent: function storageEvent(_ref) {
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref) {
       var reqId = _ref.reqId,
           module = _ref.module,
           event = _ref.event,
           params = _ref.params,
           callback = _ref.callback;
+
+      if (event === 'play') {
+        _XHBAudioPlayerModule.play(params);
+        return;
+      }
+      if (event === 'pause') {
+        _XHBAudioPlayerModule.pause();
+      }
+      if (event === 'resume') {
+        _XHBAudioPlayerModule.resume();
+      }
+      if (event === 'stop') {
+        _XHBAudioPlayerModule.stop();
+      }
+      if (event === 'next') {
+        _XHBAudioPlayerModule.next();
+      }
+      if (event === 'last') {
+        _XHBAudioPlayerModule.last();
+      }
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
+    },
+    storageEvent: function storageEvent(_ref2) {
+      var reqId = _ref2.reqId,
+          module = _ref2.module,
+          event = _ref2.event,
+          params = _ref2.params,
+          callback = _ref2.callback;
 
       var _self = this;
       if (event === 'setItem') {
@@ -3150,7 +3178,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "http://192.168.3.165:9003/#/"
     },
     on: {
-      "storage": _vm.storageEvent
+      "storage": _vm.storageEvent,
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule
     }
   })]), _c('div', {
     staticClass: ["button-cls"],

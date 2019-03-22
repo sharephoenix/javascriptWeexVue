@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div class="web-cls">
-      <web ref="rootWeb" class="web-cls" src="http://192.168.3.165:9003/#/" @storage="storageEvent"></web>
+      <web ref="rootWeb" class="web-cls" src="http://192.168.3.165:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule"></web>
     </div>
     <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessageToWebgg</text></div>
   </div>
@@ -9,6 +9,7 @@
 
 <script>
 const storage = weex.requireModule('storage')
+const XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule')
 export default {
   name: 'WKWebView',
   data () {
@@ -17,6 +18,27 @@ export default {
     }
   },
   methods: {
+    XHBAudioPlayerModule ({reqId, module, event, params, callback}) {
+      if (event === 'play') {
+        XHBAudioPlayerModule.play(params)
+        return
+      }
+      if (event === 'pause') {
+        XHBAudioPlayerModule.pause()
+      }
+      if (event === 'resume') {
+        XHBAudioPlayerModule.resume()
+      }
+      if (event === 'stop') {
+        XHBAudioPlayerModule.stop()
+      }
+      if (event === 'next') {
+        XHBAudioPlayerModule.next()
+      }
+      if (event === 'last') {
+        XHBAudioPlayerModule.last()
+      }
+    },
     postMessageToWeb () {
       this.$refs.rootWeb.postMessage({module, event, params: {info: 'success'}})
     },
