@@ -3069,12 +3069,8 @@ exports.default = {
           callback = _ref.callback;
 
       var _self = this;
-      console.log(reqId + '++++' + module + '++++' + event + '++++' + JSON.stringify(params) + '++++');
-      console.log('*****' + JSON.stringify(callback));
       if (event === 'setItem') {
         for (var key in params) {
-          console.log('**************');
-          console.log(key, params[key]);
           storage.setItem(key, params[key], function (event) {
             console.log('begin callback');
             if (callback !== undefined) {
@@ -3091,7 +3087,6 @@ exports.default = {
         var _key = params;
         var _params = {};
         storage.getItem(params, function (event) {
-          console.log('get value:', event.data);
           _params[_key] = event.data;
           var xxxx = {
             module: module,
@@ -3102,7 +3097,6 @@ exports.default = {
           if (callback !== undefined) {
             callback(xxxx);
           } else {
-            console.log('begin callback');
             _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
           }
         });
