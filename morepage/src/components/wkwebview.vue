@@ -1,6 +1,8 @@
 <template>
   <div class="body">
-    <web ref="rootWeb" class="web-cls" src="http://192.168.2.95:9003/#/" @storage="storageEvent"></web>
+    <div class="web-cls">
+      <web ref="rootWeb" class="web-cls" src="http://192.168.3.165:9003/#/" @storage="storageEvent"></web>
+    </div>
     <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessageToWebgg</text></div>
   </div>
 </template>
@@ -18,8 +20,10 @@ export default {
     postMessageToWeb () {
       this.$refs.rootWeb.postMessage({module, event, params: {info: 'success'}})
     },
-    storageEvent ({reqId, module, event, params}) {
+    storageEvent ({reqId, module, event, params, callback}) {
+      const _self = this
       console.log(reqId + '++++' + module + '++++' + event + '++++' + JSON.stringify(params) + '++++')
+      console.log('*****' + JSON.stringify(callback))
       if (event === 'setItem') {
         for (var key in params) {
           console.log('**************')
@@ -28,18 +32,15 @@ export default {
             key,
             params[key],
             event => {
+              console.log('begin callback')
+              if (callback !== undefined) {
+                callback(event)
+              } else {
+                _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}))
+              }
               console.log('set success')
             })
         }
-
-        this.$refs.rootWeb.postMessage({
-          module,
-          event,
-          reqId,
-          params: {
-            info: 'success'
-          }
-        })
       }
       if (event === 'getItem') {
         const _event = event
@@ -54,7 +55,12 @@ export default {
             event: _event,
             params: _params
           }
-          this.$refs.rootWeb.postMessage(xxxx)
+          if (callback !== undefined) {
+            callback(xxxx)
+          } else {
+            console.log('begin callback')
+            _self.$refs.rootWeb.callback(Object.assign(xxxx, {'reqId': reqId}))
+          }
         })
       }
     }
@@ -64,14 +70,21 @@ export default {
 
 <style scoped>
 .body {
+  flex-direction: center;
+  justify-content: space-between;
 }
 
 .web-cls {
+  /* flex: 1; */
   background-color: red;
-  height: 800px;
+  height: 500wx;
 }
 
 .button-cls {
+  position: absolute;
+  bottom: 0wx;
+  left: 0wx;
+  right: 0wx;
   background-color: green;
   justify-content: center;
   height: 80wx;
