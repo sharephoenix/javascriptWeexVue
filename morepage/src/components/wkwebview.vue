@@ -1,8 +1,8 @@
 <template>
   <div class="body">
     <div class="web-cls">
-      <!-- <web ref="rootWeb" class="web-cls" src="https://sharephoenix.github.io/blog/main/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web> -->
-      <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
+      <web ref="rootWeb" class="web-cls" src="https://sharephoenix.github.io/blog/main/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
+      <!-- <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web> -->
     </div>
     <scroller class="log-cls"><text>{{log}}</text></scroller>
     <!-- <div class="button-cls" @click="postMessageToWeb">

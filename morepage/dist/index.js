@@ -3118,7 +3118,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.0.102:9003/#/"
+      "src": "https://sharephoenix.github.io/blog/main/#/"
     },
     on: {
       "storage": _vm.storageEvent,
