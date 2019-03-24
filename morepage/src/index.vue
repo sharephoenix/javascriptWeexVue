@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld'
+import Main from '@/components/Main'
 export default {
   name: 'App',
   data () {
@@ -29,7 +29,7 @@ export default {
     }
   },
   components: {
-    HelloWorld
+    Main
   }
 }
 </script>

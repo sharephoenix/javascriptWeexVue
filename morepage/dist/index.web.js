@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -8916,54 +8916,10 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(7).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(13)
-}
-var Component = __webpack_require__(3)(
-  /* script */
-  __webpack_require__(16),
-  /* template */
-  __webpack_require__(17),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-5a260b5e",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] HelloWorld.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a260b5e", Component.options)
-  } else {
-    hotAPI.reload("data-v-5a260b5e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8973,7 +8929,7 @@ var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _weexVueRender = __webpack_require__(10);
+var _weexVueRender = __webpack_require__(9);
 
 var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 
@@ -8984,7 +8940,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(10),
     router = _require.router;
 
 var App = __webpack_require__(24);
@@ -8993,7 +8949,7 @@ new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App
 router.push('/');
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -9049,7 +9005,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(8);
+__webpack_require__(7);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -9063,7 +9019,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -9253,10 +9209,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(8)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9446,7 +9402,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20188,7 +20144,7 @@ console.log('START WEEX VUE RENDER: 1.0.36, Build 2018-12-29 17:52.');
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20203,13 +20159,13 @@ var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(12);
+var _vueRouter = __webpack_require__(11);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _HelloWorld = __webpack_require__(5);
+var _Main = __webpack_require__(12);
 
-var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+var _Main2 = _interopRequireDefault(_Main);
 
 var _wkwebview = __webpack_require__(18);
 
@@ -20222,8 +20178,8 @@ _vue2.default.use(_vueRouter2.default);
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
-    name: 'HelloWorld',
-    component: _HelloWorld2.default,
+    name: 'Main',
+    component: _Main2.default,
     redirect: '/wkwebview'
   }, {
     path: '/wkwebview',
@@ -20233,7 +20189,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22859,6 +22815,50 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(13)
+}
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(16),
+  /* template */
+  __webpack_require__(17),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-3c6d872c",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Main.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3c6d872c", Component.options)
+  } else {
+    hotAPI.reload("data-v-3c6d872c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22869,13 +22869,13 @@ var content = __webpack_require__(14);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2365c693", content, false, {});
+var update = __webpack_require__(2)("04fd7fe9", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5a260b5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./HelloWorld.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5a260b5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./HelloWorld.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3c6d872c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Main.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3c6d872c\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Main.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -22893,7 +22893,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-5a260b5e] {\n}\n.button-cls[data-v-5a260b5e] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.button[data-v-5a260b5e] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-3c6d872c] {\n}\n.button-cls[data-v-3c6d872c] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.button[data-v-3c6d872c] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-3c6d872c] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -22950,7 +22950,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'HelloWorld',
+  name: 'Main',
   data: function data() {
     return {};
   },
@@ -23016,7 +23016,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5a260b5e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3c6d872c", module.exports)
   }
 }
 
@@ -23099,7 +23099,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: center;\n  justify-content: space-between;\n}\n.web-cls[data-v-dccca438] {\n  /* flex: 1; */\n  background-color: red;\n  height: 6.66667rem;\n}\n.button-cls[data-v-dccca438] {\n  position: absolute;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.text-cls[data-v-dccca438] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: center;\n  justify-content: space-between;\n}\n.web-cls[data-v-dccca438] {\n  /* flex: 1; */\n  background-color: red;\n  height: 6.66667rem;\n}\n.button-cls[data-v-dccca438] {\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.text-cls[data-v-dccca438] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n.log-cls[data-v-dccca438] {\n  background-color: white;\n  height: 0.44rem;\n}\n", ""]);
 
 // exports
 
@@ -23123,24 +23123,43 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 var storage = weex.requireModule('storage');
 var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
+var _XHBNetworkModule = weex.requireModule('XHBNetworkModule');
 exports.default = {
   name: 'WKWebView',
   data: function data() {
     return {
-      msg: 'message'
+      msg: 'message',
+      log: ''
     };
   },
 
   methods: {
-    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref) {
+    XHBNetworkModule: function XHBNetworkModule(_ref) {
+      var _this = this;
+
       var reqId = _ref.reqId,
           module = _ref.module,
           event = _ref.event,
-          params = _ref.params,
-          callback = _ref.callback;
+          params = _ref.params;
+
+      this.log = '调用了' + '-' + event + params.method;
+      var _self = this;
+      _XHBNetworkModule.requestData(JSON.stringify(params), function (callback) {
+        _this.log = JSON.stringify(callback);
+        _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }, { body: callback }));
+      });
+    },
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref2) {
+      var reqId = _ref2.reqId,
+          module = _ref2.module,
+          event = _ref2.event,
+          params = _ref2.params;
 
       if (event === 'play') {
         _XHBAudioPlayerModule.play(params);
@@ -23161,27 +23180,31 @@ exports.default = {
       if (event === 'last') {
         _XHBAudioPlayerModule.last();
       }
+      if (event === 'registerStateSignal') {
+        var _self = this;
+        _XHBAudioPlayerModule.registerStateSignal(function (params) {
+          _self.log = JSON.stringify(params);
+          // 需要调用一次，否则会有内存泄漏，iOS 目前做了容错机制
+          // _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}, {body: params}))
+          _self.$refs.rootWeb.postMessage({ module: module, event: event, params: params });
+        });
+      }
     },
     postMessageToWeb: function postMessageToWeb() {
       this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
     },
-    storageEvent: function storageEvent(_ref2) {
-      var reqId = _ref2.reqId,
-          module = _ref2.module,
-          event = _ref2.event,
-          params = _ref2.params,
-          callback = _ref2.callback;
+    storageEvent: function storageEvent(_ref3) {
+      var reqId = _ref3.reqId,
+          module = _ref3.module,
+          event = _ref3.event,
+          params = _ref3.params;
 
       var _self = this;
       if (event === 'setItem') {
         for (var key in params) {
           storage.setItem(key, params[key], function (event) {
             console.log('begin callback');
-            if (callback !== undefined) {
-              callback(event);
-            } else {
-              _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
-            }
+            _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
             console.log('set success');
           });
         }
@@ -23198,11 +23221,7 @@ exports.default = {
             event: _event,
             params: _params
           };
-          if (callback !== undefined) {
-            callback(xxxx);
-          } else {
-            _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
-          }
+          _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
         });
       }
     }
@@ -23257,15 +23276,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: "web-cls",
     attrs: {
-      "src": "http://192.168.3.165:9003/#/",
+      "src": "https://sharephoenix.github.io/blog/main/#/",
       "data-evt-storage": "",
-      "data-evt-XHBAudioPlayerModule": ""
+      "data-evt-XHBAudioPlayerModule": "",
+      "data-evt-XHBNetworkModule": ""
     },
     nativeOn: {
       "storage": _vm.storageEvent,
-      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
+      "XHBNetworkModule": _vm.XHBNetworkModule
     }
   })], 1), _vm._v(" "), _c('div', {
+    staticClass: "log-cls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v(_vm._s(_vm.log))])]), _vm._v(" "), _c('div', {
     staticClass: "button-cls weex-ct weex-div",
     attrs: {
       "weex-type": "div",
@@ -23388,7 +23419,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _HelloWorld = __webpack_require__(5);
+var _HelloWorld = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"@/components/HelloWorld\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 

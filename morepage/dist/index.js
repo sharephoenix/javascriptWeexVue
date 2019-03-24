@@ -62,17 +62,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue'");
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81,7 +75,7 @@ throw new Error("Module build failed: Error: ENOENT: no such file or directory, 
 /* global Vue */
 
 /* weex initialized here, please do not move this line */
-var _require = __webpack_require__(2),
+var _require = __webpack_require__(1),
     router = _require.router;
 
 var App = __webpack_require__(12);
@@ -90,7 +84,7 @@ new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101,11 +95,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.router = undefined;
 
-var _vueRouter = __webpack_require__(3);
+var _vueRouter = __webpack_require__(2);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Main = __webpack_require__(16);
+var _Main = __webpack_require__(3);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -130,7 +124,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2756,9 +2750,129 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(4)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(5)
+
+/* template */
+var __vue_template__ = __webpack_require__(6)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-54d3a52e"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "button-cls": {
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
+  },
+  "button": {
+    "marginTop": "10wx",
+    "height": "33wx",
+    "backgroundColor": "#FF0000",
+    "border": "1px solid yellow",
+    "borderRadius": "16.5wx",
+    "marginLeft": "15wx",
+    "marginRight": "15wx"
+  },
+  "button-text": {
+    "lineHeight": "33wx",
+    "textAlign": "center"
+  }
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'Main',
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    toStorageAndAudio: function toStorageAndAudio() {
+      this.$router.push('/wkwebview');
+    },
+    toApi: function toApi() {
+      this.$router.push('/');
+    }
+  },
+  created: function created() {}
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('scroller', {
+    staticClass: ["body"]
+  }, [_c('div', {
+    on: {
+      "click": _vm.toStorageAndAudio
+    }
+  }, [_c('text', [_vm._v("测试 storage 和 播放器调用")])]), _c('div', {
+    on: {
+      "click": _vm.toApi
+    }
+  }, [_c('text', [_vm._v("测试 api 调用")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2995,7 +3109,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.0.102:9003/#/"
+      "src": "https://sharephoenix.github.io/blog/main/#/"
     },
     on: {
       "storage": _vm.storageEvent,
@@ -3099,9 +3213,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _HelloWorld = __webpack_require__(0);
+var _Main = __webpack_require__(3);
 
-var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+var _Main2 = _interopRequireDefault(_Main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3129,7 +3243,7 @@ exports.default = {
     }
   },
   components: {
-    HelloWorld: _HelloWorld2.default
+    Main: _Main2.default
   }
 }; //
 //
@@ -3150,129 +3264,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "viewappear": _vm.viewappear
     }
   }, [_c('router-view')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(17)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(18)
-
-/* template */
-var __vue_template__ = __webpack_require__(19)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-54d3a52e"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "button-cls": {
-    "backgroundColor": "#008000",
-    "justifyContent": "center",
-    "height": "80wx"
-  },
-  "button": {
-    "marginTop": "10wx",
-    "height": "33wx",
-    "backgroundColor": "#FF0000",
-    "border": "1px solid yellow",
-    "borderRadius": "16.5wx",
-    "marginLeft": "15wx",
-    "marginRight": "15wx"
-  },
-  "button-text": {
-    "lineHeight": "33wx",
-    "textAlign": "center"
-  }
-}
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'HelloWorld',
-  data: function data() {
-    return {};
-  },
-
-  methods: {
-    toStorageAndAudio: function toStorageAndAudio() {
-      this.$router.push('/wkwebview');
-    },
-    toApi: function toApi() {
-      this.$router.push('/');
-    }
-  },
-  created: function created() {}
-};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
-    staticClass: ["body"]
-  }, [_c('div', {
-    on: {
-      "click": _vm.toStorageAndAudio
-    }
-  }, [_c('text', [_vm._v("测试 storage 和 播放器调用")])]), _c('div', {
-    on: {
-      "click": _vm.toApi
-    }
-  }, [_c('text', [_vm._v("测试 api 调用")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
