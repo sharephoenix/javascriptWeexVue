@@ -15,6 +15,7 @@
 #import "UIViewController+WXDemoNaviBar.h"
 #import "DemoDefine.h"
 
+#import "WebLocalModule.h"
 
 @interface WXDemoViewController () <UIScrollViewDelegate, UIWebViewDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
@@ -47,7 +48,9 @@
     [self setupNaviBar];
     [self setupRightBarItem];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    {
+        [WXSDKEngine registerModule:@"localWeb" withClass:NSClassFromString(@"WebLocalModule")];
+    }
     _weexHeight = self.view.frame.size.height - 64;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationRefreshInstance:) name:@"RefreshInstance" object:nil];
     
@@ -176,6 +179,8 @@
         else if (state == WeexInstanceDisappear) {
             [[WXSDKManager bridgeMgr] fireEvent:_instance.instanceId ref:WX_SDK_ROOT_REF type:@"viewdisappear" params:nil domChanges:nil];
         }
+    } else {
+        NSLog(@"");
     }
 }
 

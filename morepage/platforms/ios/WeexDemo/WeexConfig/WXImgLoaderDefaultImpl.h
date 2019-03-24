@@ -11,3 +11,5 @@
 
 @interface WXImgLoaderDefaultImpl : NSObject<WXImgLoaderProtocol, WXModuleProtocol>
 @end
+@interface LocalImage: NSObject
+@end

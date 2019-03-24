@@ -1,0 +1,16 @@
+.body {
+	background-color: green;
+}
+
+.btn-div {
+	height: 30px;
+	margin-top: 10px;
+	background-color: lightgray;
+}
+
+.btn-div button {
+	display: block;
+	margin: 0 auto;
+	height: 30px;
+	width: 100px;
+}

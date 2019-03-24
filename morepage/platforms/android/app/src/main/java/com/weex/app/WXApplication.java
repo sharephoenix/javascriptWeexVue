@@ -2,6 +2,7 @@ package com.weex.app;
 
 import android.app.Application;
 
+import com.weex.app.components.WXKWeb;
 import com.weex.app.extend.ImageAdapter;
 import com.weex.app.extend.WXEventModule;
 import com.alibaba.weex.plugin.loader.WeexPluginContainer;
@@ -20,7 +21,9 @@ public class WXApplication extends Application {
     WXSDKEngine.initialize(this,
         new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build()
     );
+
     try {
+      WXSDKEngine.registerComponent("web", WXKWeb.class);
       WXSDKEngine.registerModule("event", WXEventModule.class);
     } catch (WXException e) {
       e.printStackTrace();

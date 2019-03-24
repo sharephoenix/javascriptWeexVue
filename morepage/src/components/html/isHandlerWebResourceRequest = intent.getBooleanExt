@@ -1,0 +1,19 @@
+isHandlerWebResourceRequest = intent.getBooleanExtra(INTENT_KEY_IS_HANDLER_WEB_RESOURCE_REQUEST, true)
+
+        val webSettings = bridgeWebView.settings
+        //设置user-agent
+        webSettings.userAgentString = webSettings.userAgentString + " DawnBlackBoard/" + PackageUtils.getVersionName(context)
+        webSettings.javaScriptEnabled = true
+        webSettings.domStorageEnabled = true
+        webSettings.setSupportZoom(true)
+        // 扩大比例的缩放
+        webSettings.useWideViewPort = true
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            webSettings.pluginState = WebSettings.PluginState.ON
+            webSettings.allowFileAccessFromFileURLs = true
+            webSettings.domStorageEnabled = true
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            //5.0以上https和http混合地址默认异常处理，打开总是允许避免这种情况
+            webSettings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+        }

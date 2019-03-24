@@ -14,6 +14,8 @@
 		0A86901F1E1E7872000A3F81 /* WeexDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A86901E1E1E7872000A3F81 /* WeexDemo-Info.plist */; };
 		0A996E0A1E249DAF0055CB7E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A996E091E249DAF0055CB7E /* libstdc++.tbd */; };
 		0AE277DC1DE56A5600C6D86A /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AE277DB1DE56A5600C6D86A /* config.xml */; };
+		18422943223BB2CD0020A621 /* WKWebComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 18422942223BB2CD0020A621 /* WKWebComponent.m */; };
+		18FAA3412239FDB500ADD306 /* WebLocalModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FAA3402239FDB500ADD306 /* WebLocalModule.m */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
 		775BEE801C1E8ECC008D1629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE7F1C1E8ECC008D1629 /* main.m */; };
 		775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE821C1E8ECC008D1629 /* AppDelegate.m */; };
@@ -61,6 +63,10 @@
 		0A996E091E249DAF0055CB7E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0AE277DB1DE56A5600C6D86A /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		0B4FAFDE2AD89EAFD12DB8C2 /* Pods-WeexUITestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexUITestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		18422941223BB2CD0020A621 /* WKWebComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebComponent.h; sourceTree = "<group>"; };
+		18422942223BB2CD0020A621 /* WKWebComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebComponent.m; sourceTree = "<group>"; };
+		18FAA33F2239FDB500ADD306 /* WebLocalModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebLocalModule.h; sourceTree = "<group>"; };
+		18FAA3402239FDB500ADD306 /* WebLocalModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebLocalModule.m; sourceTree = "<group>"; };
 		37DB381D5815C06F147D4D51 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
 		59EA0DA61D2E7D19004F904A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7453E3641C9FA971001EB427 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
@@ -145,6 +151,24 @@
 				0A4A05F61E0405070046E1BE /* WXDemoViewController.m */,
 			);
 			path = WeexScanner;
+			sourceTree = "<group>";
+		};
+		18422940223BB2920020A621 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18422941223BB2CD0020A621 /* WKWebComponent.h */,
+				18422942223BB2CD0020A621 /* WKWebComponent.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		18FAA33B2239FBD500ADD306 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				18FAA33F2239FDB500ADD306 /* WebLocalModule.h */,
+				18FAA3402239FDB500ADD306 /* WebLocalModule.m */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 		327BB19797F63D5309FB91BF /* Frameworks */ = {
@@ -247,6 +271,8 @@
 		D5ADF0861C77133B00597CA6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				18422940223BB2920020A621 /* Components */,
+				18FAA33B2239FBD500ADD306 /* web */,
 				D0FC4D82223947AA0049E694 /* CacheManager */,
 				0A4A05F21E0405070046E1BE /* WeexScanner */,
 				0A3122A61E1F41E30041B972 /* WeexConfig */,
@@ -339,14 +365,8 @@
 				ORGANIZATIONNAME = taobao;
 				TargetAttributes = {
 					775BEE7A1C1E8ECC008D1629 = {
-						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 1010;
-						ProvisioningStyle = Manual;
-					};
-					775BEE931C1E8ECC008D1629 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 445VCMGQD2;
-						TestTargetID = 775BEE7A1C1E8ECC008D1629;
+						DevelopmentTeam = WZMDZ97XAH;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -541,8 +561,10 @@
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
 				0A4A05F91E0405070046E1BE /* UIViewController+WXDemoNaviBar.m in Sources */,
+				18422943223BB2CD0020A621 /* WKWebComponent.m in Sources */,
 				775BEE801C1E8ECC008D1629 /* main.m in Sources */,
 				0A7758D71EA0D39C00AE9815 /* WXImgLoaderDefaultImpl.m in Sources */,
+				18FAA3412239FDB500ADD306 /* WebLocalModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,8 +690,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZMDZ97XAH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,7 +701,7 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "WeexDemo/WeexDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = (
@@ -696,9 +719,9 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.demo0001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo/CacheManager/WeexDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -714,8 +737,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZMDZ97XAH;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -724,7 +748,7 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "WeexDemo/WeexDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = (
@@ -742,9 +766,9 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.taobao.WeexPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.demo0001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo/CacheManager/WeexDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -21,7 +21,6 @@ import com.weex.app.util.Constants;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXRenderErrorCode;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.ui.component.NestedContainer;
@@ -163,11 +162,11 @@ public class WXPageActivity extends AbsWeexActivity implements
   public void onException(WXSDKInstance instance, String errCode, String msg) {
     mProgressBar.setVisibility(View.GONE);
     mTipView.setVisibility(View.VISIBLE);
-    if (TextUtils.equals(errCode, WXRenderErrorCode.WX_NETWORK_ERROR)) {
-      mTipView.setText(R.string.index_tip);
-    } else {
-      mTipView.setText("render error:" + errCode);
-    }
+//    if (TextUtils.equals(errCode, WXRenderErrorCode.WX_NETWORK_ERROR)) {
+//      mTipView.setText(R.string.index_tip);
+//    } else {
+//      mTipView.setText("render error:" + errCode);
+//    }
   }
 
   @Override
@@ -237,7 +236,7 @@ public class WXPageActivity extends AbsWeexActivity implements
       } else if (code.contains("_wx_debug")) {
         uri = Uri.parse(code);
         String debug_url = uri.getQueryParameter("_wx_debug");
-        WXSDKEngine.switchDebugModel(true, debug_url);
+//        WXSDKEngine.switchDebugModel(true, debug_url);
         finish();
       } else {
         JSONObject data = new JSONObject();
