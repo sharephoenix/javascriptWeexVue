@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper" @viewappear="viewappear">
-
-    <router-view/>
+    <router-view class="body"/>
   </div>
 </template>
 
@@ -36,6 +35,10 @@ export default {
 
 <style scoped>
   .wrapper {
+    background-color: blue;
+  }
+  .body {
+    flex: 1;
   }
   .logo {
     width: 42px;

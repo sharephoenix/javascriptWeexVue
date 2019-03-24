@@ -1,9 +1,10 @@
 <template>
   <div class="body">
     <div class="web-cls">
-      <web ref="rootWeb" class="web-cls" src="https://sharephoenix.github.io/blog/main/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
+      <!-- <web ref="rootWeb" class="web-cls" src="https://sharephoenix.github.io/blog/main/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web> -->
+      <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
     </div>
-    <div class="log-cls"><text>{{log}}</text></div>
+    <scroller class="log-cls"><text>{{log}}</text></scroller>
     <!-- <div class="button-cls" @click="postMessageToWeb">
       <text class="text-cls"> postmessageToWebgg</text>
     </div> -->
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     XHBNetworkModule ({reqId, module, event, params}) {
-      this.log = '调用了' + '-' + event + params.method
+      this.log = '调用了' + '-' + event + JSON.stringify(params)
       const _self = this
       XHBNetworkModule.requestData(JSON.stringify(params), (callback) => {
         this.log = JSON.stringify(callback)
@@ -101,14 +102,15 @@ export default {
 
 <style scoped>
 .body {
-  flex-direction: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: aquamarine;
 }
 
 .web-cls {
-  /* flex: 1; */
+  flex: 1;
   background-color: red;
-  height: 500wx;
+  /* height: 600wx; */
 }
 
 .button-cls {
@@ -122,7 +124,7 @@ export default {
   font-size: 16wx;
 }
 .log-cls {
-  background-color: white;
-  height: 33wx;
+  background-color: orchid;
+  height: 60wx;
 }
 </style>

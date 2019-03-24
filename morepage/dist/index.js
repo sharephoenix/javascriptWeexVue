@@ -2798,6 +2798,9 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "body": {
+    "backgroundColor": "#FFA500"
+  },
   "button-cls": {
     "backgroundColor": "#008000",
     "justifyContent": "center",
@@ -2922,11 +2925,13 @@ module.exports = __vue_exports__
 
 module.exports = {
   "body": {
-    "justifyContent": "space-between"
+    "flexDirection": "column",
+    "justifyContent": "flex-start",
+    "backgroundColor": "#7FFFD4"
   },
   "web-cls": {
-    "backgroundColor": "#FF0000",
-    "height": "500wx"
+    "flex": 1,
+    "backgroundColor": "#FF0000"
   },
   "button-cls": {
     "backgroundColor": "#008000",
@@ -2938,8 +2943,8 @@ module.exports = {
     "fontSize": "16wx"
   },
   "log-cls": {
-    "backgroundColor": "#FFFFFF",
-    "height": "33wx"
+    "backgroundColor": "#DA70D6",
+    "height": "60wx"
   }
 }
 
@@ -2953,6 +2958,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -2987,7 +2993,7 @@ exports.default = {
           event = _ref.event,
           params = _ref.params;
 
-      this.log = '调用了' + '-' + event + params.method;
+      this.log = '调用了' + '-' + event + JSON.stringify(params);
       var _self = this;
       _XHBNetworkModule.requestData(JSON.stringify(params), function (callback) {
         _this.log = JSON.stringify(callback);
@@ -3112,14 +3118,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "https://sharephoenix.github.io/blog/main/#/"
+      "src": "http://192.168.0.102:9003/#/"
     },
     on: {
       "storage": _vm.storageEvent,
       "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
       "XHBNetworkModule": _vm.XHBNetworkModule
     }
-  })]), _c('div', {
+  })]), _c('scroller', {
     staticClass: ["log-cls"]
   }, [_c('text', [_vm._v(_vm._s(_vm.log))])])])
 },staticRenderFns: []}
@@ -3174,6 +3180,12 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
+  "wrapper": {
+    "backgroundColor": "#0000FF"
+  },
+  "body": {
+    "flex": 1
+  },
   "logo": {
     "width": "42",
     "height": "20"
@@ -3247,7 +3259,6 @@ exports.default = {
 //
 //
 //
-//
 
 /***/ }),
 /* 15 */
@@ -3259,7 +3270,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "viewappear": _vm.viewappear
     }
-  }, [_c('router-view')], 1)
+  }, [_c('router-view', {
+    staticClass: ["body"]
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

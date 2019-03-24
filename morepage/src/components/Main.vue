@@ -26,6 +26,7 @@ export default {
 </script>
 <style scoped>
 .body {
+  background-color: orange;
 }
   .button-cls {
     background-color: green;
