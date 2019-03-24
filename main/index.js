@@ -2965,6 +2965,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 var storage = weex.requireModule('storage');
 var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
@@ -3033,6 +3034,8 @@ exports.default = {
       this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
     },
     storageEvent: function storageEvent(_ref3) {
+      var _this2 = this;
+
       var reqId = _ref3.reqId,
           module = _ref3.module,
           event = _ref3.event,
@@ -3058,8 +3061,9 @@ exports.default = {
             module: module,
             reqId: reqId,
             event: _event,
-            params: _params
+            body: _params
           };
+          _this2.log = xxxx;
           _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
         });
       }
@@ -3116,16 +3120,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
       "XHBNetworkModule": _vm.XHBNetworkModule
     }
+  }), _c('web', {
+    ref: "rootWeb",
+    staticClass: ["web-cls"],
+    attrs: {
+      "src": "http://192.168.0.102:9003/#/"
+    },
+    on: {
+      "storage": _vm.storageEvent,
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
+      "XHBNetworkModule": _vm.XHBNetworkModule
+    }
   })]), _c('div', {
     staticClass: ["log-cls"]
-  }, [_c('text', [_vm._v(_vm._s(_vm.log))])]), _c('div', {
-    staticClass: ["button-cls"],
-    on: {
-      "click": _vm.postMessageToWeb
-    }
-  }, [_c('text', {
-    staticClass: ["text-cls"]
-  }, [_vm._v(" postmessageToWebgg")])])])
+  }, [_c('text', [_vm._v(_vm._s(_vm.log))])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
