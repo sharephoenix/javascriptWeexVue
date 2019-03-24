@@ -3120,7 +3120,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "https://sharephoenix.github.io/blog/main/#/index.js"
+      "src": "https://sharephoenix.github.io/blog/main/#/"
     },
     on: {
       "storage": _vm.storageEvent,
