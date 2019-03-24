@@ -5,9 +5,9 @@
       <!-- <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web> -->
     </div>
     <scroller class="log-cls"><text>{{log}}</text></scroller>
-    <!-- <div class="button-cls" @click="postMessageToWeb">
+    <div class="button-cls" @click="postMessageToWeb">
       <text class="text-cls"> postmessageToWebgg</text>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -114,14 +114,16 @@ export default {
 }
 
 .button-cls {
-  background-color: green;
+  background-color: white;
   justify-content: center;
   height: 80wx;
+  border-radius: 3wx;
 }
 
 .text-cls {
-  background-color: red;
+  color: black;
   font-size: 16wx;
+  text-align: center;
 }
 .log-cls {
   background-color: orchid;

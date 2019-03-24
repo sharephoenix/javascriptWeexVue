@@ -2934,13 +2934,15 @@ module.exports = {
     "backgroundColor": "#FF0000"
   },
   "button-cls": {
-    "backgroundColor": "#008000",
+    "backgroundColor": "#FFFFFF",
     "justifyContent": "center",
-    "height": "80wx"
+    "height": "80wx",
+    "borderRadius": "3wx"
   },
   "text-cls": {
-    "backgroundColor": "#FF0000",
-    "fontSize": "16wx"
+    "color": "#000000",
+    "fontSize": "16wx",
+    "textAlign": "center"
   },
   "log-cls": {
     "backgroundColor": "#DA70D6",
@@ -3127,7 +3129,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _c('scroller', {
     staticClass: ["log-cls"]
-  }, [_c('text', [_vm._v(_vm._s(_vm.log))])])])
+  }, [_c('text', [_vm._v(_vm._s(_vm.log))])]), _c('div', {
+    staticClass: ["button-cls"],
+    on: {
+      "click": _vm.postMessageToWeb
+    }
+  }, [_c('text', {
+    staticClass: ["text-cls"]
+  }, [_vm._v(" postmessageToWebgg")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
