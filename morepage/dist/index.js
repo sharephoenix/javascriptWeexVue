@@ -2965,7 +2965,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
 
 var storage = weex.requireModule('storage');
 var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
@@ -3114,17 +3113,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["web-cls"],
     attrs: {
       "src": "https://sharephoenix.github.io/blog/main/#/"
-    },
-    on: {
-      "storage": _vm.storageEvent,
-      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
-      "XHBNetworkModule": _vm.XHBNetworkModule
-    }
-  }), _c('web', {
-    ref: "rootWeb",
-    staticClass: ["web-cls"],
-    attrs: {
-      "src": "http://192.168.0.102:9003/#/"
     },
     on: {
       "storage": _vm.storageEvent,
