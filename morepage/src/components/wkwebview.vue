@@ -1,12 +1,12 @@
 <template>
   <div class="body">
     <div class="web-cls">
-      <web ref="rootWeb" class="web-cls" src="https://sharephoenix.github.io/blog/main/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
+      <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
     </div>
     <div class="log-cls"><text>{{log}}</text></div>
-    <div class="button-cls" @click="postMessageToWeb">
+    <!-- <div class="button-cls" @click="postMessageToWeb">
       <text class="text-cls"> postmessageToWebgg</text>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -88,8 +88,9 @@ export default {
             module,
             reqId,
             event: _event,
-            params: _params
+            body: _params
           }
+          this.log = xxxx
           _self.$refs.rootWeb.callback(Object.assign(xxxx, {'reqId': reqId}))
         })
       }
