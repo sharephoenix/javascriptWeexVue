@@ -122,7 +122,7 @@ module.exports = __vue_exports__
 var _require = __webpack_require__(2),
     router = _require.router;
 
-var App = __webpack_require__(7);
+var App = __webpack_require__(12);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -147,15 +147,23 @@ var _HelloWorld = __webpack_require__(0);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
+var _wkwebview = __webpack_require__(7);
+
+var _wkwebview2 = _interopRequireDefault(_wkwebview);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global Vue */
-Vue.use(_vueRouter2.default);
+Vue.use(_vueRouter2.default); /* global Vue */
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
     name: 'HelloWorld',
-    component: _HelloWorld2.default
+    component: _HelloWorld2.default,
+    redirect: '/wkwebview'
+  }, {
+    path: '/wkwebview',
+    name: 'WKWebView',
+    component: _wkwebview2.default
   }]
 });
 
@@ -2790,24 +2798,10 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 module.exports = {
-  "web-cls": {
-    "backgroundColor": "#FF0000",
-    "height": "800"
-  },
   "button-cls": {
     "backgroundColor": "#008000",
     "justifyContent": "center",
     "height": "80wx"
-  },
-  "texmessaget": {
-    "color": "#FF0000",
-    "fontSize": "33wx"
-  },
-  "input": {
-    "height": "33wx",
-    "backgroundColor": "#D3D3D3",
-    "marginLeft": "15wx",
-    "marginRight": "15wx"
   },
   "button": {
     "marginTop": "10wx",
@@ -2821,14 +2815,6 @@ module.exports = {
   "button-text": {
     "lineHeight": "33wx",
     "textAlign": "center"
-  },
-  "image-div": {
-    "height": "200wx",
-    "backgroundColor": "#FF0000"
-  },
-  "text-cls": {
-    "backgroundColor": "#FF0000",
-    "fontSize": "16wx"
   }
 }
 
@@ -2849,75 +2835,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-var navigator = weex.requireModule('navigator');
-var localWeb = weex.requireModule('localWeb');
 exports.default = {
   name: 'HelloWorld',
   data: function data() {
-    return {
-      inputValue: '',
-      source: '',
-      srcs: ''
-    };
+    return {};
   },
 
   methods: {
-    postMessage: function postMessage(e) {
-      // web 调用 native 的方法
-      console.log('-----------------');
-      console.log(e.type);
-      console.log(e.origin);
-      console.log(JSON.stringify(e.data));
-      console.log('-----------------');
-      // html 调用方法
-      // window.postMessage({'params01': 'params011111',
-      //                 'params02': 'params02222'}, 'event');
+    toStorageAndAudio: function toStorageAndAudio() {
+      this.$router.push('/wkwebview');
     },
-    postMessageToWeb: function postMessageToWeb() {
-      // html 直接定义全局方法
-      // function MessageEvent(e, data) {
-      // }
-      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
-    },
-    firstEvent: function firstEvent() {
-      console.log('firstEventfirstEventfirstEvent');
-    },
-    secondEvent: function secondEvent() {
-      console.log('secondEventsecondEventsecondEvent');
-    },
-    reloadWeb: function reloadWeb() {
-      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
-      // '?q=score%3d0%26desc%3d阿嫂'
-      console.log('url::::' + this.srcs);
-    },
-    getInitialData: function getInitialData() {},
-    toFocus: function toFocus() {
-      // 下面一行是为了兼容 Android
-      this.$refs.inputRef.blur();
-      this.$refs.inputRef.focus();
-    },
-    toHide: function toHide() {
-      this.$refs.inputRef.blur();
-    },
-    abc: function abc() {
-      console.log('click');
+    toApi: function toApi() {
+      this.$router.push('/');
     }
   },
-  created: function created() {
-    navigator.setNavBarTitle({ title: 'title' });
-    this.reloadWeb();
-  }
+  created: function created() {}
 };
 
 /***/ }),
@@ -2927,25 +2860,15 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('scroller', {
     staticClass: ["body"]
-  }, [_c('web', {
-    ref: "rootWeb",
-    staticClass: ["web-cls"],
-    attrs: {
-      "src": "http://192.168.2.95:9003/#/weexbasic"
-    },
+  }, [_c('div', {
     on: {
-      "message": _vm.postMessage,
-      "firstEvent": _vm.firstEvent,
-      "secondEvent": _vm.secondEvent
+      "click": _vm.toStorageAndAudio
     }
-  }), _c('div', {
-    staticClass: ["button-cls"],
+  }, [_c('text', [_vm._v("测试 storage 和 播放器调用")])]), _c('div', {
     on: {
-      "click": _vm.postMessageToWeb
+      "click": _vm.toApi
     }
-  }, [_c('text', {
-    staticClass: ["text-cls"]
-  }, [_vm._v(" postmessage to web")])])])
+  }, [_c('text', [_vm._v("测试 api 调用")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2964,7 +2887,242 @@ __vue_styles__.push(__webpack_require__(8)
 __vue_exports__ = __webpack_require__(9)
 
 /* template */
-var __vue_template__ = __webpack_require__(10)
+var __vue_template__ = __webpack_require__(11)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/wkwebview.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-5b868445"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "body": {
+    "justifyContent": "space-between"
+  },
+  "web-cls": {
+    "backgroundColor": "#FF0000",
+    "height": "500wx"
+  },
+  "button-cls": {
+    "position": "absolute",
+    "bottom": "0wx",
+    "left": "0wx",
+    "right": "0wx",
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
+  },
+  "text-cls": {
+    "backgroundColor": "#FF0000",
+    "fontSize": "16wx"
+  }
+}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var storage = weex.requireModule('storage');
+var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
+exports.default = {
+  name: 'WKWebView',
+  data: function data() {
+    return {
+      msg: 'message'
+    };
+  },
+
+  methods: {
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref) {
+      var reqId = _ref.reqId,
+          module = _ref.module,
+          event = _ref.event,
+          params = _ref.params,
+          callback = _ref.callback;
+
+      if (event === 'play') {
+        _XHBAudioPlayerModule.play(params);
+        return;
+      }
+      if (event === 'pause') {
+        _XHBAudioPlayerModule.pause();
+      }
+      if (event === 'resume') {
+        _XHBAudioPlayerModule.resume();
+      }
+      if (event === 'stop') {
+        _XHBAudioPlayerModule.stop();
+      }
+      if (event === 'next') {
+        _XHBAudioPlayerModule.next();
+      }
+      if (event === 'last') {
+        _XHBAudioPlayerModule.last();
+      }
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
+    },
+    storageEvent: function storageEvent(_ref2) {
+      var reqId = _ref2.reqId,
+          module = _ref2.module,
+          event = _ref2.event,
+          params = _ref2.params,
+          callback = _ref2.callback;
+
+      var _self = this;
+      if (event === 'setItem') {
+        for (var key in params) {
+          storage.setItem(key, params[key], function (event) {
+            console.log('begin callback');
+            if (callback !== undefined) {
+              callback(event);
+            } else {
+              _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
+            }
+            console.log('set success');
+          });
+        }
+      }
+      if (event === 'getItem') {
+        var _event = event;
+        var _key = params;
+        var _params = {};
+        storage.getItem(params, function (event) {
+          _params[_key] = event.data;
+          var xxxx = {
+            module: module,
+            reqId: reqId,
+            event: _event,
+            params: _params
+          };
+          if (callback !== undefined) {
+            callback(xxxx);
+          } else {
+            _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
+          }
+        });
+      }
+    }
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module)))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["body"]
+  }, [_c('div', {
+    staticClass: ["web-cls"]
+  }, [_c('web', {
+    ref: "rootWeb",
+    staticClass: ["web-cls"],
+    attrs: {
+      "src": "http://192.168.3.165:9003/#/"
+    },
+    on: {
+      "storage": _vm.storageEvent,
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule
+    }
+  })]), _c('div', {
+    staticClass: ["button-cls"],
+    on: {
+      "click": _vm.postMessageToWeb
+    }
+  }, [_c('text', {
+    staticClass: ["text-cls"]
+  }, [_vm._v(" postmessageToWebgg")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(13)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(14)
+
+/* template */
+var __vue_template__ = __webpack_require__(15)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2994,7 +3152,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 8 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -3023,7 +3181,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 9 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3074,7 +3232,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 10 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

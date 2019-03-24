@@ -1,24 +1,37 @@
 <template>
   <div class="body">
     <div class="web-cls">
-      <web ref="rootWeb" class="web-cls" src="http://192.168.3.165:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule"></web>
+      <web ref="rootWeb" class="web-cls" src="http://192.168.0.102:9003/#/" @storage="storageEvent" @XHBAudioPlayerModule="XHBAudioPlayerModule" @XHBNetworkModule="XHBNetworkModule"></web>
     </div>
-    <div class="button-cls" @click="postMessageToWeb"><text class="text-cls"> postmessageToWebgg</text></div>
+    <div class="log-cls"><text>{{log}}</text></div>
+    <div class="button-cls" @click="postMessageToWeb">
+      <text class="text-cls"> postmessageToWebgg</text>
+    </div>
   </div>
 </template>
 
 <script>
 const storage = weex.requireModule('storage')
 const XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule')
+const XHBNetworkModule = weex.requireModule('XHBNetworkModule')
 export default {
   name: 'WKWebView',
   data () {
     return {
-      msg: 'message'
+      msg: 'message',
+      log: ''
     }
   },
   methods: {
-    XHBAudioPlayerModule ({reqId, module, event, params, callback}) {
+    XHBNetworkModule ({reqId, module, event, params}) {
+      this.log = '调用了' + '-' + event + params.method
+      const _self = this
+      XHBNetworkModule.requestData(JSON.stringify(params), (callback) => {
+        this.log = JSON.stringify(callback)
+        _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}, {body: callback}))
+      })
+    },
+    XHBAudioPlayerModule ({reqId, module, event, params}) {
       if (event === 'play') {
         XHBAudioPlayerModule.play(params)
         return
@@ -38,11 +51,20 @@ export default {
       if (event === 'last') {
         XHBAudioPlayerModule.last()
       }
+      if (event === 'registerStateSignal') {
+        const _self = this
+        XHBAudioPlayerModule.registerStateSignal((params) => {
+          _self.log = JSON.stringify(params)
+          // 需要调用一次，否则会有内存泄漏，iOS 目前做了容错机制
+          // _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}, {body: params}))
+          _self.$refs.rootWeb.postMessage({module, event, params: params})
+        })
+      }
     },
     postMessageToWeb () {
       this.$refs.rootWeb.postMessage({module, event, params: {info: 'success'}})
     },
-    storageEvent ({reqId, module, event, params, callback}) {
+    storageEvent ({reqId, module, event, params}) {
       const _self = this
       if (event === 'setItem') {
         for (var key in params) {
@@ -51,11 +73,7 @@ export default {
             params[key],
             event => {
               console.log('begin callback')
-              if (callback !== undefined) {
-                callback(event)
-              } else {
-                _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}))
-              }
+              _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}))
               console.log('set success')
             })
         }
@@ -72,11 +90,7 @@ export default {
             event: _event,
             params: _params
           }
-          if (callback !== undefined) {
-            callback(xxxx)
-          } else {
-            _self.$refs.rootWeb.callback(Object.assign(xxxx, {'reqId': reqId}))
-          }
+          _self.$refs.rootWeb.callback(Object.assign(xxxx, {'reqId': reqId}))
         })
       }
     }
@@ -97,10 +111,6 @@ export default {
 }
 
 .button-cls {
-  position: absolute;
-  bottom: 0wx;
-  left: 0wx;
-  right: 0wx;
   background-color: green;
   justify-content: center;
   height: 80wx;
@@ -109,5 +119,9 @@ export default {
 .text-cls {
   background-color: red;
   font-size: 16wx;
+}
+.log-cls {
+  background-color: white;
+  height: 33wx;
 }
 </style>

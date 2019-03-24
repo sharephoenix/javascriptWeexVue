@@ -22893,7 +22893,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-5a260b5e] {\n}\n.web-cls[data-v-5a260b5e] {\n    background-color: red;\n    height: 10.66667rem;\n}\n.button-cls[data-v-5a260b5e] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.texmessaget[data-v-5a260b5e] {\n    color: red;\n    font-size: 0.44rem;\n}\n.input[data-v-5a260b5e] {\n    height: 0.44rem;\n    background-color: lightgray;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button[data-v-5a260b5e] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n.image-div[data-v-5a260b5e] {\n    height: 2.66667rem;\n    background-color: red;\n}\n.text-cls[data-v-5a260b5e] {\n    background-color: red;\n    font-size: 0.21333rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-5a260b5e] {\n}\n.button-cls[data-v-5a260b5e] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.button[data-v-5a260b5e] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-5a260b5e] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -22948,75 +22948,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-var navigator = weex.requireModule('navigator');
-var localWeb = weex.requireModule('localWeb');
 exports.default = {
   name: 'HelloWorld',
   data: function data() {
-    return {
-      inputValue: '',
-      source: '',
-      srcs: ''
-    };
+    return {};
   },
 
   methods: {
-    postMessage: function postMessage(e) {
-      // web 调用 native 的方法
-      console.log('-----------------');
-      console.log(e.type);
-      console.log(e.origin);
-      console.log(JSON.stringify(e.data));
-      console.log('-----------------');
-      // html 调用方法
-      // window.postMessage({'params01': 'params011111',
-      //                 'params02': 'params02222'}, 'event');
+    toStorageAndAudio: function toStorageAndAudio() {
+      this.$router.push('/wkwebview');
     },
-    postMessageToWeb: function postMessageToWeb() {
-      // html 直接定义全局方法
-      // function MessageEvent(e, data) {
-      // }
-      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
-    },
-    firstEvent: function firstEvent() {
-      console.log('firstEventfirstEventfirstEvent');
-    },
-    secondEvent: function secondEvent() {
-      console.log('secondEventsecondEventsecondEvent');
-    },
-    reloadWeb: function reloadWeb() {
-      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
-      // '?q=score%3d0%26desc%3d阿嫂'
-      console.log('url::::' + this.srcs);
-    },
-    getInitialData: function getInitialData() {},
-    toFocus: function toFocus() {
-      // 下面一行是为了兼容 Android
-      this.$refs.inputRef.blur();
-      this.$refs.inputRef.focus();
-    },
-    toHide: function toHide() {
-      this.$refs.inputRef.blur();
-    },
-    abc: function abc() {
-      console.log('click');
+    toApi: function toApi() {
+      this.$router.push('/');
     }
   },
-  created: function created() {
-    navigator.setNavBarTitle({ title: 'title' });
-    this.reloadWeb();
-  }
+  created: function created() {}
 };
 
 /***/ }),
@@ -23027,22 +22974,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('scroller', {
     staticClass: "body",
     attrs: {}
-  }, [_c('web', {
-    ref: "rootWeb",
-    staticClass: "web-cls",
-    attrs: {
-      "src": "http://192.168.2.95:9003/#/weexbasic",
-      "data-evt-message": "",
-      "data-evt-firstEvent": "",
-      "data-evt-secondEvent": ""
-    },
-    nativeOn: {
-      "message": _vm.postMessage,
-      "firstEvent": _vm.firstEvent,
-      "secondEvent": _vm.secondEvent
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "button-cls weex-ct weex-div",
+  }, [_c('div', {
+    staticClass: " weex-ct weex-div",
     attrs: {
       "weex-type": "div",
       "data-evt-click": ""
@@ -23051,15 +22984,33 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        return _vm.postMessageToWeb($event)
+        return _vm.toStorageAndAudio($event)
       }
     }
   }, [_c('p', {
-    staticClass: "text-cls weex-el weex-text",
+    staticClass: " weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(" postmessage to web")])])], 1)
+  }, [_vm._v("测试 storage 和 播放器调用")])]), _vm._v(" "), _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.toApi($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: " weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("测试 api 调用")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23148,7 +23099,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-dccca438] {\n}\n.web-cls[data-v-dccca438] {\n  background-color: red;\n  height: 10.66667rem;\n}\n.button-cls[data-v-dccca438] {\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.text-cls[data-v-dccca438] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: center;\n  justify-content: space-between;\n}\n.web-cls[data-v-dccca438] {\n  /* flex: 1; */\n  background-color: red;\n  height: 6.66667rem;\n}\n.button-cls[data-v-dccca438] {\n  position: absolute;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.text-cls[data-v-dccca438] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n", ""]);
 
 // exports
 
@@ -23170,8 +23121,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 var storage = weex.requireModule('storage');
+var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
 exports.default = {
   name: 'WKWebView',
   data: function data() {
@@ -23181,25 +23135,52 @@ exports.default = {
   },
 
   methods: {
-    postMessageToWeb: function postMessageToWeb() {
-      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
-    },
-    storageEvent: function storageEvent(_ref) {
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref) {
       var reqId = _ref.reqId,
           module = _ref.module,
           event = _ref.event,
           params = _ref.params,
           callback = _ref.callback;
 
-      console.log(reqId + '++++' + module + '++++' + event + '++++' + JSON.stringify(params) + '++++');
+      if (event === 'play') {
+        _XHBAudioPlayerModule.play(params);
+        return;
+      }
+      if (event === 'pause') {
+        _XHBAudioPlayerModule.pause();
+      }
+      if (event === 'resume') {
+        _XHBAudioPlayerModule.resume();
+      }
+      if (event === 'stop') {
+        _XHBAudioPlayerModule.stop();
+      }
+      if (event === 'next') {
+        _XHBAudioPlayerModule.next();
+      }
+      if (event === 'last') {
+        _XHBAudioPlayerModule.last();
+      }
+    },
+    postMessageToWeb: function postMessageToWeb() {
+      this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
+    },
+    storageEvent: function storageEvent(_ref2) {
+      var reqId = _ref2.reqId,
+          module = _ref2.module,
+          event = _ref2.event,
+          params = _ref2.params,
+          callback = _ref2.callback;
 
+      var _self = this;
       if (event === 'setItem') {
         for (var key in params) {
-          console.log('**************');
-          console.log(key, params[key]);
           storage.setItem(key, params[key], function (event) {
+            console.log('begin callback');
             if (callback !== undefined) {
               callback(event);
+            } else {
+              _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
             }
             console.log('set success');
           });
@@ -23210,7 +23191,6 @@ exports.default = {
         var _key = params;
         var _params = {};
         storage.getItem(params, function (event) {
-          console.log('get value:', event.data);
           _params[_key] = event.data;
           var xxxx = {
             module: module,
@@ -23220,6 +23200,8 @@ exports.default = {
           };
           if (callback !== undefined) {
             callback(xxxx);
+          } else {
+            _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
           }
         });
       }
@@ -23266,17 +23248,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
+  }, [_c('div', {
+    staticClass: "web-cls weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
   }, [_c('web', {
     ref: "rootWeb",
     staticClass: "web-cls",
     attrs: {
-      "src": "http://192.168.2.95:9003/#/",
-      "data-evt-storage": ""
+      "src": "http://192.168.3.165:9003/#/",
+      "data-evt-storage": "",
+      "data-evt-XHBAudioPlayerModule": ""
     },
     nativeOn: {
-      "storage": _vm.storageEvent
+      "storage": _vm.storageEvent,
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule
     }
-  }), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c('div', {
     staticClass: "button-cls weex-ct weex-div",
     attrs: {
       "weex-type": "div",
@@ -23294,7 +23283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(" postmessageToWebgg")])])], 1)
+  }, [_vm._v(" postmessageToWebgg")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

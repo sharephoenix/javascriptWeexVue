@@ -67,47 +67,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(4)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(5)
-
-/* template */
-var __vue_template__ = __webpack_require__(6)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-469af010"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/HelloWorld.vue'");
 
 /***/ }),
 /* 1 */
@@ -143,9 +105,9 @@ var _vueRouter = __webpack_require__(3);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _HelloWorld = __webpack_require__(0);
+var _Main = __webpack_require__(16);
 
-var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+var _Main2 = _interopRequireDefault(_Main);
 
 var _wkwebview = __webpack_require__(7);
 
@@ -157,8 +119,8 @@ Vue.use(_vueRouter2.default); /* global Vue */
 var router = exports.router = new _vueRouter2.default({
   routes: [{
     path: '/',
-    name: 'HelloWorld',
-    component: _HelloWorld2.default,
+    name: 'Main',
+    component: _Main2.default,
     redirect: '/wkwebview'
   }, {
     path: '/wkwebview',
@@ -2794,170 +2756,9 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "web-cls": {
-    "backgroundColor": "#FF0000",
-    "height": "800"
-  },
-  "button-cls": {
-    "backgroundColor": "#008000",
-    "justifyContent": "center",
-    "height": "80wx"
-  },
-  "texmessaget": {
-    "color": "#FF0000",
-    "fontSize": "33wx"
-  },
-  "input": {
-    "height": "33wx",
-    "backgroundColor": "#D3D3D3",
-    "marginLeft": "15wx",
-    "marginRight": "15wx"
-  },
-  "button": {
-    "marginTop": "10wx",
-    "height": "33wx",
-    "backgroundColor": "#FF0000",
-    "border": "1px solid yellow",
-    "borderRadius": "16.5wx",
-    "marginLeft": "15wx",
-    "marginRight": "15wx"
-  },
-  "button-text": {
-    "lineHeight": "33wx",
-    "textAlign": "center"
-  },
-  "image-div": {
-    "height": "200wx",
-    "backgroundColor": "#FF0000"
-  },
-  "text-cls": {
-    "backgroundColor": "#FF0000",
-    "fontSize": "16wx"
-  }
-}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var navigator = weex.requireModule('navigator');
-var localWeb = weex.requireModule('localWeb');
-exports.default = {
-  name: 'HelloWorld',
-  data: function data() {
-    return {
-      inputValue: '',
-      source: '',
-      srcs: ''
-    };
-  },
-
-  methods: {
-    postMessage: function postMessage(e) {
-      // web 调用 native 的方法
-      console.log('-----------------');
-      console.log(e.type);
-      console.log(e.origin);
-      console.log(JSON.stringify(e.data));
-      console.log('-----------------');
-      // html 调用方法
-      // window.postMessage({'params01': 'params011111',
-      //                 'params02': 'params02222'}, 'event');
-    },
-    postMessageToWeb: function postMessageToWeb() {
-      // html 直接定义全局方法
-      // function MessageEvent(e, data) {
-      // }
-      this.$refs.rootWeb.postMessage({ a: 'b', b: 'c' });
-    },
-    firstEvent: function firstEvent() {
-      console.log('firstEventfirstEventfirstEvent');
-    },
-    secondEvent: function secondEvent() {
-      console.log('secondEventsecondEventsecondEvent');
-    },
-    reloadWeb: function reloadWeb() {
-      this.srcs = localWeb.getLocalUrl({ score: '1001', desc: '小王GGb' });
-      // '?q=score%3d0%26desc%3d阿嫂'
-      console.log('url::::' + this.srcs);
-    },
-    getInitialData: function getInitialData() {},
-    toFocus: function toFocus() {
-      // 下面一行是为了兼容 Android
-      this.$refs.inputRef.blur();
-      this.$refs.inputRef.focus();
-    },
-    toHide: function toHide() {
-      this.$refs.inputRef.blur();
-    },
-    abc: function abc() {
-      console.log('click');
-    }
-  },
-  created: function created() {
-    navigator.setNavBarTitle({ title: 'title' });
-    this.reloadWeb();
-  }
-};
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
-    staticClass: ["body"]
-  }, [_c('web', {
-    ref: "rootWeb",
-    staticClass: ["web-cls"],
-    attrs: {
-      "src": "http://192.168.2.95:9003/#/weexbasic"
-    },
-    on: {
-      "message": _vm.postMessage,
-      "firstEvent": _vm.firstEvent,
-      "secondEvent": _vm.secondEvent
-    }
-  }), _c('div', {
-    staticClass: ["button-cls"],
-    on: {
-      "click": _vm.postMessageToWeb
-    }
-  }, [_c('text', {
-    staticClass: ["text-cls"]
-  }, [_vm._v(" postmessage to web")])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3014,10 +2815,6 @@ module.exports = {
     "height": "500wx"
   },
   "button-cls": {
-    "position": "absolute",
-    "bottom": "0wx",
-    "left": "0wx",
-    "right": "0wx",
     "backgroundColor": "#008000",
     "justifyContent": "center",
     "height": "80wx"
@@ -3025,6 +2822,10 @@ module.exports = {
   "text-cls": {
     "backgroundColor": "#FF0000",
     "fontSize": "16wx"
+  },
+  "log-cls": {
+    "backgroundColor": "#FFFFFF",
+    "height": "33wx"
   }
 }
 
@@ -3047,24 +2848,43 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 var storage = weex.requireModule('storage');
 var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
+var _XHBNetworkModule = weex.requireModule('XHBNetworkModule');
 exports.default = {
   name: 'WKWebView',
   data: function data() {
     return {
-      msg: 'message'
+      msg: 'message',
+      log: ''
     };
   },
 
   methods: {
-    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref) {
+    XHBNetworkModule: function XHBNetworkModule(_ref) {
+      var _this = this;
+
       var reqId = _ref.reqId,
           module = _ref.module,
           event = _ref.event,
-          params = _ref.params,
-          callback = _ref.callback;
+          params = _ref.params;
+
+      this.log = '调用了' + '-' + event + params.method;
+      var _self = this;
+      _XHBNetworkModule.requestData(JSON.stringify(params), function (callback) {
+        _this.log = JSON.stringify(callback);
+        _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }, { body: callback }));
+      });
+    },
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref2) {
+      var reqId = _ref2.reqId,
+          module = _ref2.module,
+          event = _ref2.event,
+          params = _ref2.params;
 
       if (event === 'play') {
         _XHBAudioPlayerModule.play(params);
@@ -3085,27 +2905,31 @@ exports.default = {
       if (event === 'last') {
         _XHBAudioPlayerModule.last();
       }
+      if (event === 'registerStateSignal') {
+        var _self = this;
+        _XHBAudioPlayerModule.registerStateSignal(function (params) {
+          _self.log = JSON.stringify(params);
+          // 需要调用一次，否则会有内存泄漏，iOS 目前做了容错机制
+          // _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}, {body: params}))
+          _self.$refs.rootWeb.postMessage({ module: module, event: event, params: params });
+        });
+      }
     },
     postMessageToWeb: function postMessageToWeb() {
       this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
     },
-    storageEvent: function storageEvent(_ref2) {
-      var reqId = _ref2.reqId,
-          module = _ref2.module,
-          event = _ref2.event,
-          params = _ref2.params,
-          callback = _ref2.callback;
+    storageEvent: function storageEvent(_ref3) {
+      var reqId = _ref3.reqId,
+          module = _ref3.module,
+          event = _ref3.event,
+          params = _ref3.params;
 
       var _self = this;
       if (event === 'setItem') {
         for (var key in params) {
           storage.setItem(key, params[key], function (event) {
             console.log('begin callback');
-            if (callback !== undefined) {
-              callback(event);
-            } else {
-              _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
-            }
+            _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }));
             console.log('set success');
           });
         }
@@ -3122,11 +2946,7 @@ exports.default = {
             event: _event,
             params: _params
           };
-          if (callback !== undefined) {
-            callback(xxxx);
-          } else {
-            _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
-          }
+          _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
         });
       }
     }
@@ -3175,13 +2995,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "rootWeb",
     staticClass: ["web-cls"],
     attrs: {
-      "src": "http://192.168.3.165:9003/#/"
+      "src": "http://192.168.0.102:9003/#/"
     },
     on: {
       "storage": _vm.storageEvent,
-      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule
+      "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
+      "XHBNetworkModule": _vm.XHBNetworkModule
     }
   })]), _c('div', {
+    staticClass: ["log-cls"]
+  }, [_c('text', [_vm._v(_vm._s(_vm.log))])]), _c('div', {
     staticClass: ["button-cls"],
     on: {
       "click": _vm.postMessageToWeb
@@ -3327,6 +3150,129 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "viewappear": _vm.viewappear
     }
   }, [_c('router-view')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(17)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(18)
+
+/* template */
+var __vue_template__ = __webpack_require__(19)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-54d3a52e"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "button-cls": {
+    "backgroundColor": "#008000",
+    "justifyContent": "center",
+    "height": "80wx"
+  },
+  "button": {
+    "marginTop": "10wx",
+    "height": "33wx",
+    "backgroundColor": "#FF0000",
+    "border": "1px solid yellow",
+    "borderRadius": "16.5wx",
+    "marginLeft": "15wx",
+    "marginRight": "15wx"
+  },
+  "button-text": {
+    "lineHeight": "33wx",
+    "textAlign": "center"
+  }
+}
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'HelloWorld',
+  data: function data() {
+    return {};
+  },
+
+  methods: {
+    toStorageAndAudio: function toStorageAndAudio() {
+      this.$router.push('/wkwebview');
+    },
+    toApi: function toApi() {
+      this.$router.push('/');
+    }
+  },
+  created: function created() {}
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('scroller', {
+    staticClass: ["body"]
+  }, [_c('div', {
+    on: {
+      "click": _vm.toStorageAndAudio
+    }
+  }, [_c('text', [_vm._v("测试 storage 和 播放器调用")])]), _c('div', {
+    on: {
+      "click": _vm.toApi
+    }
+  }, [_c('text', [_vm._v("测试 api 调用")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
