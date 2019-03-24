@@ -51,7 +51,8 @@
     self.view.backgroundColor = [UIColor redColor];
     self.url = [NSURL URLWithString:@"http://192.168.0.100:8081/dist/index.js"];
 
-    _weexHeight = self.view.frame.size.height - 64;
+//    _weexHeight = self.view.frame.size.height - 64;
+    _weexHeight = self.view.frame.size.height;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationRefreshInstance:) name:@"RefreshInstance" object:nil];
     
 #if DEBUG
@@ -87,7 +88,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 //TODO get height
