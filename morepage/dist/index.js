@@ -2995,7 +2995,7 @@ exports.default = {
           event = _ref.event,
           params = _ref.params;
 
-      this.log = '调用了' + '-' + event + JSON.stringify(params);
+      this.log = JSON.stringify(params);
       var _self = this;
       _XHBNetworkModule.requestData(params, function (callback) {
         _this.log = JSON.stringify(callback);
