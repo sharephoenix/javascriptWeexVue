@@ -2997,7 +2997,7 @@ exports.default = {
 
       this.log = '调用了' + '-' + event + JSON.stringify(params);
       var _self = this;
-      _XHBNetworkModule.requestData(JSON.stringify(params), function (callback) {
+      _XHBNetworkModule.requestData(params, function (callback) {
         _this.log = JSON.stringify(callback);
         _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }, { body: callback }));
       });
