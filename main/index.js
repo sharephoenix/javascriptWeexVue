@@ -92,7 +92,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
+__vue_options__.__file = "/Users/apple/ClientsRemote/weex-demo/morepage/src/components/Main.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-54d3a52e"
@@ -2902,7 +2902,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/wkwebview.vue"
+__vue_options__.__file = "/Users/apple/ClientsRemote/weex-demo/morepage/src/components/wkwebview.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-5b868445"
@@ -2977,6 +2977,7 @@ Object.defineProperty(exports, "__esModule", {
 var storage = weex.requireModule('storage');
 var _XHBAudioPlayerModule = weex.requireModule('XHBAudioPlayerModule');
 var _XHBNetworkModule = weex.requireModule('XHBNetworkModule');
+var XHBLoginInfoMo = weex.requireModule('XHBLoginInfo');
 exports.default = {
   name: 'WKWebView',
   data: function data() {
@@ -2987,26 +2988,42 @@ exports.default = {
   },
 
   methods: {
-    XHBNetworkModule: function XHBNetworkModule(_ref) {
-      var _this = this;
-
+    XHBLoginInfo: function XHBLoginInfo(_ref) {
       var reqId = _ref.reqId,
           module = _ref.module,
           event = _ref.event,
           params = _ref.params;
 
-      this.log = JSON.stringify(params);
       var _self = this;
-      _XHBNetworkModule.requestData(params, function (callback) {
-        _this.log = JSON.stringify(callback);
-        _self.$refs.rootWeb.callback(Object.assign(event, { 'reqId': reqId }, { body: callback }));
-      });
+      if (event === 'localUserInfo') {
+        var info = XHBLoginInfoMo.localUserInfo();
+        var res = { event: event, reqId: reqId, body: info };
+        this.log = JSON.stringify(res);
+        _self.$refs.rootWeb.callback(res);
+      }
     },
-    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref2) {
+    XHBNetworkModule: function XHBNetworkModule(_ref2) {
+      var _this = this;
+
       var reqId = _ref2.reqId,
           module = _ref2.module,
           event = _ref2.event,
           params = _ref2.params;
+
+      this.log = JSON.stringify(params);
+      var _self = this;
+      _XHBNetworkModule.requestData(params, function (callback) {
+        _this.log = JSON.stringify(callback);
+        var res = { event: event, reqId: reqId, body: callback };
+
+        _self.$refs.rootWeb.callback(res);
+      });
+    },
+    XHBAudioPlayerModule: function XHBAudioPlayerModule(_ref3) {
+      var reqId = _ref3.reqId,
+          module = _ref3.module,
+          event = _ref3.event,
+          params = _ref3.params;
 
       if (event === 'play') {
         _XHBAudioPlayerModule.play(params);
@@ -3040,13 +3057,13 @@ exports.default = {
     postMessageToWeb: function postMessageToWeb() {
       this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
     },
-    storageEvent: function storageEvent(_ref3) {
+    storageEvent: function storageEvent(_ref4) {
       var _this2 = this;
 
-      var reqId = _ref3.reqId,
-          module = _ref3.module,
-          event = _ref3.event,
-          params = _ref3.params;
+      var reqId = _ref4.reqId,
+          module = _ref4.module,
+          event = _ref4.event,
+          params = _ref4.params;
 
       var _self = this;
       if (event === 'setItem') {
@@ -3125,7 +3142,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "storage": _vm.storageEvent,
       "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
-      "XHBNetworkModule": _vm.XHBNetworkModule
+      "XHBNetworkModule": _vm.XHBNetworkModule,
+      "XHBLoginInfo": _vm.XHBLoginInfo
     }
   })]), _c('scroller', {
     staticClass: ["log-cls"]
@@ -3167,7 +3185,7 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/index.vue"
+__vue_options__.__file = "/Users/apple/ClientsRemote/weex-demo/morepage/src/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 __vue_options__._scopeId = "data-v-2964abc9"
