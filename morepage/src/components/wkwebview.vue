@@ -27,7 +27,7 @@ export default {
     XHBNetworkModule ({reqId, module, event, params}) {
       this.log = '调用了' + '-' + event + JSON.stringify(params)
       const _self = this
-      XHBNetworkModule.requestData(params, (callback) => {
+      XHBNetworkModule.requestData(JSON.stringify(params), (callback) => {
         this.log = JSON.stringify(callback)
         _self.$refs.rootWeb.callback(Object.assign(event, {'reqId': reqId}, {body: callback}))
       })
