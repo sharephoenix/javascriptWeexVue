@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -8916,10 +8916,54 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(6).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(7).setImmediate))
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(13)
+}
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(16),
+  /* template */
+  __webpack_require__(17),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-3c6d872c",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Main.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3c6d872c", Component.options)
+  } else {
+    hotAPI.reload("data-v-3c6d872c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8929,7 +8973,7 @@ var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _weexVueRender = __webpack_require__(9);
+var _weexVueRender = __webpack_require__(10);
 
 var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 
@@ -8940,7 +8984,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 
-var _require = __webpack_require__(10),
+var _require = __webpack_require__(11),
     router = _require.router;
 
 var App = __webpack_require__(24);
@@ -8949,7 +8993,7 @@ new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App
 router.push('/');
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -9005,7 +9049,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(7);
+__webpack_require__(8);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -9019,7 +9063,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -9209,10 +9253,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(9)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9402,7 +9446,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20144,7 +20188,7 @@ console.log('START WEEX VUE RENDER: 1.0.36, Build 2018-12-29 17:52.');
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20159,11 +20203,11 @@ var _vue = __webpack_require__(4);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(11);
+var _vueRouter = __webpack_require__(12);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _Main = __webpack_require__(12);
+var _Main = __webpack_require__(5);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -20189,7 +20233,7 @@ var router = exports.router = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22815,50 +22859,6 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(13)
-}
-var Component = __webpack_require__(3)(
-  /* script */
-  __webpack_require__(16),
-  /* template */
-  __webpack_require__(17),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-3c6d872c",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/apple/MyClientRemote/javascriptWeexVue/morepage/src/components/Main.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Main.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3c6d872c", Component.options)
-  } else {
-    hotAPI.reload("data-v-3c6d872c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22893,7 +22893,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-3c6d872c] {\n}\n.button-cls[data-v-3c6d872c] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.button[data-v-3c6d872c] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-3c6d872c] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-3c6d872c] {\n  background-color: orange;\n}\n.button-cls[data-v-3c6d872c] {\n    background-color: green;\n    justify-content: center;\n    height: 1.06667rem;\n}\n.button[data-v-3c6d872c] {\n    margin-top: 0.13333rem;\n    height: 0.44rem;\n    background-color: red;\n    border: 1px solid yellow;\n    border-radius: 0.22rem;\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n}\n.button-text[data-v-3c6d872c] {\n    line-height: 0.44rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -23099,7 +23099,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: center;\n  justify-content: space-between;\n}\n.web-cls[data-v-dccca438] {\n  /* flex: 1; */\n  background-color: red;\n  height: 6.66667rem;\n}\n.button-cls[data-v-dccca438] {\n  background-color: green;\n  justify-content: center;\n  height: 1.06667rem;\n}\n.text-cls[data-v-dccca438] {\n  background-color: red;\n  font-size: 0.21333rem;\n}\n.log-cls[data-v-dccca438] {\n  background-color: white;\n  height: 0.44rem;\n}\n", ""]);
+exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: column;\n  justify-content: flex-start;\n  background-color: aquamarine;\n}\n.web-cls[data-v-dccca438] {\n  flex: 1;\n  background-color: red;\n  /* height: 600wx; */\n}\n.button-cls[data-v-dccca438] {\n  background-color: white;\n  justify-content: center;\n  height: 1.06667rem;\n  border-radius: 0.04rem;\n}\n.text-cls[data-v-dccca438] {\n  color: black;\n  font-size: 0.21333rem;\n  text-align: center;\n}\n.log-cls[data-v-dccca438] {\n  background-color: orchid;\n  height: 0.8rem;\n}\n", ""]);
 
 // exports
 
@@ -23114,6 +23114,7 @@ exports.push([module.i, "\n.body[data-v-dccca438] {\n  flex-direction: center;\n
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
 //
 //
 //
@@ -23148,7 +23149,7 @@ exports.default = {
           event = _ref.event,
           params = _ref.params;
 
-      this.log = '调用了' + '-' + event + params.method;
+      this.log = '调用了' + '-' + event + JSON.stringify(params);
       var _self = this;
       _XHBNetworkModule.requestData(JSON.stringify(params), function (callback) {
         _this.log = JSON.stringify(callback);
@@ -23194,6 +23195,8 @@ exports.default = {
       this.$refs.rootWeb.postMessage({ module: module, event: event, params: { info: 'success' } });
     },
     storageEvent: function storageEvent(_ref3) {
+      var _this2 = this;
+
       var reqId = _ref3.reqId,
           module = _ref3.module,
           event = _ref3.event,
@@ -23219,8 +23222,9 @@ exports.default = {
             module: module,
             reqId: reqId,
             event: _event,
-            params: _params
+            body: _params
           };
+          _this2.log = xxxx;
           _self.$refs.rootWeb.callback(Object.assign(xxxx, { 'reqId': reqId }));
         });
       }
@@ -23286,11 +23290,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "XHBAudioPlayerModule": _vm.XHBAudioPlayerModule,
       "XHBNetworkModule": _vm.XHBNetworkModule
     }
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "log-cls weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  })], 1), _vm._v(" "), _c('scroller', {
+    staticClass: "log-cls",
+    attrs: {}
   }, [_c('p', {
     staticClass: " weex-el weex-text",
     attrs: {
@@ -23314,7 +23316,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v(" postmessageToWebgg")])])])
+  }, [_vm._v(" postmessageToWebgg")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23403,7 +23405,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n.image-cls[data-v-296d580a] {\n  height: 4rem;\n  background: url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png');\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-296d580a] {\n  background-color: blue;\n}\n.body[data-v-296d580a] {\n  flex: 1;\n}\n.logo[data-v-296d580a] {\n  width: 0.56rem;\n  height: 0.26667rem;\n}\n.greeting[data-v-296d580a] {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message[data-v-296d580a] {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n.image-cls[data-v-296d580a] {\n  height: 4rem;\n  background: url('https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png');\n}\n", ""]);
 
 // exports
 
@@ -23419,9 +23421,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _HelloWorld = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"@/components/HelloWorld\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _Main = __webpack_require__(5);
 
-var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+var _Main2 = _interopRequireDefault(_Main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23449,10 +23451,9 @@ exports.default = {
     }
   },
   components: {
-    HelloWorld: _HelloWorld2.default
+    Main: _Main2.default
   }
 }; //
-//
 //
 //
 //
@@ -23473,7 +23474,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "viewappear": _vm.viewappear
     }
-  }, [_c('router-view')], 1)
+  }, [_c('router-view', {
+    staticClass: "body",
+    attrs: {}
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
